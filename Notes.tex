@@ -43,24 +43,26 @@
         \[ \left(A \setminus B\right) \cup \left(B \setminus A \right) = \left( A \cup B \right) \setminus \left( A \cap B \right)\] 
     \end{center}
 }
-
 \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.6]
       \begin{scope}[shift={(-4,0)}]
+        % Circle A
         \filldraw[
           line width=0.8pt,
           color=red,
           fill=red!30
         ] (0,0) circle[radius=2cm]
-          node[left=2.5cm, yshift=0.5cm] {\( A \)};
+          node[left=1.2cm, yshift=0.3cm] {\( A \)};
         
+        % Circle B
         \filldraw[
           line width=0.8pt,
           color=blue,
           fill=none
         ] (2,0) circle[radius=2cm]
-          node[right=2.5cm, yshift=0.5cm] {\( B \)};
+          node[right=1.2 cm, yshift=0.3cm] {\( B \)};
     
+        % Overlap
         \begin{scope}
           \clip (2,0) circle [radius=2cm]; 
           \fill[white] (0,0) circle [radius=2cm]; 
@@ -68,20 +70,23 @@
       \end{scope}
     
       \begin{scope}[shift={(5,0)}]
+        % Circle A
         \filldraw[
           line width=0.8pt,
           color=red,
           fill=none
         ] (0,0) circle[radius=2cm]
-          node[left=2.5cm, yshift=0.5cm] {\( A \)};
+          node[left=1.2 cm, yshift=0.3cm] {\( A \)};
         
+        % Circle B
         \filldraw[
           line width=0.8pt,
           color=blue,
           fill=blue!30
         ] (2,0) circle[radius=2cm]
-          node[right=2.5cm, yshift=0.5cm] {\( B \)};
+          node[right=1.2 cm, yshift=0.3cm] {\( B \)};
     
+        % Overlap
         \begin{scope}
           \clip (0,0) circle [radius=2cm]; 
           \fill[white] (2,0) circle [radius=2cm]; 
@@ -91,69 +96,137 @@
 \end{center}
 
 \begin{center}
-    \begin{tikzpicture}
-            \filldraw[
-              line width=0.8pt,
-              color=red,
-              fill= none
-            ] (0,0) circle[radius=2cm]
-              node[left=2.5cm, yshift=0.5cm] {\( A \)};
-            
-            \filldraw[
-              line width=0.8pt,
-              color=blue,
-              fill= none
-            ] (2,0) circle[radius=2cm]
-              node[right=2.5cm, yshift=0.5cm] {\( B \)};
+    \begin{tikzpicture}[scale=0.6]
+        % Circle A
+        \filldraw[
+          line width=0.8pt,
+          color=red,
+          fill=green!30
+        ] (0,0) circle[radius=2cm]
+          node[left=1.2 cm, yshift=0.3cm] {\( A \)};
+        
+        % Circle B
+        \filldraw[
+          line width=0.8pt,
+          color=blue,
+          fill=green!30
+        ] (2,0) circle[radius=2cm]
+          node[right=1.2 cm, yshift=0.3cm] {\( B \)};
+    
+        % Overlap
+        \begin{scope}
+          \clip (0,0) circle [radius=2cm]; 
+          \fill[white] (2,0) circle [radius=2cm]; 
+        \end{scope}
     \end{tikzpicture}
 \end{center}
-    
+
 \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.6]
         \begin{scope}[shift={(-4,0)}]
+            % Circle A
             \filldraw[
               line width=0.8pt,
               color=red,
-              fill= none
+              fill=red!30,
+              draw=red
             ] (0,0) circle[radius=2cm]
-              node[left=2.5cm, yshift=0.5cm] {\( A \)};
+              node[left=1.2cm, yshift=0.3cm] {\( A \)};
             
+            % Circle B with transparency
             \filldraw[
               line width=0.8pt,
               color=blue,
-              fill= none
+              fill=blue!30,
+              draw=blue,
+              opacity=0.7
             ] (2,0) circle[radius=2cm]
-              node[right=2.5cm, yshift=0.5cm] {\( B \)};
+              node[right=1.2cm, yshift=0.3cm] {\( B \)};
+        \end{scope}    
+
+        \begin{scope}[shift={(5,0)}]
+            % Circle A
+            \filldraw[
+              line width=0.8pt,
+              color=red,
+              fill=none
+            ] (0,0) circle[radius=2cm]
+              node[left=1.2cm, yshift=0.3cm] {\( A \)};
             
+            % Circle B
+            \filldraw[
+              line width=0.8pt,
+              color=blue,
+              fill=none
+            ] (2,0) circle[radius=2cm]
+              node[right=1.2cm, yshift=0.3cm] {\( B \)};
+            
+            % Overlap
             \begin{scope}
                 \clip (0,0) circle [radius=2cm]; 
                 \fill[green!30] (2,0) circle [radius=2cm]; 
             \end{scope}
         \end{scope}
-
-        \begin{scope}[shift={(5,0)}]
-            \filldraw[
-              line width=0.8pt,
-              color=red,
-              fill= red!30
-            ] (0,0) circle[radius=2cm]
-              node[left=2.5cm, yshift=0.5cm] {\( A \)};
-            
-            \filldraw[
-              line width=0.8pt,
-              color= blue,
-              fill= blue!30
-            ] (2,0) circle[radius=2cm]
-              node[right=2.5cm, yshift=0.5cm] {\( B \)};
-            
-            \begin{scope}
-                \clip (0,0) circle [radius=2cm]; 
-                \fill[white] (2,0) circle [radius=2cm]; 
-            \end{scope}
-        \end{scope}
-
     \end{tikzpicture}
 \end{center}
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.6]
+        % Circle A
+        \filldraw[
+          line width=0.8pt,
+          color=red,
+          fill=green!30
+        ] (0,0) circle[radius=2cm]
+          node[left=1.2cm, yshift=0.3cm] {\( A \)};
+        
+        % Circle B
+        \filldraw[
+          line width=0.8pt,
+          color=blue,
+          fill=green!30
+        ] (2,0) circle[radius=2cm]
+          node[right=1.2cm, yshift=0.3cm] {\( B \)};
+    
+        % Overlap
+        \begin{scope}
+          \clip (0,0) circle [radius=2cm]; 
+          \fill[white] (2,0) circle [radius=2cm]; 
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+\begin{ClaimWithMagnolia}{Claim 1 For Probelm 2}
+    IIf $x \in \left(A \setminus B\right) \cup \left(B \setminus A \right)$, then $x \in A \setminus B$ or $x \in B \setminus A$.
+\end{ClaimWithMagnolia}
+
+\begin{RemarkWithLily}{1}
+    IIf $x \in A \setminus B$, then $x \in A$ and $x \notin B$. This also implies $x \in A \cup B$ but $x \notin A \cap B$, so $x \in (A \cup B) \setminus (A \cap B)$. \\
+    If $x \in B \setminus A$, then $x \in B$ and $x \notin A$, which implies $x \in A \cup B$ but $x \notin A \cap B$, so $x \in (A \cup B) \setminus (A \cap B)$. \\
+    
+    This proves that:
+    \[
+    \left(A \setminus B\right) \cup \left(B \setminus A \right) \subseteq \left( A \cup B \right) \setminus \left( A \cap B \right).
+    \]
+\end{RemarkWithLily}
+
+\begin{ClaimWithMagnolia}{Claim 2 For Probelm 2}
+    IIf $x$ is in $\left( A \cup B \right) \setminus \left( A \cap B \right)$, then $x \in A \cup B$ and $x \notin A \cap B$.
+\end{ClaimWithMagnolia}
+
+\begin{RemarkWithLily}{2}
+    IIf $x \in A \cup B$ but $x \notin A \cap B$, then $x$ must belong to exactly one of $A$ or $B$. \\
+    If $x \in A$ but $x \notin B$, then $x \in A \setminus B$. \\
+    If $x \in B$ but $x \notin A$, then $x \in B \setminus A$. \\
+    
+    Therefore, $x \in \left(A \setminus B\right) \cup \left(B \setminus A \right)$.
+
+    This proves that:
+    \[
+    \left( A \cup B \right) \setminus \left( A \cap B \right) \subseteq \left(A \setminus B\right) \cup \left(B \setminus A \right).
+    \]
+\end{RemarkWithLily}
+
 
 \section*{Section 1.3 Problem 2}
 \addcontentsline{toc}{section}{Problem 2}
