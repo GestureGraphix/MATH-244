@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/TeX Live for SUSE Linux) (preloaded format=pdflatex 2025.1.17)  18 JAN 2025 22:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/TeX Live for SUSE Linux) (preloaded format=pdflatex 2025.1.17)  18 JAN 2025 23:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1016,6 +1016,9 @@ LaTeX Warning: Label `clmf:I' multiply defined.
 
 LaTeX Warning: Label `rmf:I' multiply defined.
 
+
+LaTeX Warning: Label `ex:W' multiply defined.
+
 )
 \openout1 = `Notes.aux'.
 
@@ -1234,7 +1237,16 @@ File: lot.png Graphic file (type png)
 <use lot.png>
 Package pdftex.def Info: lot.png  used on input line 270.
 (pdftex.def)             Requested size: 36.98866pt x 36.97275pt.
- [4 </home/alex/Documents/MATH 244/tulip.png> </home/alex/Documents/MATH 244/lot.png>] (/home/alex/Documents/MATH 244/Notes.aux)
+<flow.png, id=101, 692.5875pt x 492.84125pt>
+File: flow.png Graphic file (type png)
+<use flow.png>
+Package pdftex.def Info: flow.png  used on input line 286.
+(pdftex.def)             Requested size: 42.67912pt x 30.36633pt.
+File: flow.png Graphic file (type png)
+<use flow.png>
+Package pdftex.def Info: flow.png  used on input line 290.
+(pdftex.def)             Requested size: 42.67912pt x 30.36633pt.
+ [4 </home/alex/Documents/MATH 244/tulip.png> </home/alex/Documents/MATH 244/lot.png> </home/alex/Documents/MATH 244/flow.png>] (/home/alex/Documents/MATH 244/Notes.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1247,18 +1259,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 45187 strings out of 478994
- 1016641 string characters out of 5867238
- 1600440 words of memory out of 5000000
- 61825 multiletter control sequences out of 15000+600000
+ 45196 strings out of 478994
+ 1016746 string characters out of 5867238
+ 1600484 words of memory out of 5000000
+ 61833 multiletter control sequences out of 15000+600000
  431465 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,7n,110p,777b,1387s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf/fonts/type1/public/newtx/txexs.pfb>
-Output written on "/home/alex/Documents/MATH 244/Notes.pdf" (5 pages, 33112576 bytes).
+Output written on "/home/alex/Documents/MATH 244/Notes.pdf" (5 pages, 33122807 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
+ 177 PDF objects out of 1000 (max. 8388607)
  111 compressed objects within 2 object streams
  12 named destinations out of 1000 (max. 500000)
- 235 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 240 words of extra memory for PDF output out of 10000 (max. 10000000)
 
