@@ -1,6 +1,6 @@
 \contentsline {section}{Problem 5}{2}{section*.2}%
 \contentsline {section}{Problem 6}{2}{section*.3}%
 \contentsline {section}{Problem 2}{3}{section*.4}%
-\contentsline {section}{Problem 2}{3}{section*.5}%
+\contentsline {section}{Problem 2}{4}{section*.5}%
 \contentsline {section}{Problem 6}{4}{section*.6}%
 \contentsfinish 

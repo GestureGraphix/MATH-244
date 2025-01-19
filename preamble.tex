@@ -1150,10 +1150,30 @@
   before upper = \tcbtitle\par\smallskip,
   coltitle = mybasefr,
   overlay unbroken and last={
-    \node[anchor=south east,xshift=-2mm,yshift=2mm] at (frame.south east)
+    \node[anchor=south east,xshift=-2mm,yshift=-2mm] at (frame.south east)
       {\includegraphics[width=1.3cm]{tulip.png}};
   }
 }
+
+%% INDUCTIVE HYPOTHESIS WITH ROSE
+\newtcolorbox{inducthypWithRose}{
+  enhanced,
+  breakable,
+  colback = mybasebg,
+  frame hidden,
+  boxrule = 0pt,
+  borderline west = {2pt}{0pt}{mybasefr},
+  sharp corners,
+  title = {\bfseries Inductive Hypothesis},
+  detach title,
+  before upper = \tcbtitle\par\smallskip,
+  coltitle = mybasefr,
+  overlay unbroken and last={
+    \node[anchor=south east,xshift=-2mm,yshift=-2mm] at (frame.south east)
+      {\includegraphics[width=1.3cm]{rose.png}};
+  }
+}
+
 
 %% CLAIM WITH MAGNOLIA
 \newtcbtheorem[no counter]{ClaimWithMagnolia}{Claim}
@@ -1173,7 +1193,7 @@
   separator sign none,
   segmentation style={solid, myg!85!black},
   overlay unbroken and last={
-    \node[anchor=south east,xshift=-2mm,yshift=-1mm] at (frame.south east)
+    \node[anchor=south east,xshift=-2mm,yshift=0 mm] at (frame.south east)
       {\includegraphics[width=1.3cm]{magnolia.png}};
   }
 }{clmf}

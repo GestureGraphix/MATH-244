@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/TeX Live for SUSE Linux) (preloaded format=pdflatex 2025.1.17)  18 JAN 2025 20:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/TeX Live for SUSE Linux) (preloaded format=pdflatex 2025.1.17)  18 JAN 2025 22:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1209,7 +1209,32 @@ File: lily.png Graphic file (type png)
 <use lily.png>
 Package pdftex.def Info: lily.png  used on input line 228.
 (pdftex.def)             Requested size: 36.98866pt x 36.02458pt.
-[3 </home/alex/Documents/MATH 244/magnolia.png>] [4] (/home/alex/Documents/MATH 244/Notes.aux)
+<poppy.png, id=87, 2585.66pt x 3521.155pt>
+File: poppy.png Graphic file (type png)
+<use poppy.png>
+Package pdftex.def Info: poppy.png  used on input line 245.
+(pdftex.def)             Requested size: 28.45274pt x 38.73819pt.
+<rose.png, id=88, 1379.1525pt x 1231.60126pt>
+File: rose.png Graphic file (type png)
+<use rose.png>
+Package pdftex.def Info: rose.png  used on input line 249.
+(pdftex.def)             Requested size: 36.98866pt x 33.01877pt.
+File: lily.png Graphic file (type png)
+<use lily.png>
+Package pdftex.def Info: lily.png  used on input line 253.
+(pdftex.def)             Requested size: 36.98866pt x 36.02458pt.
+[3 </home/alex/Documents/MATH 244/magnolia.png> </home/alex/Documents/MATH 244/poppy.png> </home/alex/Documents/MATH 244/rose.png>]
+<tulip.png, id=99, 3697.815pt x 4107.345pt>
+File: tulip.png Graphic file (type png)
+<use tulip.png>
+Package pdftex.def Info: tulip.png  used on input line 266.
+(pdftex.def)             Requested size: 36.98866pt x 41.05078pt.
+<lot.png, id=100, 2007.5pt x 2007.5pt>
+File: lot.png Graphic file (type png)
+<use lot.png>
+Package pdftex.def Info: lot.png  used on input line 270.
+(pdftex.def)             Requested size: 36.98866pt x 36.97275pt.
+ [4 </home/alex/Documents/MATH 244/tulip.png> </home/alex/Documents/MATH 244/lot.png>] (/home/alex/Documents/MATH 244/Notes.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1222,18 +1247,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 45150 strings out of 478994
- 1016152 string characters out of 5867238
- 1593974 words of memory out of 5000000
- 61792 multiletter control sequences out of 15000+600000
+ 45187 strings out of 478994
+ 1016641 string characters out of 5867238
+ 1600440 words of memory out of 5000000
+ 61825 multiletter control sequences out of 15000+600000
  431465 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,7n,110p,777b,1387s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf/fonts/type1/public/newtx/txexs.pfb>
-Output written on "/home/alex/Documents/MATH 244/Notes.pdf" (5 pages, 18641460 bytes).
+</usr/share/texmf/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf/fonts/type1/public/newtx/txexs.pfb>
+Output written on "/home/alex/Documents/MATH 244/Notes.pdf" (5 pages, 33112948 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
+ 175 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
  12 named destinations out of 1000 (max. 500000)
- 215 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 235 words of extra memory for PDF output out of 10000 (max. 10000000)
 
