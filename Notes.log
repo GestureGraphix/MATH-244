@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/TeX Live for SUSE Linux) (preloaded format=pdflatex 2025.1.17)  19 JAN 2025 11:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/TeX Live for SUSE Linux) (preloaded format=pdflatex 2025.1.17)  19 JAN 2025 16:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1019,6 +1019,9 @@ LaTeX Warning: Label `rmf:I' multiply defined.
 
 LaTeX Warning: Label `ex:W' multiply defined.
 
+
+LaTeX Warning: Label `clmf:A' multiply defined.
+
 )
 \openout1 = `Notes.aux'.
 
@@ -1188,65 +1191,91 @@ Package pdftex.def Info: lily.png  used on input line 35.
 <magnolia.png, id=86, 4203.705pt x 4187.645pt>
 File: magnolia.png Graphic file (type png)
 <use magnolia.png>
-Package pdftex.def Info: magnolia.png  used on input line 201.
+Package pdftex.def Info: magnolia.png  used on input line 226.
 (pdftex.def)             Requested size: 36.98866pt x 36.80537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--206
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 File: lily.png Graphic file (type png)
 <use lily.png>
-Package pdftex.def Info: lily.png  used on input line 211.
+Package pdftex.def Info: lily.png  used on input line 236.
 (pdftex.def)             Requested size: 36.98866pt x 36.02458pt.
 File: magnolia.png Graphic file (type png)
 <use magnolia.png>
-Package pdftex.def Info: magnolia.png  used on input line 215.
+Package pdftex.def Info: magnolia.png  used on input line 240.
 (pdftex.def)             Requested size: 36.98866pt x 36.80537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--221
+Underfull \hbox (badness 10000) in paragraph at lines 243--246
 
  []
 
 File: lily.png Graphic file (type png)
 <use lily.png>
-Package pdftex.def Info: lily.png  used on input line 228.
+Package pdftex.def Info: lily.png  used on input line 253.
 (pdftex.def)             Requested size: 36.98866pt x 36.02458pt.
 <poppy.png, id=87, 2585.66pt x 3521.155pt>
 File: poppy.png Graphic file (type png)
 <use poppy.png>
-Package pdftex.def Info: poppy.png  used on input line 245.
+Package pdftex.def Info: poppy.png  used on input line 270.
 (pdftex.def)             Requested size: 28.45274pt x 38.73819pt.
 <rose.png, id=88, 1379.1525pt x 1231.60126pt>
 File: rose.png Graphic file (type png)
 <use rose.png>
-Package pdftex.def Info: rose.png  used on input line 249.
+Package pdftex.def Info: rose.png  used on input line 274.
 (pdftex.def)             Requested size: 36.98866pt x 33.01877pt.
 File: lily.png Graphic file (type png)
 <use lily.png>
-Package pdftex.def Info: lily.png  used on input line 253.
+Package pdftex.def Info: lily.png  used on input line 278.
 (pdftex.def)             Requested size: 36.98866pt x 36.02458pt.
 [3 </home/alex/Documents/MATH 244/magnolia.png> </home/alex/Documents/MATH 244/poppy.png> </home/alex/Documents/MATH 244/rose.png>]
 <tulip.png, id=99, 3697.815pt x 4107.345pt>
 File: tulip.png Graphic file (type png)
 <use tulip.png>
-Package pdftex.def Info: tulip.png  used on input line 266.
+Package pdftex.def Info: tulip.png  used on input line 291.
 (pdftex.def)             Requested size: 36.98866pt x 41.05078pt.
 <lot.png, id=100, 2007.5pt x 2007.5pt>
 File: lot.png Graphic file (type png)
 <use lot.png>
-Package pdftex.def Info: lot.png  used on input line 270.
+Package pdftex.def Info: lot.png  used on input line 295.
 (pdftex.def)             Requested size: 36.98866pt x 36.97275pt.
 <flow.png, id=101, 692.5875pt x 492.84125pt>
 File: flow.png Graphic file (type png)
 <use flow.png>
-Package pdftex.def Info: flow.png  used on input line 286.
+Package pdftex.def Info: flow.png  used on input line 311.
 (pdftex.def)             Requested size: 42.67912pt x 30.36633pt.
 File: flow.png Graphic file (type png)
 <use flow.png>
-Package pdftex.def Info: flow.png  used on input line 290.
+Package pdftex.def Info: flow.png  used on input line 315.
 (pdftex.def)             Requested size: 42.67912pt x 30.36633pt.
- [4 </home/alex/Documents/MATH 244/tulip.png> </home/alex/Documents/MATH 244/lot.png> </home/alex/Documents/MATH 244/flow.png>] (/home/alex/Documents/MATH 244/Notes.aux)
+ [4 </home/alex/Documents/MATH 244/tulip.png> </home/alex/Documents/MATH 244/lot.png> </home/alex/Documents/MATH 244/flow.png>]
+File: magnolia.png Graphic file (type png)
+<use magnolia.png>
+Package pdftex.def Info: magnolia.png  used on input line 330.
+(pdftex.def)             Requested size: 36.98866pt x 36.80537pt.
+File: lot.png Graphic file (type png)
+<use lot.png>
+Package pdftex.def Info: lot.png  used on input line 334.
+(pdftex.def)             Requested size: 36.98866pt x 36.97275pt.
+File: lily.png Graphic file (type png)
+<use lily.png>
+Package pdftex.def Info: lily.png  used on input line 338.
+(pdftex.def)             Requested size: 36.98866pt x 36.02458pt.
+File: magnolia.png Graphic file (type png)
+<use magnolia.png>
+Package pdftex.def Info: magnolia.png  used on input line 342.
+(pdftex.def)             Requested size: 36.98866pt x 36.80537pt.
+<lycoris.png, id=109, 2862.695pt x 4352.26pt>
+File: lycoris.png Graphic file (type png)
+<use lycoris.png>
+Package pdftex.def Info: lycoris.png  used on input line 346.
+(pdftex.def)             Requested size: 22.76228pt x 34.59962pt.
+File: lily.png Graphic file (type png)
+<use lily.png>
+Package pdftex.def Info: lily.png  used on input line 367.
+(pdftex.def)             Requested size: 36.98866pt x 36.02458pt.
+ [5 </home/alex/Documents/MATH 244/lycoris.png>] (/home/alex/Documents/MATH 244/Notes.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1259,18 +1288,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 45197 strings out of 478994
- 1016765 string characters out of 5867238
- 1600484 words of memory out of 5000000
- 61834 multiletter control sequences out of 15000+600000
- 431465 words of font info for 107 fonts, out of 8000000 for 9000
+ 45252 strings out of 478994
+ 1017603 string characters out of 5867238
+ 1600431 words of memory out of 5000000
+ 61880 multiletter control sequences out of 15000+600000
+ 440226 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,7n,110p,777b,1387s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 107i,8n,110p,777b,1387s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf/fonts/type1/public/newtx/txexs.pfb>
-Output written on "/home/alex/Documents/MATH 244/Notes.pdf" (5 pages, 33122946 bytes).
+Output written on "/home/alex/Documents/MATH 244/Notes.pdf" (6 pages, 40353298 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 12 named destinations out of 1000 (max. 500000)
- 240 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 184 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
+ 13 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 

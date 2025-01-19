@@ -1198,6 +1198,32 @@
   }
 }{clmf}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONTRAPOSITIVE WITH LYCORIS COLORS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtcbtheorem[no counter]{ContrapositiveWithLycoris}{Contrapositive}
+{%
+  enhanced,
+  breakable,
+  colback = red!10,       % Light crimson background
+  frame hidden,
+  boxrule = 0sp,
+  borderline west = {2pt}{0pt}{red!80!black},
+  sharp corners,
+  detach title,
+  before upper = \tcbtitle\par\smallskip,
+  coltitle = red!80!black,
+  fonttitle = \bfseries\sffamily,
+  description font = \mdseries,
+  separator sign none,
+  segmentation style={solid, red!80!black},
+  overlay unbroken and last={
+    \node[anchor=south east,xshift=-2mm,yshift=-1mm] at (frame.south east)
+      {\includegraphics[width=0.8 cm]{lycoris.png}};
+  }
+}{cply}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  END OF "BIG" PREAMBLE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
