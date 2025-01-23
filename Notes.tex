@@ -300,7 +300,33 @@
     nonzero repeat the same step. Prove that this algorithm always finishes in a finite
     number of steps. }
 
+\begin{ClaimWithMagnolia}{For Bonus Problem}
+  FFor every fraction $\frac{m}{n}$,  with integers $m$ and $n$ satisfying $1 \leq m \leq n $ the algorithm will terminate in a finite number of steps.
+\end{ClaimWithMagnolia}
 
+\begin{RemarkWithLily}{1}
+  LLet $k = \lceil \frac{m}{n} \rceil$.
+\end{RemarkWithLily}
+
+\begin{basecaseWithPoppy}
+  $m = 1$ \\
+  Here, $\frac{m}{n} = \frac{1}{n}$ \\
+  \[k = \lceil \frac{n}{1} \rceil = n \] 
+  \[\frac{1}{n} - \frac{1}{n} = 0 \]
+  When m = 1 the algorithm terminates 
+\end{basecaseWithPoppy}
+
+\begin{inducthypWithRose}
+  For every smaller numerator $\ell$ ($1 \leq \ell < m$), and for every denominator $n'$ ($\ell < n'$), the fraction $\frac{\ell}{n'}$ can be completely reduced to a sum of unit fractions in finite steps.
+\end{inducthypWithRose}
+
+\begin{RemarkWithLily}{2}
+  LLet $k = \lceil \frac{m}{n} \rceil$. \\
+  The fraction $\frac{m}{n} - \frac{1}{k}$ is:
+  \[ \frac{m}{n} - \frac{1}{k} = \frac{mk - n}{kn} \]
+  Since $m < n$, $mk - n < n^2 - n = n(n - 1)$. \\
+  Therefore, $mk - n < kn$.
+\end{RemarkWithLily}
 
 \section*{1.4 Problem 2}
 \addcontentsline{toc}{section}{Problem 4}

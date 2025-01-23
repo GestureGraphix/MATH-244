@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1737669627 "/home/alex/Documents/MATH 244/Notes.tex" "/home/alex/Documents/MATH 244/Notes.pdf" "Notes" 1737669646
+["pdflatex"] 1737672868 "/home/alex/Documents/MATH 244/Notes.tex" "/home/alex/Documents/MATH 244/Notes.pdf" "Notes" 1737672895
   "/etc/texmf/web2c/texmf.cnf" 1617974667 40935 950c859ef6aa64cd9f8caa18792b2c7d ""
-  "/home/alex/Documents/MATH 244/Notes.aux" 1737669645 3477 a836d1570531f553a22cb136a41d81b4 ""
-  "/home/alex/Documents/MATH 244/Notes.tex" 1737669610 13796 2b204ab5d29f6008bcfe59c2f699b4c8 ""
+  "/home/alex/Documents/MATH 244/Notes.aux" 1737672886 3617 e4925a6c2635fcff2d0e7acac980ce87 ""
+  "/home/alex/Documents/MATH 244/Notes.tex" 1737672895 14852 75ffad88b81b7dbb5b7f9b421c17e784 ""
   "/usr/share/texmf/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/share/texmf/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -326,9 +326,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1617974667 40935 950c859ef6aa64cd9f8caa18792b2c7d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1737166436 5175355 cdab57a66732305fc52dc8bf1694ca9d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1737166327 2724546 eb4ee59b3748dcc0747b79c0ae2a910b ""
-  "Notes.aux" 1737669645 3477 a836d1570531f553a22cb136a41d81b4 "pdflatex"
-  "Notes.tex" 1737669610 13796 2b204ab5d29f6008bcfe59c2f699b4c8 ""
-  "Notes.toc" 1737669645 327 1c0f534cb758259f8e672161da4c8044 "pdflatex"
+  "Notes.aux" 1737672886 3617 e4925a6c2635fcff2d0e7acac980ce87 "pdflatex"
+  "Notes.tex" 1737672895 14852 75ffad88b81b7dbb5b7f9b421c17e784 ""
+  "Notes.toc" 1737672886 327 bef6c7569adae928fe364589514880fc "pdflatex"
   "flow.png" 1737149437 3327 eab4ed35b4d13609c606e28f6c71b1ca ""
   "letterfonts.tex" 1737149437 8702 ef32ca12e97530ef5734ca4adcb1f6b1 ""
   "lily.png" 1737226170 3275114 b246647a32825cf1115115f6cfe1aba2 ""
@@ -341,9 +341,9 @@
   "rose.png" 1737149437 84304 9523fd103fff6cdfa3cfa431464e1d56 ""
   "tulip.png" 1737227044 9641448 59572efda6fcc7ea3f80a5d27554a137 ""
   (generated)
+  "Notes.aux"
   "Notes.toc"
-  "/home/alex/Documents/MATH 244/Notes.log"
-  "/home/alex/Documents/MATH 244/Notes.pdf"
   "Notes.pdf"
   "Notes.log"
-  "Notes.aux"
+  "/home/alex/Documents/MATH 244/Notes.log"
+  "/home/alex/Documents/MATH 244/Notes.pdf"
