@@ -1730,11 +1730,6 @@ INPUT /home/alex/Documents/MATH 244/tulip.png
 INPUT /home/alex/Documents/MATH 244/tulip.png
 INPUT /home/alex/Documents/MATH 244/tulip.png
 INPUT /home/alex/Documents/MATH 244/tulip.png
-INPUT /home/alex/Documents/MATH 244/lot.png
-INPUT /home/alex/Documents/MATH 244/lot.png
-INPUT /home/alex/Documents/MATH 244/lot.png
-INPUT /home/alex/Documents/MATH 244/lot.png
-INPUT /home/alex/Documents/MATH 244/lot.png
 INPUT /home/alex/Documents/MATH 244/flow.png
 INPUT /home/alex/Documents/MATH 244/flow.png
 INPUT /home/alex/Documents/MATH 244/flow.png
@@ -1744,10 +1739,16 @@ INPUT /home/alex/Documents/MATH 244/flow.png
 INPUT /home/alex/Documents/MATH 244/flow.png
 INPUT /home/alex/Documents/MATH 244/flow.png
 INPUT /home/alex/Documents/MATH 244/flow.png
+INPUT /usr/share/texmf/fonts/vf/public/newpx/zplsym.vf
+INPUT /usr/share/texmf/fonts/tfm/public/newtx/ntxsym.tfm
+INPUT /usr/share/texmf/fonts/vf/public/newtx/ntxsym.vf
+INPUT /usr/share/texmf/fonts/tfm/public/txfonts/txsyb.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/txfonts/txsya.tfm
 INPUT /home/alex/Documents/MATH 244/magnolia.png
 INPUT /home/alex/Documents/MATH 244/magnolia.png
 INPUT /home/alex/Documents/MATH 244/magnolia.png
 INPUT /home/alex/Documents/MATH 244/magnolia.png
+INPUT /home/alex/Documents/MATH 244/lot.png
 INPUT /home/alex/Documents/MATH 244/lot.png
 INPUT /home/alex/Documents/MATH 244/lot.png
 INPUT /home/alex/Documents/MATH 244/lot.png
@@ -1784,3 +1785,4 @@ INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/newpx/pxmiaX.pfb
 INPUT /usr/share/texmf/fonts/type1/public/newpx/pxsys.pfb
 INPUT /usr/share/texmf/fonts/type1/public/newtx/txexs.pfb
+INPUT /usr/share/texmf/fonts/type1/public/txfonts/txsya.pfb
