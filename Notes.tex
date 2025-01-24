@@ -292,41 +292,31 @@
 \addcontentsline{toc}{section}{Bonus Problem}
 
 \qs{Bonus Problem}{
-    In ancient Egypt, fractions were written as sums
-    of fractions with numerator 1. For instance, $\frac{3}{5} = \frac{1}{2} + \frac{1}
-    {10}$. Consider the following algorithm for writing a fraction $\frac{m}{n}$ in
-    this form ($1 \leq m < n$): write the fraction $\frac{1}{\lceil n/m \rceil}$,
-    calculate the fraction $\frac{m}{n} - \frac{1}{\lceil n/m \rceil}$, and if it is
-    nonzero repeat the same step. Prove that this algorithm always finishes in a finite
-    number of steps. }
+  In ancient Egypt, fractions were written as sums
+  of fractions with numerator 1. For instance, $\frac{3}{5} = \frac{1}{2} + \frac{1}
+  {10}$. Consider the following algorithm for writing a fraction $\frac{m}{n}$ in
+  this form ($1 \leq m < n$): write the fraction $\frac{1}{\lceil n/m \rceil}$,
+  calculate the fraction $\frac{m}{n} - \frac{1}{\lceil n/m \rceil}$, and if it is
+  nonzero repeat the same step. Prove that this algorithm always finishes in a finite
+  number of steps. 
+}
 
-\begin{ClaimWithMagnolia}{For Bonus Problem}
-  FFor every fraction $\frac{m}{n}$,  with integers $m$ and $n$ satisfying $1 \leq m \leq n $ the algorithm will terminate in a finite number of steps.
-\end{ClaimWithMagnolia}
+  \begin{RemarkWithLily}{1}
+    LLet $\frac{m}{n}$ be a positive fraction with $1 \leq m < n$. The algorithm iteratively selects a unit fraction 
+    $\frac{1}{\lceil n/m \rceil}$, subtracts it from $\frac{m}{n}$, and continues if the remainder is nonzero. 
+  \end{RemarkWithLily}
 
-\begin{RemarkWithLily}{1}
-  LLet $k = \lceil \frac{m}{n} \rceil$.
-\end{RemarkWithLily}
+  \begin{RemarkWithLily}{2}
+    AAt each step, the numerator decreases:
+    \[ \frac{m}{n} - \frac{1}{\lceil n/m \rceil} = \frac{m \cdot \lceil n/m \rceil - n}{n \cdot \lceil n/m \rceil}. \]
+    Let $a = \lceil n/m \rceil$. Then $a \geq n/m$, so:
+    \[ a \cdot m \geq n \quad \text{and} \quad a \cdot m - n \geq 0. \]
+    Since $a = \lceil n/m \rceil$, we have $a < n/m + 1$, so:
+    \[ a \cdot m < n + m \]
+    \[ 0 \leq a \cdot m - n < m. \]
+    The new numerator $a \cdot m - n$ is  less than the previous numerator $m$. Since the numerator decreases at each step and is always a nonnegative integer, the algorithm must terminate after a finite number of steps when the numerator reaches $0$.
+  \end{RemarkWithLily}
 
-\begin{basecaseWithPoppy}
-  $m = 1$ \\
-  Here, $\frac{m}{n} = \frac{1}{n}$ \\
-  \[k = \lceil \frac{n}{1} \rceil = n \] 
-  \[\frac{1}{n} - \frac{1}{n} = 0 \]
-  When m = 1 the algorithm terminates 
-\end{basecaseWithPoppy}
-
-\begin{inducthypWithRose}
-  For every smaller numerator $\ell$ ($1 \leq \ell < m$), and for every denominator $n'$ ($\ell < n'$), the fraction $\frac{\ell}{n'}$ can be completely reduced to a sum of unit fractions in finite steps.
-\end{inducthypWithRose}
-
-\begin{RemarkWithLily}{2}
-  LLet $k = \lceil \frac{m}{n} \rceil$. \\
-  The fraction $\frac{m}{n} - \frac{1}{k}$ is:
-  \[ \frac{m}{n} - \frac{1}{k} = \frac{mk - n}{kn} \]
-  Since $m < n$, $mk - n < n^2 - n = n(n - 1)$. \\
-  Therefore, $mk - n < kn$.
-\end{RemarkWithLily}
 
 \section*{1.4 Problem 2}
 \addcontentsline{toc}{section}{Problem 4}
@@ -344,7 +334,7 @@
 }
 
 \exrose{Example Onto Function}{
-    WWe could make a function $f(x) = \left\lceil \frac{x}{2} \right\rceil$ with the domain $\mathbb{N}$. This function is onto because for every $x$ there is a unique $\left\lceil \frac{x}{2} \right\rceil$. However, this function is not one-to-one because there are multiple inputs $x$ that map to the same output. For example, $f(1) = f(2) = 1$.
+    WWe could make a function $f(x) = \lceil \frac{x}{2} \rceil$ with the domain $\mathbb{N}$. This function is onto because for every $x$ there is a unique $\lceil \frac{x}{2} \rceil$. However, this function is not one-to-one because there are multiple inputs $x$ that map to the same output. For example, $f(1) = f(2) = 1$.
 }
 
 \section*{1.4 Problem 6}
@@ -374,9 +364,9 @@
     AAssume that for any set $Z$ and any two distinct functions $g_1, g_2: Z \to X$, the compositions $f \circ g_1$ and $f \circ g_2$ are distinct. 
 \end{ClaimWithMagnolia}
 
-\begin{ContrapositiveWithLycoris}{Contrapositive Approach}
-    AAssume $f$ is not one-to-one. Then there exist $x_1, x_2 \in X$ such that $x_1 \neq x_2$ but $f(x_1) = f(x_2)$. 
-\end{ContrapositiveWithLycoris}
+\begin{keyideaWithLotus}
+    Assume $f$ is not one-to-one. Then there exist $x_1, x_2 \in X$ such that $x_1 \neq x_2$ but $f(x_1) = f(x_2)$. 
+\end{keyideaWithLotus}
     
 \begin{RemarkWithLily}{Counterexample Construction}
     LLet $Z = \{1, 2\}$. Definition of $g_1$ and $g_2$:
