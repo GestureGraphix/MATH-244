@@ -1,0 +1,107 @@
+\documentclass{report}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Math 244}}
+\author{\huge{PSET 2}}
+\date{Feb 3 2025}
+
+\begin{document}
+
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+
+\section*{Section 1.5 Problem 5}
+\addcontentsline{toc}{section}{Problem 1}
+
+\qs{}{
+  Prove the associativity of composing relations: If $R$, $S$, and $T$ are relations such that 
+  $( R \circ S) \circ T$ is well defined, then $R \circ (S \circ T)$ is well defined and equal to $( R \circ S) \circ T$.
+}
+
+\begin{RemarkWithLily}{For prob 1}
+  WWe know $(w,z)$ lies in $(R \circ S) \circ T$ \textit{iff} there is some $y$ such that 
+  \begin{itemize}
+    \item [1] $(w,y) \in R \circ S $ and 
+    \item [2] $(y,z) \in T$ 
+  \end{itemize}
+
+  $(w, y) \in R \circ S$ means: 
+
+  \[ (w,x) \in R \quad \text{and} \quad (x,y) \in S\]
+  
+  So we have $(x,y) \in S$ and $(y,z) \in T $, which implies $(y, z) \in S \circ T$ So, $(w,x) \in R$ and 
+  $(y,z) \in S \circ T$ means that $(w,z) \in R \circ (S \circ T)$ 
+
+  $(R \circ S) \circ T \subseteq R \circ (S \circ T)$ 
+
+
+
+\end{RemarkWithLily}
+
+\section*{Section 1.6 Problem 3}
+\addcontentsline{toc}{section}{Problem 2}
+
+\qs{}{
+  Prove that a relation $R$ is transitive if and only if $R \circ R \subseteq R$.
+}
+
+\begin{keyideaWithLotus}
+  We need to show 
+  \begin{itemize}
+    \item [$\Rightarrow$] If $R$ is transitive, then, $R \circ R \subseteq R$
+    \item [$\Leftarrow$] If $R \circ R \subseteq R$, then $R$ is transitive.   
+  \end{itemize}
+
+\end{keyideaWithLotus}
+
+\begin{RemarkWithLily}{$\Rightarrow$}
+  WWe assume that $R$ is transitive. \\
+  By def or relational composition we know that for a pair $(a,c) \in R \circ R$ there exists some $b \space s.t.$ 
+
+  \[ (a,b) \in R \quad \text{and} \quad (b,c) \in R \]
+  
+  
+\end{RemarkWithLily}
+
+\section*{Section 1.6 Problem 6}
+\addcontentsline{toc}{section}{Problem 3}
+
+\qs{}{
+  Describe all relations on a set $X$ that are equivalences and orderings at the same time. 
+}
+
+\section*{Section 2.1 Problem 4}
+\addcontentsline{toc}{section}{Problem 4}
+
+
+\qs{}{
+  Let $(X, \preceq)$, $(Y, \preceq)$ be ordered sets. We say that they are \textit{isomorphic} if there exists a bijection $f: X \to Y$ such that for every $x, y \in X$, we have 
+  $x \leq y$ if and only if $f(x) \preceq f(y)$. 
+
+  \begin{itemize}
+    \item [a)] Draw Hasse diagrams for all non-isomorphic ordered sets with 3 elements posets.
+    \item [b)] Prove that any two $n$-elements linearly ordered sets are isomorphic.
+  \end{itemize}
+}
+
+
+\section*{Section 2.2 Problem 3}
+\addcontentsline{toc}{section}{Problem 5}
+
+\qs{}{
+  \begin{itemize}
+    \item [a)] Consider the set $\{ 1, 2, \ldots n \}$ ordered by the divisibility relation $|$. What is the maximum possible number of elements of a set $X \subseteq \{1, 2, \ldots n \}$ that is ordered linearly by the relation $|$ 
+    \item [b)] Solve the same question for the set $2^{\{1, 2, \ldots n\}}$ ordered by the inclusion relation $\subseteq$.
+  \end{itemize}
+}
+
+
+
+\end{document}
