@@ -1,6 +1,10 @@
 \contentsline {section}{Problem 1}{2}{section*.2}%
 \contentsline {section}{Problem 2}{2}{section*.3}%
-\contentsline {section}{Problem 3}{2}{section*.4}%
-\contentsline {section}{Problem 4}{3}{section*.5}%
-\contentsline {section}{Problem 5}{3}{section*.6}%
+\contentsline {section}{Problem 3}{3}{section*.4}%
+\contentsline {section}{Problem 4}{4}{section*.5}%
+\contentsline {subsection}{Prob 4.a}{4}{section*.6}%
+\contentsline {subsection}{Prob 4.b}{4}{section*.7}%
+\contentsline {section}{Problem 5}{5}{section*.8}%
+\contentsline {subsection}{Prob 5.a}{5}{section*.9}%
+\contentsline {subsection}{Prob 5.b}{5}{section*.10}%
 \contentsfinish 
