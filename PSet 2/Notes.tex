@@ -26,20 +26,16 @@
 }
 
 
-\begin{RemarkWithLily}{For prob 1}
-  WWe know that $(w,z)$ lies in $(R \circ S) \circ T$ \textit{iff} there is some $y$ such that 
-  \begin{itemize}
-    \item [1] $(w,y) \in R \circ S$, and 
-    \item [2] $(y,z) \in T$. 
-  \end{itemize}
+\begin{proofWithHibiscus}
+  Suppose $(w,z)$ lies in $(R \circ S) \circ T$ 
 
-  Since $(w, y) \in R \circ S$, there is some $x$ such that 
+  If $(w, y) \in R \circ S$, there is some $x$ such that 
 
   \[ (w,x) \in R \quad \text{and} \quad (x,y) \in S. \]
 
-  Since we also have $(y,z) \in T$, it follows that $(x, z) \in S \circ T$. 
+  Since we also have $(y,z) \in T$, so $(x, z) \in S \circ T$. 
 
-  So, we now have $(w,x) \in R$ and $(x,z) \in S \circ T$, which means that $(w,z) \in R \circ (S \circ T)$. 
+  We now have $(w,x) \in R$ and $(x,z) \in S \circ T$, which means that $(w,z) \in R \circ (S \circ T)$. 
 
   This means  
   \[ (R \circ S) \circ T \subseteq R \circ (S \circ T). \]
@@ -56,7 +52,7 @@
 
   Since $(w,x) \in R$ and $(x,y) \in S$, we conclude that $(w,y) \in R \circ S$. 
 
-  Since we also have $(y,z) \in T$, it follows that $(w,z) \in (R \circ S) \circ T$. \\ 
+  Since we also have $(y,z) \in T$, that means $(w,z) \in (R \circ S) \circ T$. \\ 
    
   So 
   \[ R \circ (S \circ T) \subseteq (R \circ S) \circ T. \]
@@ -64,7 +60,7 @@
   So  
   \[ (R \circ S) \circ T = R \circ (S \circ T). \]
 
-\end{RemarkWithLily}
+\end{proofWithHibiscus}
 
 \section*{Section 1.6 Problem 3}
 \addcontentsline{toc}{section}{Problem 2}
@@ -121,7 +117,7 @@
   IF $R$ is symmetric and antisymmetric, for any $x,y \in X$
   \begin{itemize}
     \item [1] $xRy$ and $yRx$ for symmetry 
-    \item [2] $=y$ for antisymmetry
+    \item [2] $x=y$ for antisymmetry
   \end{itemize}                    
   Meaning that if $xRy$ holds than $x$ and $y$ have to be the same element. So really the relation is relating an element 
   to itself 
@@ -129,6 +125,8 @@
   \bigskip 
   \[ R = \{ (x,x) : x \in X \}\] 
 \end{RemarkWithLily}
+
+\newpage 
 
 \section*{Section 2.1 Problem 4}
 \addcontentsline{toc}{section}{Problem 4}
@@ -189,40 +187,34 @@
 \addcontentsline{toc}{subsection}{Prob 4.b}
 
 \begin{keyideaWithLotus}
-  We want to show that if \((X, \leq)\) and \((Y, \preceq)\) are two linearly ordered sets with \(n\) elements, then they must be isomorphic.
+  We want to show that if $(X, \leq)$ and $(Y, \preceq)$ are two linearly ordered sets with $n$ elements, then they must be isomorphic.
 \end{keyideaWithLotus}
 
 \begin{basecaseWithPoppy}
-  \(n = 1\)
+  $n = 1$
 
-  If \(X\) and \(Y\) both have exactly one element, say \(X = \{x\}\) and \(Y = \{y\}\), we can define the function 
+  If $X$ and $Y$ both have exactly one element, say $X = \{x\}$ and $Y = \{y\}$, we can define the function 
   \[
-  f(x) = y.
+  h(x) = y.
   \]
-  This is clearly a bijection (since both sets have only one element), and there is no ordering to worry about. Since order is trivially preserved, \(X\) and \(Y\) are isomorphic.
+  This is clearly a bijection since both sets have only one element, and there is no ordering to worry about. Since order is trivially preserved, $X$ and $Y$ are isomorphic.
 \end{basecaseWithPoppy}
 
 \begin{inducthypWithRose}
-  Assume that for any two linearly ordered sets with \(n-1\) elements, there exists an order-preserving bijection (an isomorphism) between them.
+  Assume that for any two linearly ordered sets with $n-1$ elements, there exists an order-preserving bijection (an isomorphism) between them.
 \end{inducthypWithRose}
 
 \begin{inductstepWithTulip}
 
-  Suppose \(X\) and \(Y\) are two linearly ordered sets with \(n\) elements. Since the order is total, each set has a unique largest element. Let
-  \[
-  x_{\text{max}} = \text{largest element of } X, \quad y_{\text{max}} = \text{largest element of } Y.
-  \]
+  Suppose $X$ and $Y$ are two linearly ordered sets with $n$ elements. Since the order is total, each set has a unique largest element. Let
+  \[ x_{\text{max}} = \text{largest element of } X, \quad y_{\text{max}} = \text{largest element of } Y. \]
   
   Now, consider the subsets
-  \[
-  X' = X \setminus \{x_{\text{max}}\}, \quad Y' = Y \setminus \{y_{\text{max}}\}.
-  \]
-  These are both linearly ordered sets with \(n-1\) elements. By the inductive hypothesis, there exists an isomorphism 
-  \[
-  g: X' \to Y'.
-  \]
+  \[ X' = X \setminus \{x_{\text{max}}\}, \quad Y' = Y \setminus \{y_{\text{max}}\}. \]
+  These are both linearly ordered sets with $n-1$ elements. By the inductive hypothesis, there exists an isomorphism 
+  \[ g: X' \to Y'. \]
 
-  Next, we build a function \(f: X \to Y\) by setting
+  Let $f: X \to Y$ be 
   \[
   f(x)=
   \begin{cases}
@@ -231,23 +223,21 @@
   \end{cases}
   \]
 
-  Let's check that \(f\) works:
-  Since \(g\) is a bijection from \(X'\) to \(Y'\) and \(y_{\text{max}}\) is not in the image of \(g\), the function \(f\) is one-to-one and onto.
+  Since $g$ is a bijection from $X'$ to $Y'$ and $y_{\text{max}}$ is not in the image of $g$, the function $f$ is one-to-one and onto.
 
   \bigskip
 
-  If both \(x_1\) and \(x_2\) are in \(X'\), then \(f(x_1)=g(x_1)\) and \(f(x_2)=g(x_2)\), and since \(g\) is order preserving, the order is maintained.
-  If \(x_1 \in X'\) and \(x_2 = x_{\text{max}}\), then in \(X\) we have \(x_1 \leq x_{\text{max}}\). In \(Y\), since \(y_{\text{max}}\) is the largest, \(g(x_1) \preceq y_{\text{max}}\), so the order is preserved.
-  The case where \(x_1 = x_{\text{max}}\) and \(x_2 \in X'\) cannot happen because the largest element cannot be less than any other element.
-  Finally, if both \(x_1 = x_{\text{max}}\) and \(x_2 = x_{\text{max}}\), the order obviously holds.
-
-  \bigskip
-
-  Since \(f\) is a bijection and it preserves the order, it is an isomorphism. 
+  If both $x_1$ and $x_2$ are in $X'$, then $f(x_1)=g(x_1)$ and $f(x_2)=g(x_2)$, and since $g$ is order preserving, the order is maintained. \\ 
+  If $x_1 \in X'$ and $x_2 = x_{\text{max}}$, then in $X$ we have $x_1 \leq x_{\text{max}}$. In $Y$, since $y_{\text{max}}$ is the largest, $g(x_1) \preceq y_{\text{max}}$, so the order is preserved. \\
+  Finally, if both $x_1 = x_{\text{max}}$ and $x_2 = x_{\text{max}}$, the order obviously holds.
 
   \medskip
 
-  By the principle of induction, the claim holds for all \(n\).
+  Since $f$ is a bijection and it preserves the order, it is an isomorphism. 
+
+  \medskip
+
+  By the principle of induction, the claim holds for all $n$.
 
 \end{inductstepWithTulip}
 
@@ -266,7 +256,7 @@
 \addcontentsline{toc}{subsection}{Prob 5.a}
 
 \begin{RemarkWithLily}{Prob 5.a }
-  IIt is the longest branch of the prime facorization of n . 
+  IIt is 1 + the longest branch of the prime facorization of n . 
 \end{RemarkWithLily}
 
 \subsection*{Prob 5.b}
@@ -277,18 +267,61 @@
   If two distinct subsets have the same number of elements, then none could be a proper subset of the other. So the sizes of subsequent subsets must be strictly increasing.  
 
   \bigskip 
-  Since any subset of \(\{1,2,\dots,n\}\) has a cardinality between \(0\) and \(n\), there can be at most \(n+1\) different cardinalities. 
+  Since any subset of $\{1,2,\dots,n\}$ has a cardinality between $0$ and $n$, there can be at most $n+1$ different cardinalities. 
   
-  \bigskip
-    
-  A chain with \(n+1\) elements is given by
-  \[
-  \varnothing \subset \{a_1\} \subset \{a_1, a_2\} \subset \cdots \subset \{a_1, a_2, \dots, a_n\},
-  \]
-  where \(\{a_1, a_2, \dots, a_n\} = \{1,2,\dots,n\}\) . This chain clearly has exactly one subset for each possible size from \(0\) to \(n\), showing that the maximum possible size \(n+1\) is attainable.
-  
-  \bigskip
 \end{RemarkWithLily}
+
+\newpage 
+
+\section*{Optionl Bonus Problem}
+\addcontentsline{toc}{section}{Bonus Problem}
+
+\qs{}{
+  Let le$(X,  \preceq )$ denote teh number of linear extensions of a partially ordered set $(X , \preceq)$. Prove: 
+  \begin{itemize}
+    \item [a)] le$(X, \preceq) = 1$ if and only if $(X, \preceq)$ is a linear ordering.
+    \item [b)] le$(X, \preceq) \leq n!$, where $n = |X|$    
+  \end{itemize}
+}
+
+\subsection*{Bonus Prob Part a}
+\addcontentsline{toc}{subsection}{Bonus Prob A}
+
+\begin{proofWithHibiscus}
+  (\(\Rightarrow\)) Suppose that $\operatorname{le}(X, \preceq) = 1$. 
+
+  \bigskip
+  
+  Assume, for contradiction, that $(X, \preceq)$ is not a linear order. Then there exist two distinct elements 
+  $a, b \in X$ such that neither $a \preceq b$ nor $b \preceq a$ holds. But in linear extensions every pair of elements must be comparable. So two cases 
+  \begin{enumerate}
+    \item One linear extension where $a$ comes before $b$ 
+    \item or one where $b$ comes before $a$ .
+  \end{enumerate}
+  This would make two distinct linear extensions, contradicting the assumption. $\preceq$ must be a total order.
+
+  \bigskip
+  
+  (\(\Leftarrow\)) Suppose that $(X, \preceq)$ is a linear total order. We need to show that $\operatorname{le}(X, \preceq) = 1$.
+
+  \bigskip
+  
+  Since $\preceq$ is already a total order, it already orders every pair of elements in $X$. The only possible linear extension is the order $\preceq$ itself. So, there is exactly one linear extension. $\operatorname{le}(X, \preceq) = 1$.
+\end{proofWithHibiscus}
+
+\subsection*{Bonus Prob Part B}
+\addcontentsline{toc}{subsection}{Bonus Prob B}
+
+
+\begin{proofWithHibiscus}
+  A linear extension of $(X, \preceq)$ is  a total order on $X$ that respects the partial order. A total order on a finite set $X$ with $n$ elements would be a permutation of $X$ and there are $n!$ permutations of a set with $n$ elements. 
+
+  But not every permutation of $X$ will be a linear extension of $(X, \preceq)$ because the permutation must respect the partial order $\preceq$. So, the set of linear extensions is a subset of the set of all permutations of $X$.
+
+  \[ \operatorname{le}(X, \preceq) \leq n! \]
+
+\end{proofWithHibiscus}
+
 
 
 \end{document}

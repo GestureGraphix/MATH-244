@@ -1636,19 +1636,18 @@ INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplsyc.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/lot.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/lot.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/lot.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/lot.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/lot.png
 INPUT /usr/share/texmf/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/cm/cmss10.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/cm/cmti10.tfm
-INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
-INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
-INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
-INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
-INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
-INPUT /home/alex/Documents/MATH 244/PSet 2/lot.png
-INPUT /home/alex/Documents/MATH 244/PSet 2/lot.png
-INPUT /home/alex/Documents/MATH 244/PSet 2/lot.png
-INPUT /home/alex/Documents/MATH 244/PSet 2/lot.png
-INPUT /home/alex/Documents/MATH 244/PSet 2/lot.png
 INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI.tfm
@@ -1663,6 +1662,8 @@ INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
 INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
 INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
 INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmti10.tfm
 INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
 INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
 INPUT /home/alex/Documents/MATH 244/PSet 2/lily.png
@@ -1710,6 +1711,14 @@ INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newtx/stxscr.tfm
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 2/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 2/Notes.aux
 INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texmf/fonts/type1/public/newpx/NewPXMI.pfb

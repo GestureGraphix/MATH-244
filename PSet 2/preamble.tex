@@ -1198,6 +1198,44 @@
   }
 }{clmf}
 
+\newtcbtheorem[no counter]{TheoremWithRose}{Theorem}
+{%
+  enhanced,
+  breakable,
+  colback = mybasebg,
+  frame hidden,
+  boxrule = 0pt,
+  borderline west = {2pt}{0pt}{mybasefr},
+  sharp corners,
+  title = {\bfseries Theorem},
+  detach title,
+  before upper = \tcbtitle\par\smallskip,
+  coltitle = mybasefr,
+  overlay unbroken and last={
+    \node[anchor=south east,xshift=-2mm,yshift=-2mm] at (frame.south east)
+      {\includegraphics[width=0.9cm]{rose.png}};
+  }
+}{thmrose}
+
+\newtcolorbox{proofWithHibiscus}{
+  enhanced,
+  breakable,
+  colback = myideabg,
+  frame hidden,
+  boxrule = 0pt,
+  borderline west = {2pt}{0pt}{mybasefr},
+  sharp corners,
+  title = {\bfseries Proof},
+  detach title,
+  before upper = \tcbtitle\par\smallskip,
+  coltitle = mybasefr,
+  overlay unbroken and last={
+    \node[anchor=south east,xshift=-2mm,yshift= 0 mm] at (frame.south east)
+      {\includegraphics[width=0.9 cm]{hibiscus.png}};
+  }
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CONTRAPOSITIVE WITH LYCORIS COLORS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

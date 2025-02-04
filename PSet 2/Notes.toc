@@ -7,4 +7,7 @@
 \contentsline {section}{Problem 5}{5}{section*.8}%
 \contentsline {subsection}{Prob 5.a}{5}{section*.9}%
 \contentsline {subsection}{Prob 5.b}{5}{section*.10}%
+\contentsline {section}{Bonus Problem}{6}{section*.11}%
+\contentsline {subsection}{Bonus Prob A}{6}{section*.12}%
+\contentsline {subsection}{Bonus Prob B}{6}{section*.13}%
 \contentsfinish 
