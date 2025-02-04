@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1738630717 "/home/alex/Documents/MATH 244/PSet 2/Notes.tex" "/home/alex/Documents/MATH 244/PSet 2/Notes.pdf" "Notes" 1738630729
+["pdflatex"] 1738634755 "/home/alex/Documents/MATH 244/PSet 2/Notes.tex" "/home/alex/Documents/MATH 244/PSet 2/Notes.pdf" "Notes" 1738634885
   "/etc/texmf/web2c/texmf.cnf" 1617974667 40935 950c859ef6aa64cd9f8caa18792b2c7d ""
-  "/home/alex/Documents/MATH 244/PSet 2/Notes.aux" 1738630728 4618 9fa2eaedadecce9e9a3a177da22db22b ""
-  "/home/alex/Documents/MATH 244/PSet 2/Notes.tex" 1738630716 11479 2ff0d14abfa6272527495cd6fd19c482 ""
+  "/home/alex/Documents/MATH 244/PSet 2/Notes.aux" 1738634767 4618 af1a92a4aeffc7e83012532f37a196b7 ""
+  "/home/alex/Documents/MATH 244/PSet 2/Notes.tex" 1738634885 11807 cd3e7142962f6a5b8a4ebbd6a2edebc1 ""
   "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf/fonts/tfm/jknappen/ec/tcrm0900.tfm" 1136768653 1536 c4f439db76ef96a9c53bc437f35ffe20 ""
@@ -322,9 +322,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1617974667 40935 950c859ef6aa64cd9f8caa18792b2c7d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1737166436 5175355 cdab57a66732305fc52dc8bf1694ca9d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1737166327 2724546 eb4ee59b3748dcc0747b79c0ae2a910b ""
-  "Notes.aux" 1738630728 4618 9fa2eaedadecce9e9a3a177da22db22b "pdflatex"
-  "Notes.tex" 1738630716 11479 2ff0d14abfa6272527495cd6fd19c482 ""
-  "Notes.toc" 1738630728 657 95cf1537c9516aa99a2241b0499c7732 "pdflatex"
+  "Notes.aux" 1738634767 4618 af1a92a4aeffc7e83012532f37a196b7 "pdflatex"
+  "Notes.tex" 1738634885 11807 cd3e7142962f6a5b8a4ebbd6a2edebc1 ""
+  "Notes.toc" 1738634767 657 95cf1537c9516aa99a2241b0499c7732 "pdflatex"
   "hibiscus.png" 1737226788 13504464 a190309bb29eae501b51bb5c710cb123 ""
   "letterfonts.tex" 1737149437 8702 ef32ca12e97530ef5734ca4adcb1f6b1 ""
   "lily.png" 1737226170 3275114 b246647a32825cf1115115f6cfe1aba2 ""
@@ -335,9 +335,9 @@
   "rose.png" 1737149437 84304 9523fd103fff6cdfa3cfa431464e1d56 ""
   "tulip.png" 1737227044 9641448 59572efda6fcc7ea3f80a5d27554a137 ""
   (generated)
-  "Notes.log"
-  "Notes.pdf"
-  "Notes.toc"
-  "/home/alex/Documents/MATH 244/PSet 2/Notes.pdf"
   "Notes.aux"
+  "Notes.log"
+  "/home/alex/Documents/MATH 244/PSet 2/Notes.pdf"
+  "Notes.toc"
+  "Notes.pdf"
   "/home/alex/Documents/MATH 244/PSet 2/Notes.log"
