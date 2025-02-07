@@ -10,6 +10,12 @@
 
 \begin{document}
 
+% Define some pastel colors
+\definecolor{pastelPink}{HTML}{ffb3ba}     % "#ffb3ba"
+\definecolor{pastelBlue}{HTML}{b3cde0}     % "#b3cde0"
+\definecolor{pastelGreen}{HTML}{ccebc5}    % "#ccebc5"
+\definecolor{pastelLavender}{HTML}{c6aed8} % "#c6aed8"
+
 \maketitle
 \newpage% or \cleardoublepage
 % \pdfbookmark[<level>]{<title>}{<dest>}
@@ -23,6 +29,78 @@
 \qs{}{
   How many linear extensions of $\mathcal{B}_2$ are there, and what about $\mathcal{B}_3$?
 }
+
+
+
+\begin{center}
+  \begin{tikzpicture}[scale=1.0, 
+      every node/.style={circle, draw, thick, minimum size=10mm, inner sep=0pt, font=\footnotesize}]
+      
+    % First lattice: B2 on the left
+    \node (topB2) at (-4,1.5) [fill=pastelPink] {\(\{a,b\}\)};
+    \node (aB2)   at (-5,0)   [fill=pastelBlue] {\(\{a\}\)};
+    \node (bB2)   at (-3,0)   [fill=pastelBlue] {\(\{b\}\)};
+    \node (botB2) at (-4,-1.5) [fill=pastelLavender] {\(\varnothing\)};
+
+    % -- B2 edges --
+    \draw[thick] (topB2) -- (aB2);
+    \draw[thick] (topB2) -- (bB2);
+    \draw[thick] (aB2) -- (botB2);
+    \draw[thick] (bB2) -- (botB2);
+
+    % Label for B2
+    \node[draw=none, fill=none, below=8mm] at (-4,-2.2) {\(\mathbf{B_2}\)};
+
+    % Second lattice: B3 on the right
+    \node (top) at (2,3) [fill=pastelPink]   {\(\{a,b,c\}\)};
+    \node (ab)  at (0,1.5) [fill=pastelBlue]    {\(\{a,b\}\)};
+    \node (ac)  at (2,1.5) [fill=pastelBlue]    {\(\{a,c\}\)};
+    \node (bc)  at (4,1.5) [fill=pastelBlue]    {\(\{b,c\}\)};
+    \node (a)   at (0,0) [fill=pastelGreen]   {\(\{a\}\)};
+    \node (b)   at (2,0) [fill=pastelGreen]   {\(\{b\}\)};
+    \node (c)   at (4,0) [fill=pastelGreen]   {\(\{c\}\)};
+    \node (bot) at (2,-1.5) [fill=pastelLavender] {\(\varnothing\)};
+
+    % -- B3 edges --
+    \draw[thick] (top) -- (ab);
+    \draw[thick] (top) -- (ac);
+    \draw[thick] (top) -- (bc);
+
+    \draw[thick] (ab) -- (a);
+    \draw[thick] (ab) -- (b);
+    \draw[thick] (ac) -- (a);
+    \draw[thick] (ac) -- (c);
+    \draw[thick] (bc) -- (b);
+    \draw[thick] (bc) -- (c);
+
+    \draw[thick] (a) -- (bot);
+    \draw[thick] (b) -- (bot);
+    \draw[thick] (c) -- (bot);
+
+    % Label for B3
+    \node[draw=none, fill=none, below=8mm] at (2,-2.2) {\(\mathbf{B_3}\)};
+  \end{tikzpicture}
+\end{center}
+
+
+\begin{RemarkWithLily}{For Prob 1}
+  FFor $\mathcal{B}_2$ there are two linear extensions because the linear extension must respect and preserve the original partial order 
+  so the empty set must be first and the set $\{a,b\}$ must be at the top which means ther variation in ordering the remaining elements is $2!$ as those are the elements below 
+  $\{a,b\}$ and above the empty set. 
+
+  \medskip
+
+  For $\mathcal{B}_{3}$ there are 36 possible linear extensions. Since the linear extension needs to preserve teh original 
+  partial order than that means the unique top element and unique bottom element of the set $\{a,b,c\}$ and the empty set must be the last and first 
+  element of any linear extension respectively. For the remaining elements the sets with cardinlaties 1 must all come before the sets of cardinality 2 
+  but there are $3$ sets of cardinality 1 that can be ordered in $3!$ ways as there are 3 options for the first one, 2 for the second, and 1 for the last one. 
+  This logic also applies to the 3 sets of cardinality of 2 that must all go after the sets of cardinality 1 and before the unique top element of 
+  cardinality 3 so there are $3!$ ways to order those. This makes the total possible linear extensions the result of 
+  multiplying the possibilities of each possible way of ordering the elements so $1 \cdot 3! \cdot 3! \cdot 1$ which is $36$. 
+\end{RemarkWithLily}
+
+
+
 
 \section*{Bonus Problem}
 \addcontentsline{toc}{section}{Bonus Prob}
@@ -39,6 +117,10 @@
 \qs{}{
   Find a sequence of real numbers of length 16 that contains no monotone
   subsequence of length 5.
+}
+
+\exrose{For Prob 2}{
+  AArray: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] 
 }
 
 \section*{2.4 Prob 4}

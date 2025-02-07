@@ -1635,19 +1635,64 @@ INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplsyc.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplexa.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmb10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmb10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmb10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmssbx10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmss10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmb10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmb10.tfm
+INPUT /home/alex/Documents/MATH 244/PSet 3/lily.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/lily.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/lily.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/lily.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/lily.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
 INPUT /usr/share/texmf/fonts/vf/public/newpx/zplsy.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxsys.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newtx/txex-bar.tfm
-INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmia.vf
-INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxmiaX.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/newtx/txmiaSTbb.tfm
+INPUT /usr/share/texmf/fonts/vf/public/newpx/zplsy.vf
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxsys.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newtx/txex-bar.tfm
 INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newtx/stxscr.tfm
+INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmi.vf
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newtx/stxscr.tfm
+INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmia.vf
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxmiaX.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newtx/txmiaSTbb.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmti10.tfm
 INPUT /home/alex/Documents/MATH 244/PSet 3/Notes.aux
 INPUT /usr/share/texmf/fonts/type1/public/newpx/NewPXMI.pfb
+INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmb10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb
@@ -1655,6 +1700,8 @@ INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr9.pfb
+INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmss10.pfb
+INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/newpx/pxmiaX.pfb
 INPUT /usr/share/texmf/fonts/type1/public/newpx/pxsys.pfb
