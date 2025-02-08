@@ -1175,29 +1175,6 @@
 }
 
 
-%% CLAIM WITH MAGNOLIA
-\newtcbtheorem[no counter]{ClaimWithMagnolia}{Claim}
-{%
-  enhanced,
-  breakable,
-  colback = myg!10,
-  frame hidden,
-  boxrule = 0sp,
-  borderline west = {2pt}{0pt}{myg},
-  sharp corners,
-  detach title,
-  before upper = \tcbtitle\par\smallskip,
-  coltitle = myg!85!black,
-  fonttitle = \bfseries\sffamily,
-  description font = \mdseries,
-  separator sign none,
-  segmentation style={solid, myg!85!black},
-  overlay unbroken and last={
-    \node[anchor=south east,xshift=-2mm,yshift=0 mm] at (frame.south east)
-      {\includegraphics[width=1.3cm]{magnolia.png}};
-  }
-}{clmf}
-
 \newtcbtheorem[no counter]{TheoremWithRose}{Theorem}
 {%
   enhanced,
@@ -1235,6 +1212,23 @@
   }
 }
 
+\newtcolorbox{ClaimWithMagnolia}{
+  enhanced,
+  breakable,
+  colback = mybasebg,
+  frame hidden,
+  boxrule = 0pt,
+  borderline west = {2pt}{0pt}{mybasefr},
+  sharp corners,
+  title = {\bfseries Claim},
+  detach title,
+  before upper = \tcbtitle\par\smallskip,
+  coltitle = mybasefr,
+  overlay unbroken and last={
+    \node[anchor=south east,xshift=-2mm,yshift= 0 mm] at (frame.south east)
+      {\includegraphics[width=0.9 cm]{magnolia.png}};
+  }
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CONTRAPOSITIVE WITH LYCORIS COLORS

@@ -119,9 +119,97 @@
   subsequence of length 5.
 }
 
+\begin{center}
+  \begin{tikzpicture}[scale=1]
+    % Loop over rows i=1..4 and columns j=1..4
+    \foreach \i in {1,2,3,4} {%
+      \foreach \j in {1,2,3,4} {%
+        % Compute the value to display
+        \pgfmathtruncatemacro{\val}{4*(\j-1) + (5-\i)}
+        % Compute a hue between 0 and 1 depending on row and column.
+        \pgfmathsetmacro{\hue}{((\i-1)*4 + (\j-1))/16}
+        %
+        % --- Convert HSV (hue, 0.3, 1) to RGB ---
+        % Compute H' = 6 * hue.
+        \pgfmathsetmacro{\Hprime}{6*\hue}
+        % Determine the sector (an integer between 0 and 5)
+        \pgfmathtruncatemacro{\sector}{floor(\Hprime)}
+        % The fractional part
+        \pgfmathsetmacro{\f}{\Hprime - \sector}
+        % p is constant because saturation is 0.3:
+        \pgfmathsetmacro{\pval}{0.7} % since 1 - 0.3 = 0.7
+        % q and t depend on f:
+        \pgfmathsetmacro{\qval}{1 - \f*0.3}
+        \pgfmathsetmacro{\tval}{1 - (1-\f)*0.3}
+        %
+        % Now set r,g,b based on the sector.
+        % We use TeX conditionals (\ifcase ... \fi). The numbers will be stored in
+        % macros \rval, \gval, \bval.
+        \ifcase\sector
+          \def\rval{1}%
+          \def\gval{\tval}%
+          \def\bval{\pval}%
+        \or
+          \def\rval{\qval}%
+          \def\gval{1}%
+          \def\bval{\pval}%
+        \or
+          \def\rval{\pval}%
+          \def\gval{1}%
+          \def\bval{\tval}%
+        \or
+          \def\rval{\pval}%
+          \def\gval{\qval}%
+          \def\bval{1}%
+        \or
+          \def\rval{\tval}%
+          \def\gval{\pval}%
+          \def\bval{1}%
+        \or
+          \def\rval{1}%
+          \def\gval{\pval}%
+          \def\bval{\qval}%
+        \fi
+        %
+        % Draw the cell using the computed RGB color.
+        % The fill syntax here uses the "rgb" model.
+        \node[draw,
+              fill={rgb,1:red,\rval; green,\gval; blue,\bval},
+              minimum width=1cm,
+              minimum height=1cm]
+              at (\j,-\i) {\(\val\)};
+      }%
+    }
+    
+    % Place row labels to the left (using anchor=east so they don’t touch the boxes)
+    \node[anchor=east] at (0.5, -1) {\(i=1\)};
+    \node[anchor=east] at (0.5, -2) {\(i=2\)};
+    \node[anchor=east] at (0.5, -3) {\(i=3\)};
+    \node[anchor=east] at (0.5, -4) {\(i=4\)};
+    
+    % Place column labels below (using anchor=north)
+    \node[anchor=north] at (1, -4.5) {\(j=1\)};
+    \node[anchor=north] at (2, -4.5) {\(j=2\)};
+    \node[anchor=north] at (3, -4.5) {\(j=3\)};
+    \node[anchor=north] at (4, -4.5) {\(j=4\)};
+  \end{tikzpicture}
+\end{center}
+
+\bigskip
+
+\noindent
+Reading the cells row by row (from top row to bottom row) gives the sequence:
+\[
+4, 8, 12, 16,\quad
+3, 7, 11, 15,\quad
+2, 6, 10, 14,\quad
+1, 5, 9, 13.
+\]
+
 \exrose{For Prob 2}{
   AArray: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] 
 }
+
 
 \section*{2.4 Prob 4}
 \addcontentsline{toc}{section}{Prob 3}
@@ -133,12 +221,64 @@
   length $ \ell +1$.
 }
 
+
+\begin{proofWithHibiscus}
+  Let a sequence $(x_1, x_2, \ldots, x_{kl+1})$ be a sequence of real numbers and let $X = \{1,2, \ldots , kl + 1 \}$. \\
+  Define a relation $\preceq$ on $X$ by 
+  \[ i \leq j \quad iff \quad i \leq j \text{ and } x_{i} \leq x_{j} \]
+  \begin{ClaimWithMagnolia}
+    $\preceq$ is an ordering
+    \medskip
+
+    reflexive: $i \leq i$ for all $i$ since $i \leq i$ and $x_{i} \leq x_{i}$ 
+
+    \medskip
+
+    antisymetric: Suppose $i \leq j$ and $j \leq i$. Then $i \leq j$ and $j \leq i$ and $x_i \leq x_j$ and $x_j \leq x_i$. \\
+    implies $i = j$ and $x_i = x_j$ 
+
+    \medskip
+
+    transitive: suppose $i \leq j$ and $j \leq k$. Want to show $i \leq k$. \\
+    $i \leq j$ implies $i \leq j$ and $x_i \leq x_j$. \\
+    $j \leq k $ implies $j \leq k$ and $x_j \leq x_k$. But then $i \leq k$ and $x_i \leq x_k$.\\ 
+    which implies $ i \preceq k$ 
+  \end{ClaimWithMagnolia} 
+
+  by the theorem that for every finite ordered set $ P = (Xm \preceq)$ we have 
+  \[ \alpha (P) \cdot \omega (P) \geq |X| \] 
+  we then have 
+  \[ \alpha (P) \cdot \omega (P) \geq |kl + 1|\]
+  
+  \medskip 
+  So either 
+  \begin{enumerate}
+    \item $\alpha (X, \preceq) > l + 1 $
+    \item $\omega (X, \preceq) > k + 1 $
+  \end{enumerate}
+
+  If $1$, then $(X, \preceq )$ has an independent set of size $l +1$ \\ 
+  We then have 
+  \[i_1 < i_2, \ldots , i_l+1\]
+  \[ x_{i{1}} \geq x_{i_{2}}, \geq , x_{i_{k+1}}\] 
+
+  \smallskip
+
+
+  If $2$, then $(X, \preceq )$ has a chain for length $k + 1$ 
+  We then have 
+  \[ i_1 < i_2, \ldots , i_k+1 \] 
+  \[ x_{i{1}} \leq x_{i_{2}}, \ldots , x_{i_{k+1}}\] 
+
+
+
+\end{proofWithHibiscus}
+
 \section*{3.1 Prob 2}
 \addcontentsline{toc}{section}{Prob 4}
 
 \qs{}{
-  Determine the number of ordered pairs $(A, B)$, where $A \subseteq B \
-  subseteq \{ 1, 2, \ldots, n \}$.
+  Determine the number of ordered pairs $(A, B)$, where $A \subseteq B \subseteq \{ 1, 2, \ldots, n \}$.
 }
 
 \section*{3.1 Prob 6}
