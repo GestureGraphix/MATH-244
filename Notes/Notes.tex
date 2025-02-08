@@ -1,293 +1,440 @@
-\documentclass{report}
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
 
-\input{preamble}
-\input{macros}
-\input{letterfonts}
+% Theorem environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma} 
+\newtheorem{corollary}[theorem]{Corollary}
 
-\title{\Huge{Math 244}}
-\author{\huge{PSET 3}}
-\date{Feb 10 2025}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
 
 \begin{document}
 
-% Define some pastel colors
-\definecolor{pastelPink}{HTML}{ffb3ba}     % "#ffb3ba"
-\definecolor{pastelBlue}{HTML}{b3cde0}     % "#b3cde0"
-\definecolor{pastelGreen}{HTML}{ccebc5}    % "#ccebc5"
-\definecolor{pastelLavender}{HTML}{c6aed8} % "#c6aed8"
-
+\title{Discrete Mathematics: In-Depth Topics and Advanced Formulas}
+\author{}
+\date{\today}
 \maketitle
-\newpage% or \cleardoublepage
-% \pdfbookmark[<level>]{<title>}{<dest>}
-\pdfbookmark[section]{\contentsname}{toc}
+
 \tableofcontents
-\pagebreak
 
-\section*{2.3 Prob 1}
-\addcontentsline{toc}{section}{Prob 1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction and Basic Concepts}
 
-\qs{}{
-  How many linear extensions of $\mathcal{B}_2$ are there, and what about $\mathcal{B}_3$?
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Numbers and Sets: Notation}
 
+A clear understanding of sets and number systems is fundamental to discrete mathematics. In this section we introduce standard notations and some useful identities.
 
+\begin{definition}[Common Number Sets]
+  \begin{itemize}[itemsep=3pt]
+    \item \(\mathbb{N}\): the set of \emph{natural numbers}. (Note: some authors define \(\mathbb{N} = \{0,1,2,\dots\}\), while others use \(\{1,2,\dots\}\).)
+    \item \(\mathbb{Z}\): the set of \emph{integers} \( \{ \dots, -2, -1, 0, 1, 2, \dots \}\).
+    \item \(\mathbb{Q}\): the set of \emph{rational numbers}.
+    \item \(\mathbb{R}\): the set of \emph{real numbers}.
+    \item \(\mathbb{C}\): the set of \emph{complex numbers}.
+  \end{itemize}
+\end{definition}
 
-\begin{center}
-  \begin{tikzpicture}[scale=1.0, 
-      every node/.style={circle, draw, thick, minimum size=10mm, inner sep=0pt, font=\footnotesize}]
-      
-    % First lattice: B2 on the left
-    \node (topB2) at (-4,1.5) [fill=pastelPink] {\(\{a,b\}\)};
-    \node (aB2)   at (-5,0)   [fill=pastelBlue] {\(\{a\}\)};
-    \node (bB2)   at (-3,0)   [fill=pastelBlue] {\(\{b\}\)};
-    \node (botB2) at (-4,-1.5) [fill=pastelLavender] {\(\varnothing\)};
+\begin{definition}[Basic Set Notation]
+  A \emph{set} is a collection of distinct objects (called \emph{elements}). Common notations include:
+  \[
+  A = \{ a, b, c, \dots \},
+  \]
+  with \(a \in A\) meaning \(a\) is an element of \(A\). Other important notations are:
+  \begin{itemize}[itemsep=3pt]
+    \item \(|A|\): the \emph{cardinality} of \(A\) (number of elements).
+    \item \(A \subseteq B\): \(A\) is a \emph{subset} of \(B\).
+    \item \(A \cup B\): the \emph{union} of \(A\) and \(B\).
+    \item \(A \cap B\): the \emph{intersection} of \(A\) and \(B\).
+    \item \(A \setminus B\): the \emph{set difference} (elements in \(A\) but not in \(B\)).
+    \item \(A^c\) or \(\overline{A}\): the \emph{complement} of \(A\) (with respect to a universal set \(U\)).
+    \item \(\mathcal{P}(A)\): the \emph{power set} of \(A\), which has \(|\mathcal{P}(A)| = 2^{|A|}\) when \(A\) is finite.
+  \end{itemize}
+\end{definition}
 
-    % -- B2 edges --
-    \draw[thick] (topB2) -- (aB2);
-    \draw[thick] (topB2) -- (bB2);
-    \draw[thick] (aB2) -- (botB2);
-    \draw[thick] (bB2) -- (botB2);
+\begin{lemma}[De Morgan's Laws]
+  For any two sets \(A\) and \(B\) (with respect to a universal set \(U\)), we have:
+  \[
+  (A \cup B)^c = A^c \cap B^c \quad \text{and} \quad (A \cap B)^c = A^c \cup B^c.
+  \]
+\end{lemma}
+\begin{proof}
+  The proof follows directly from the definitions of union, intersection, and complement.
+\end{proof}
 
-    % Label for B2
-    \node[draw=none, fill=none, below=8mm] at (-4,-2.2) {\(\mathbf{B_2}\)};
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mathematical Induction and Other Proof Techniques}
 
-    % Second lattice: B3 on the right
-    \node (top) at (2,3) [fill=pastelPink]   {\(\{a,b,c\}\)};
-    \node (ab)  at (0,1.5) [fill=pastelBlue]    {\(\{a,b\}\)};
-    \node (ac)  at (2,1.5) [fill=pastelBlue]    {\(\{a,c\}\)};
-    \node (bc)  at (4,1.5) [fill=pastelBlue]    {\(\{b,c\}\)};
-    \node (a)   at (0,0) [fill=pastelGreen]   {\(\{a\}\)};
-    \node (b)   at (2,0) [fill=pastelGreen]   {\(\{b\}\)};
-    \node (c)   at (4,0) [fill=pastelGreen]   {\(\{c\}\)};
-    \node (bot) at (2,-1.5) [fill=pastelLavender] {\(\varnothing\)};
+Induction is a key tool for proving statements about natural numbers. In addition to standard induction, strong (complete) induction is also widely used.
 
-    % -- B3 edges --
-    \draw[thick] (top) -- (ab);
-    \draw[thick] (top) -- (ac);
-    \draw[thick] (top) -- (bc);
+\begin{theorem}[Principle of Mathematical Induction]
+  Let \(P(n)\) be a proposition about \(n \in \mathbb{N}\). If
+  \begin{enumerate}[label=(\roman*)]
+    \item \textbf{Base Case:} \(P(1)\) is true.
+    \item \textbf{Inductive Step:} For all \(k \in \mathbb{N}\), \(P(k)\) true implies \(P(k+1)\) is true.
+  \end{enumerate}
+  Then \(P(n)\) is true for all \(n \in \mathbb{N}\).
+\end{theorem}
 
-    \draw[thick] (ab) -- (a);
-    \draw[thick] (ab) -- (b);
-    \draw[thick] (ac) -- (a);
-    \draw[thick] (ac) -- (c);
-    \draw[thick] (bc) -- (b);
-    \draw[thick] (bc) -- (c);
+\begin{theorem}[Principle of Strong Induction]
+  Let \(P(n)\) be a proposition about \(n \in \mathbb{N}\). If
+  \begin{enumerate}[label=(\roman*)]
+    \item \textbf{Base Case:} \(P(1)\) is true.
+    \item \textbf{Inductive Step:} For all \(n \ge 1\), if \(P(1), P(2), \dots, P(n)\) are true, then \(P(n+1)\) is true.
+  \end{enumerate}
+  Then \(P(n)\) is true for all \(n \in \mathbb{N}\).
+\end{theorem}
 
-    \draw[thick] (a) -- (bot);
-    \draw[thick] (b) -- (bot);
-    \draw[thick] (c) -- (bot);
+\begin{example}[Prime Factorization]
+  \textbf{Statement:} Every integer \(n > 1\) can be written as a product of primes.
 
-    % Label for B3
-    \node[draw=none, fill=none, below=8mm] at (2,-2.2) {\(\mathbf{B_3}\)};
-  \end{tikzpicture}
-\end{center}
+  \textbf{Proof (by strong induction):}
+  \begin{itemize}[itemsep=3pt]
+    \item \emph{Base Case:} \(n = 2\) is prime.
+    \item \emph{Inductive Step:} Assume every integer \(2 \le k \le n\) has a prime factorization. For \(n+1\): if it is prime, the claim holds; if not, write \(n+1 = ab\) with \(2 \le a,b \le n\). By induction, both \(a\) and \(b\) have prime factorizations, so \(n+1\) does as well.
+  \end{itemize}
+\end{example}
 
+Other common proof methods include \emph{proof by contradiction} and \emph{proof by contrapositive}.
 
-\begin{RemarkWithLily}{For Prob 1}
-  FFor $\mathcal{B}_2$ there are two linear extensions because the linear extension must respect and preserve the original partial order 
-  so the empty set must be first and the set $\{a,b\}$ must be at the top which means ther variation in ordering the remaining elements is $2!$ as those are the elements below 
-  $\{a,b\}$ and above the empty set. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Functions}
 
-  \medskip
+Functions are mappings between sets that play a central role in mathematics.
 
-  For $\mathcal{B}_{3}$ there are 36 possible linear extensions. Since the linear extension needs to preserve teh original 
-  partial order than that means the unique top element and unique bottom element of the set $\{a,b,c\}$ and the empty set must be the last and first 
-  element of any linear extension respectively. For the remaining elements the sets with cardinlaties 1 must all come before the sets of cardinality 2 
-  but there are $3$ sets of cardinality 1 that can be ordered in $3!$ ways as there are 3 options for the first one, 2 for the second, and 1 for the last one. 
-  This logic also applies to the 3 sets of cardinality of 2 that must all go after the sets of cardinality 1 and before the unique top element of 
-  cardinality 3 so there are $3!$ ways to order those. This makes the total possible linear extensions the result of 
-  multiplying the possibilities of each possible way of ordering the elements so $1 \cdot 3! \cdot 3! \cdot 1$ which is $36$. 
-\end{RemarkWithLily}
+\begin{definition}[Function]
+  A \emph{function} \(f\) from a set \(A\) to a set \(B\), written \(f: A \to B\), is a rule that assigns each \(a \in A\) a unique element \(f(a) \in B\). Here:
+  \begin{itemize}[itemsep=3pt]
+    \item \(A\) is the \emph{domain}.
+    \item \(B\) is the \emph{codomain}.
+    \item The \emph{image} of \(f\) is \(\{ f(a) \mid a \in A \}\).
+  \end{itemize}
+\end{definition}
 
+\begin{definition}[Types of Functions]
+  A function \(f: A \to B\) is:
+  \begin{itemize}[itemsep=3pt]
+    \item \textbf{Injective (one-to-one)} if \(f(a_1)=f(a_2)\) implies \(a_1 = a_2\).
+    \item \textbf{Surjective (onto)} if for every \(b \in B\) there is an \(a \in A\) with \(f(a)=b\).
+    \item \textbf{Bijective} if it is both injective and surjective.
+  \end{itemize}
+\end{definition}
 
+\begin{lemma}[Composition of Functions]
+  Let \(f: A \to B\) and \(g: B \to C\). Then the composition \(g \circ f: A \to C\) defined by
+  \[
+  (g \circ f)(a) = g(f(a))
+  \]
+  is a function. Moreover:
+  \begin{itemize}
+    \item If \(f\) and \(g\) are injective, then \(g \circ f\) is injective.
+    \item If \(f\) and \(g\) are surjective, then \(g \circ f\) is surjective.
+    \item If \(f\) and \(g\) are bijective, then \(g \circ f\) is bijective with inverse \((g \circ f)^{-1} = f^{-1} \circ g^{-1}\).
+  \end{itemize}
+\end{lemma}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Relations}
 
-\section*{Bonus Problem}
-\addcontentsline{toc}{section}{Bonus Prob}
+Relations generalize the idea of functions and allow us to discuss various types of associations between elements.
 
-\qs{}{
-  Prove that not every
-  finite poset admits an embedding into the poset $( \mathbb{N}^2, \preceq)$, where
-  $(x_1, y_1)\preceq (x_2, y_2)$ if and only if $x_1 \leq x_2$ and $y_1 \leq y_2$.
-}
+\begin{definition}[Relation]
+  A \emph{relation} \(R\) on a set \(A\) is a subset of the Cartesian product \(A \times A\):
+  \[
+  R \subseteq A \times A.
+  \]
+  If \((a,b) \in R\), we write \(a\,R\,b\).
+\end{definition}
 
-\section*{2.4 Prob 3}
-\addcontentsline{toc}{section}{Prob 2}
+\begin{definition}[Properties of Relations]
+  Let \(R\) be a relation on \(A\). Then:
+  \begin{itemize}[itemsep=3pt]
+    \item \(R\) is \emph{reflexive} if for every \(a \in A\), \(a\,R\,a\).
+    \item \(R\) is \emph{symmetric} if \(a\,R\,b\) implies \(b\,R\,a\) for all \(a,b \in A\).
+    \item \(R\) is \emph{antisymmetric} if \(a\,R\,b\) and \(b\,R\,a\) imply \(a=b\).
+    \item \(R\) is \emph{transitive} if \(a\,R\,b\) and \(b\,R\,c\) imply \(a\,R\,c\) for all \(a,b,c \in A\).
+  \end{itemize}
+\end{definition}
 
-\qs{}{
-  Find a sequence of real numbers of length 16 that contains no monotone
-  subsequence of length 5.
-}
+\begin{example}
+  The relation \( \leq \) on \(\mathbb{R}\) is reflexive, antisymmetric, and transitive.
+\end{example}
 
-\begin{center}
-  \begin{tikzpicture}[scale=1]
-    % Loop over rows i=1..4 and columns j=1..4
-    \foreach \i in {1,2,3,4} {%
-      \foreach \j in {1,2,3,4} {%
-        % Compute the value to display
-        \pgfmathtruncatemacro{\val}{4*(\j-1) + (5-\i)}
-        % Compute a hue between 0 and 1 depending on row and column.
-        \pgfmathsetmacro{\hue}{((\i-1)*4 + (\j-1))/16}
-        %
-        % --- Convert HSV (hue, 0.3, 1) to RGB ---
-        % Compute H' = 6 * hue.
-        \pgfmathsetmacro{\Hprime}{6*\hue}
-        % Determine the sector (an integer between 0 and 5)
-        \pgfmathtruncatemacro{\sector}{floor(\Hprime)}
-        % The fractional part
-        \pgfmathsetmacro{\f}{\Hprime - \sector}
-        % p is constant because saturation is 0.3:
-        \pgfmathsetmacro{\pval}{0.7} % since 1 - 0.3 = 0.7
-        % q and t depend on f:
-        \pgfmathsetmacro{\qval}{1 - \f*0.3}
-        \pgfmathsetmacro{\tval}{1 - (1-\f)*0.3}
-        %
-        % Now set r,g,b based on the sector.
-        % We use TeX conditionals (\ifcase ... \fi). The numbers will be stored in
-        % macros \rval, \gval, \bval.
-        \ifcase\sector
-          \def\rval{1}%
-          \def\gval{\tval}%
-          \def\bval{\pval}%
-        \or
-          \def\rval{\qval}%
-          \def\gval{1}%
-          \def\bval{\pval}%
-        \or
-          \def\rval{\pval}%
-          \def\gval{1}%
-          \def\bval{\tval}%
-        \or
-          \def\rval{\pval}%
-          \def\gval{\qval}%
-          \def\bval{1}%
-        \or
-          \def\rval{\tval}%
-          \def\gval{\pval}%
-          \def\bval{1}%
-        \or
-          \def\rval{1}%
-          \def\gval{\pval}%
-          \def\bval{\qval}%
-        \fi
-        %
-        % Draw the cell using the computed RGB color.
-        % The fill syntax here uses the "rgb" model.
-        \node[draw,
-              fill={rgb,1:red,\rval; green,\gval; blue,\bval},
-              minimum width=1cm,
-              minimum height=1cm]
-              at (\j,-\i) {\(\val\)};
-      }%
-    }
-    
-    % Place row labels to the left (using anchor=east so they don’t touch the boxes)
-    \node[anchor=east] at (0.5, -1) {\(i=1\)};
-    \node[anchor=east] at (0.5, -2) {\(i=2\)};
-    \node[anchor=east] at (0.5, -3) {\(i=3\)};
-    \node[anchor=east] at (0.5, -4) {\(i=4\)};
-    
-    % Place column labels below (using anchor=north)
-    \node[anchor=north] at (1, -4.5) {\(j=1\)};
-    \node[anchor=north] at (2, -4.5) {\(j=2\)};
-    \node[anchor=north] at (3, -4.5) {\(j=3\)};
-    \node[anchor=north] at (4, -4.5) {\(j=4\)};
-  \end{tikzpicture}
-\end{center}
+\begin{lemma}[Composition of Relations]
+  If \(R\) and \(S\) are relations on a set \(A\), their composition is defined as:
+  \[
+  R \circ S = \{ (a,c) \in A \times A \mid \exists\, b \in A \text{ with } (a,b) \in S \text{ and } (b,c) \in R \}.
+  \]
+  (Note: even if \(R\) and \(S\) are transitive, \(R \circ S\) need not be transitive; one may consider the \emph{transitive closure} of a relation.)
+\end{lemma}
 
-\bigskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Equivalence Relations and Partitions}
 
-\noindent
-Reading the cells row by row (from top row to bottom row) gives the sequence:
+\begin{definition}[Equivalence Relation]
+  A relation \(R\) on a set \(A\) is an \emph{equivalence relation} if it is reflexive, symmetric, and transitive.
+\end{definition}
+
+\begin{lemma}[Equivalence Relations and Partitions]
+  Every equivalence relation on \(A\) partitions \(A\) into disjoint subsets (equivalence classes), where each element of \(A\) belongs to exactly one equivalence class. Conversely, any partition of \(A\) defines an equivalence relation by declaring two elements equivalent if they lie in the same subset.
+\end{lemma}
+
+\begin{example}
+  Define a relation \(R\) on \(\mathbb{Z}\) by \(a\,R\,b\) if and only if \(a \equiv b \pmod{n}\) (for some fixed \(n\in\mathbb{N}\)). Then \(R\) is an equivalence relation, and its equivalence classes are the congruence classes modulo \(n\).
+\end{example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ordering and Posets}
+
+Ordering relations allow us to compare elements in a set. This section discusses partial orders, total orders, lattices, and related results.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Partial Orders and Hasse Diagrams}
+
+\begin{definition}[Partial Order]
+  A relation \(\preceq\) on a set \(P\) is a \emph{partial order} if it is:
+  \begin{itemize}[itemsep=3pt]
+    \item \textbf{Reflexive}: For all \(a \in P\), \(a \preceq a\).
+    \item \textbf{Antisymmetric}: For all \(a,b \in P\), if \(a \preceq b\) and \(b \preceq a\), then \(a = b\).
+    \item \textbf{Transitive}: For all \(a,b,c \in P\), if \(a \preceq b\) and \(b \preceq c\), then \(a \preceq c\).
+  \end{itemize}
+\end{definition}
+
+\begin{definition}[Hasse Diagram]
+  A \emph{Hasse diagram} is a drawing of a finite poset that shows the ordering without including the edges for reflexivity and transitivity. If \(a \prec b\) (i.e., \(a \preceq b\) and \(a \neq b\)), then \(b\) is drawn above \(a\).
+\end{definition}
+
+\begin{lemma}
+  Every finite, nonempty poset has at least one \emph{minimal} element (an element with no smaller element) and at least one \emph{maximal} element.
+\end{lemma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Total Orders and Chains}
+
+\begin{definition}[Total (or Linear) Order]
+  A partial order \(\preceq\) on a set \(P\) is a \emph{total order} if for any \(a, b \in P\), either \(a \preceq b\) or \(b \preceq a\); that is, every pair of elements is \emph{comparable}.
+\end{definition}
+
+\begin{example}
+  The usual order \(\leq\) on \(\mathbb{R}\) is a total order. In contrast, the subset relation \(\subseteq\) on the power set \(\mathcal{P}(S)\) is only a partial order.
+\end{example}
+
+A \emph{chain} in a poset is a subset in which every two elements are comparable, while an \emph{antichain} is a subset in which no two distinct elements are comparable.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lattices and Boolean Algebras}
+
+\begin{definition}[Lattice]
+  A poset \((L, \preceq)\) is called a \emph{lattice} if every pair \(a,b \in L\) has a unique \emph{least upper bound} (join, \(a \vee b\)) and a unique \emph{greatest lower bound} (meet, \(a \wedge b\)).
+\end{definition}
+
+\begin{example}
+  The power set \(\mathcal{P}(S)\) of any set \(S\), ordered by \(\subseteq\), forms a lattice where
+  \[
+  a \vee b = a \cup b \quad \text{and} \quad a \wedge b = a \cap b.
+  \]
+\end{example}
+
+\begin{lemma}[Distributive Law in Lattices]
+  A lattice \(L\) is \emph{distributive} if for all \(a,b,c \in L\):
+  \[
+  a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)
+  \]
+  and
+  \[
+  a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c).
+  \]
+  The lattice \(\mathcal{P}(S)\) is distributive.
+\end{lemma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dilworth's Theorem and Related Results}
+
+A major topic in the study of posets is the interplay between chains and antichains.
+
+\begin{theorem}[Dilworth's Theorem]
+  In any finite poset, the size of the largest antichain equals the minimum number of chains needed to cover the poset.
+\end{theorem}
+
+\begin{theorem}[Erd\H{o}s--Szekeres Theorem]
+  Any sequence of \(n^2+1\) distinct real numbers contains a monotonic (increasing or decreasing) subsequence of length \(n+1\).
+\end{theorem}
+
+These results capture the idea that in a sufficiently large poset, one finds either a long chain (``tall'') or a large antichain (``wide'').
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Combinatorial Counting}
+
+Counting techniques are at the heart of discrete mathematics. This section covers functions, permutations, binomial coefficients, and more.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Counting Functions and Subsets}
+
+\begin{itemize}
+  \item The number of functions from a finite set \(A\) (with \(|A| = m\)) to a finite set \(B\) (with \(|B| = n\)) is:
+  \[
+  n^m.
+  \]
+  \item The number of injections from \(A\) to \(B\) (when \(m \le n\)) is:
+  \[
+  P(n, m) = \frac{n!}{(n-m)!}.
+  \]
+  \item The number of subsets of an \(n\)-element set is:
+  \[
+  2^n.
+  \]
+  \item The number of \(k\)-element subsets is given by the binomial coefficient:
+  \[
+  \binom{n}{k} = \frac{n!}{k!(n-k)!}.
+  \]
+\end{itemize}
+
+\begin{lemma}[Binomial Sum Identity]
+  For any non-negative integer \(n\),
+  \[
+  \sum_{k=0}^{n} \binom{n}{k} = 2^n.
+  \]
+\end{lemma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Permutations and Factorials}
+
+\begin{definition}[Factorial]
+  For \(n \in \mathbb{N}\), the \emph{factorial} \(n!\) is defined as:
+  \[
+  n! = n \cdot (n-1) \cdots 2 \cdot 1, \quad \text{with } 0! = 1.
+  \]
+\end{definition}
+
+\begin{definition}[Permutation]
+  A \emph{permutation} of a set of \(n\) elements is an ordered arrangement of its elements. The total number of permutations is \(n!\). More generally, the number of ways to order \(k\) out of \(n\) elements is:
+  \[
+  P(n,k) = \frac{n!}{(n-k)!}.
+  \]
+\end{definition}
+
+\begin{lemma}[Permutations with Repetition]
+  If there are \(n\) objects with \(n_1\) of one type, \(n_2\) of another, \(\dots\), \(n_k\) of the \(k\)th type (with \(n_1+n_2+\cdots+n_k = n\)), then the number of distinct permutations is:
+  \[
+  \frac{n!}{n_1!n_2!\cdots n_k!}.
+  \]
+\end{lemma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Binomial Coefficients and the Binomial Theorem}
+
+\begin{definition}[Binomial Coefficient]
+  For non-negative integers \(n\) and \(k\) with \(0 \le k \le n\), the binomial coefficient is:
+  \[
+  \binom{n}{k} = \frac{n!}{k!(n-k)!}.
+  \]
+\end{definition}
+
+\begin{lemma}[Pascal's Identity]
+  For \(0 < k < n\),
+  \[
+  \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}.
+  \]
+\end{lemma}
+
+\begin{theorem}[Binomial Theorem]
+  For any real numbers \(x\) and \(y\) and any non-negative integer \(n\),
+  \[
+  (x+y)^n = \sum_{k=0}^{n} \binom{n}{k} x^k y^{n-k}.
+  \]
+\end{theorem}
+
+\begin{example}
+  For \(n=3\):
+  \[
+  (x+y)^3 = \binom{3}{0}x^0y^3 + \binom{3}{1}x^1y^2 + \binom{3}{2}x^2y^1 + \binom{3}{3}x^3y^0 = y^3 + 3xy^2 + 3x^2y + x^3.
+  \]
+\end{example}
+
+\begin{definition}[Multinomial Coefficients]
+  For non-negative integers \(n_1, n_2, \dots, n_k\) satisfying \(n_1+n_2+\cdots+n_k = n\), the multinomial coefficient is defined by:
+  \[
+  \binom{n}{n_1, n_2, \dots, n_k} = \frac{n!}{n_1!n_2!\cdots n_k!}.
+  \]
+\end{definition}
+
+\begin{theorem}[Multinomial Theorem]
+  For any real numbers \(x_1, x_2, \dots, x_k\) and non-negative integer \(n\),
+  \[
+  (x_1+x_2+\cdots+x_k)^n = \sum_{n_1+n_2+\cdots+n_k=n} \binom{n}{n_1, n_2, \dots, n_k} \prod_{i=1}^k x_i^{n_i}.
+  \]
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Inclusion-Exclusion Principle}
+
+The inclusion-exclusion principle is an important tool for counting the number of elements in the union of overlapping sets.
+
+\begin{theorem}[Inclusion-Exclusion Principle]
+  Let \(A_1, A_2, \dots, A_n\) be finite sets. Then:
+  \[
+  \left| \bigcup_{i=1}^{n} A_i \right| = \sum_{i=1}^{n} |A_i| - \sum_{1\le i < j \le n} |A_i \cap A_j| + \sum_{1\le i < j < k \le n} |A_i \cap A_j \cap A_k| - \cdots + (-1)^{n+1} |A_1 \cap A_2 \cap \cdots \cap A_n|.
+  \]
+\end{theorem}
+
+\begin{example}
+  For two sets \(A\) and \(B\):
+  \[
+  |A \cup B| = |A| + |B| - |A \cap B|.
+  \]
+\end{example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derangements and the Hat-Check Problem}
+
+A classical problem in combinatorics involves counting derangements.
+
+\begin{definition}[Derangement]
+  A \emph{derangement} is a permutation \(\sigma\) of \(\{1,2,\dots,n\}\) with no fixed points; that is, \(\sigma(i) \neq i\) for all \(i\).
+\end{definition}
+
+Let \(D_n\) denote the number of derangements of \(n\) objects. Using inclusion-exclusion, one obtains:
 \[
-4, 8, 12, 16,\quad
-3, 7, 11, 15,\quad
-2, 6, 10, 14,\quad
-1, 5, 9, 13.
+D_n = n! \sum_{k=0}^{n} \frac{(-1)^k}{k!}.
+\]
+An alternative recurrence for derangements is:
+\[
+D_n = (n-1)(D_{n-1} + D_{n-2}), \quad \text{with } D_0 = 1 \text{ and } D_1 = 0.
 \]
 
-\exrose{For Prob 2}{
-  AArray: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] 
-}
+\begin{example}
+  For \(n=3\):
+  \[
+  D_3 = 3! \left(1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!}\right)
+  = 6\left(1 - 1 + \frac{1}{2} - \frac{1}{6}\right)
+  = 6\left(\frac{1}{2} - \frac{1}{6}\right)
+  = 6\left(\frac{1}{3}\right)
+  = 2.
+  \]
+\end{example}
 
+Another useful expression for \(D_n\) is:
+\[
+D_n = \left\lfloor \frac{n!}{e} + \frac{1}{2} \right\rfloor,
+\]
+where \(e\) is the base of the natural logarithm.
 
-\section*{2.4 Prob 4}
-\addcontentsline{toc}{section}{Prob 3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Conclusion}
 
-\qs{}{
-  Prove the following strengthening of Theorem 2.4.6: Let $k, \ell$ be
-  natural numbers. Then every sequence of real numbers of length $k \ell + 1$
-  contains a nondecreasing subsequence of length $k+1$ or a decreasing subsequence of
-  length $ \ell +1$.
-}
+In this document we have explored several core topics in discrete mathematics in greater depth:
+\begin{itemize}
+  \item \textbf{Numbers and Sets:} We reviewed standard number systems, set operations, and key identities such as De Morgan's laws.
+  \item \textbf{Proof Techniques:} Both standard and strong forms of mathematical induction were discussed alongside examples.
+  \item \textbf{Functions and Relations:} Definitions, types, and properties (including function composition and inverses) were examined. We also discussed relations, including equivalence relations and the corresponding partitions of sets.
+  \item \textbf{Ordering:} Partial and total orders were defined, and the concept of Hasse diagrams, chains, antichains, lattices, and related theorems (such as Dilworth's theorem) were introduced.
+  \item \textbf{Combinatorial Counting:} Fundamental counting techniques including functions, permutations (with and without repetition), binomial and multinomial coefficients, the binomial theorem, inclusion-exclusion, and derangements were covered.
+\end{itemize}
 
-
-\begin{proofWithHibiscus}
-  Let a sequence $(x_1, x_2, \ldots, x_{kl+1})$ be a sequence of real numbers and let $X = \{1,2, \ldots , kl + 1 \}$. \\
-  Define a relation $\preceq$ on $X$ by 
-  \[ i \leq j \quad iff \quad i \leq j \text{ and } x_{i} \leq x_{j} \]
-  \begin{ClaimWithMagnolia}
-    $\preceq$ is an ordering
-    \medskip
-
-    reflexive: $i \leq i$ for all $i$ since $i \leq i$ and $x_{i} \leq x_{i}$ 
-
-    \medskip
-
-    antisymetric: Suppose $i \leq j$ and $j \leq i$. Then $i \leq j$ and $j \leq i$ and $x_i \leq x_j$ and $x_j \leq x_i$. \\
-    implies $i = j$ and $x_i = x_j$ 
-
-    \medskip
-
-    transitive: suppose $i \leq j$ and $j \leq k$. Want to show $i \leq k$. \\
-    $i \leq j$ implies $i \leq j$ and $x_i \leq x_j$. \\
-    $j \leq k $ implies $j \leq k$ and $x_j \leq x_k$. But then $i \leq k$ and $x_i \leq x_k$.\\ 
-    which implies $ i \preceq k$ 
-  \end{ClaimWithMagnolia} 
-
-  by the theorem that for every finite ordered set $ P = (Xm \preceq)$ we have 
-  \[ \alpha (P) \cdot \omega (P) \geq |X| \] 
-  we then have 
-  \[ \alpha (P) \cdot \omega (P) \geq |kl + 1|\]
-  
-  \medskip 
-  So either 
-  \begin{enumerate}
-    \item $\alpha (X, \preceq) > l + 1 $
-    \item $\omega (X, \preceq) > k + 1 $
-  \end{enumerate}
-
-  If $1$, then $(X, \preceq )$ has an independent set of size $l +1$ \\ 
-  We then have 
-  \[i_1 < i_2, \ldots , i_l+1\]
-  \[ x_{i{1}} \geq x_{i_{2}}, \geq , x_{i_{k+1}}\] 
-
-  \smallskip
-
-
-  If $2$, then $(X, \preceq )$ has a chain for length $k + 1$ 
-  We then have 
-  \[ i_1 < i_2, \ldots , i_k+1 \] 
-  \[ x_{i{1}} \leq x_{i_{2}}, \ldots , x_{i_{k+1}}\] 
-
-
-
-\end{proofWithHibiscus}
-
-\section*{3.1 Prob 2}
-\addcontentsline{toc}{section}{Prob 4}
-
-\qs{}{
-  Determine the number of ordered pairs $(A, B)$, where $A \subseteq B \subseteq \{ 1, 2, \ldots, n \}$.
-}
-
-\section*{3.1 Prob 6}
-\addcontentsline{toc}{section}{Prob 5}
-
-\qs{}{
-  Show that a natural number $n \ge 1$ has an odd number of divisors
-  (including 1 and itself) if and only if $\sqrt{n}$ is an integer. {\it The textbook
-  has a hint to this problem in the back.}
-}
+These topics form the backbone of combinatorics, graph theory, number theory, and computer science, and provide a solid foundation for advanced studies.
 
 \end{document}

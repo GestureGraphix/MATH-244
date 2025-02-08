@@ -1,7 +1,17 @@
-\contentsline {section}{Prob 1}{2}{section*.2}%
-\contentsline {section}{Bonus Prob}{2}{section*.3}%
-\contentsline {section}{Prob 2}{2}{section*.4}%
-\contentsline {section}{Prob 3}{3}{section*.5}%
-\contentsline {section}{Prob 4}{4}{section*.6}%
-\contentsline {section}{Prob 5}{4}{section*.7}%
-\contentsfinish 
+\contentsline {section}{\numberline {1}Introduction and Basic Concepts}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Numbers and Sets: Notation}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Mathematical Induction and Other Proof Techniques}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Functions}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Relations}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Equivalence Relations and Partitions}{5}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Ordering and Posets}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Partial Orders and Hasse Diagrams}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Total Orders and Chains}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Lattices and Boolean Algebras}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Dilworth's Theorem and Related Results}{7}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Combinatorial Counting}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Counting Functions and Subsets}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Permutations and Factorials}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Binomial Coefficients and the Binomial Theorem}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Inclusion-Exclusion Principle}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Derangements and the Hat-Check Problem}{10}{subsection.3.5}%
