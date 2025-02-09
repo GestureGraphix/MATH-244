@@ -111,6 +111,9 @@
   $(x_1, y_1)\preceq (x_2, y_2)$ if and only if $x_1 \leq x_2$ and $y_1 \leq y_2$.
 }
 
+
+\newpage 
+
 \section*{2.4 Prob 3}
 \addcontentsline{toc}{section}{Prob 2}
 
@@ -197,19 +200,34 @@
 
 \bigskip
 
-\noindent
-Reading the cells row by row (from top row to bottom row) gives the sequence:
-\[
-4, 8, 12, 16,\quad
-3, 7, 11, 15,\quad
-2, 6, 10, 14,\quad
-1, 5, 9, 13.
-\]
+
 
 \exrose{For Prob 2}{
-  AArray: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] 
+  RReading the cells row by row (from top row to bottom row) gives the sequence:
+  \[
+  4, 8, 12, 16,\quad
+  3, 7, 11, 15,\quad
+  2, 6, 10, 14,\quad
+  1, 5, 9, 13.
+  \]
+  Why there can't be an increasing subsequence of length 5 
+  \medskip
+  This works because we split the sequence into a matrice of of $ 4 \times 4$ and by the pigeonhole 
+  principle, if you were to pick 5 numbers from the sequence at least of them would have to come from the same column 
+  but in each column, the numbers appear in decreasing order thus any two numbers comming from teh same cloum will be in decreasing 
+  order which prevents the entire subsequence from being increasing. 
+  \bigskip
+
+  Why there can't be a strictly decreasing subsequence of length 5 
+  \medskip
+  A similar argument applies for the decreasing subsequence. Our grid has 4 rows and if you were to pick 5 numbers from teh sequence 
+  then by the pigeonhole principle at least two would have to come from the same row 
+  but the entries in each row are in increasing order preventing a nondecreasing sequence of length 5.
+
 }
 
+
+\newpage 
 
 \section*{2.4 Prob 4}
 \addcontentsline{toc}{section}{Prob 3}
@@ -223,56 +241,88 @@ Reading the cells row by row (from top row to bottom row) gives the sequence:
 
 
 \begin{proofWithHibiscus}
-  Let a sequence $(x_1, x_2, \ldots, x_{kl+1})$ be a sequence of real numbers and let $X = \{1,2, \ldots , kl + 1 \}$. \\
-  Define a relation $\preceq$ on $X$ by 
-  \[ i \leq j \quad iff \quad i \leq j \text{ and } x_{i} \leq x_{j} \]
-  \begin{ClaimWithMagnolia}
-    $\preceq$ is an ordering
-    \medskip
-
-    reflexive: $i \leq i$ for all $i$ since $i \leq i$ and $x_{i} \leq x_{i}$ 
-
-    \medskip
-
-    antisymetric: Suppose $i \leq j$ and $j \leq i$. Then $i \leq j$ and $j \leq i$ and $x_i \leq x_j$ and $x_j \leq x_i$. \\
-    implies $i = j$ and $x_i = x_j$ 
-
-    \medskip
-
-    transitive: suppose $i \leq j$ and $j \leq k$. Want to show $i \leq k$. \\
-    $i \leq j$ implies $i \leq j$ and $x_i \leq x_j$. \\
-    $j \leq k $ implies $j \leq k$ and $x_j \leq x_k$. But then $i \leq k$ and $x_i \leq x_k$.\\ 
-    which implies $ i \preceq k$ 
-  \end{ClaimWithMagnolia} 
-
-  by the theorem that for every finite ordered set $ P = (Xm \preceq)$ we have 
-  \[ \alpha (P) \cdot \omega (P) \geq |X| \] 
-  we then have 
-  \[ \alpha (P) \cdot \omega (P) \geq |kl + 1|\]
-  
-  \medskip 
-  So either 
-  \begin{enumerate}
-    \item $\alpha (X, \preceq) > l + 1 $
-    \item $\omega (X, \preceq) > k + 1 $
-  \end{enumerate}
-
-  If $1$, then $(X, \preceq )$ has an independent set of size $l +1$ \\ 
-  We then have 
-  \[i_1 < i_2, \ldots , i_l+1\]
-  \[ x_{i{1}} \geq x_{i_{2}}, \geq , x_{i_{k+1}}\] 
-
+  Let $(x_1, x_2, \ldots, x_{k\ell + 1})$ be any sequence of real numbers and let 
+  \[
+    X \;=\; \{\,1,2,\ldots, k\ell + 1\}.
+  \]
+  We define a relation $\preceq$ on $X$ by 
+  \[
+    i \preceq j 
+    \quad\Longleftrightarrow\quad 
+    i \le j 
+    \;\text{ and }\;
+    x_i \,\le\, x_j.
+  \]
   \smallskip
 
+  \begin{ClaimWithMagnolia}
+    The relation $\preceq$ is a partial order on $X$.
+    
+    \medskip
+    \noindent
+    \emph{Proof of Claim.} 
+    \begin{itemize}
+      \item \textbf{Reflexivity:} 
+      For every $i \in X$, we have $i \le i$ and $x_i \le x_i$. Hence $i \preceq i$.
+      
+      \item \textbf{Antisymmetry:} 
+      Suppose $i \preceq j$ and $j \preceq i$. Then $i \le j$, $j \le i$, $x_i \le x_j$, and $x_j \le x_i$. 
+      Thus $i = j$ and $x_i = x_j$, so $i \preceq j$ and $j \preceq i$ imply $i=j$.
+      
+      \item \textbf{Transitivity:} 
+      Suppose $i \preceq j$ and $j \preceq k$. Then $i \le j \le k$ and 
+      $x_i \le x_j \le x_k$. Consequently $i \le k$ and $x_i \le x_k$, so $i \preceq k$.
+    \end{itemize}
+    Hence $\preceq$ is indeed a partial order.
+  \end{ClaimWithMagnolia}
 
-  If $2$, then $(X, \preceq )$ has a chain for length $k + 1$ 
-  We then have 
-  \[ i_1 < i_2, \ldots , i_k+1 \] 
-  \[ x_{i{1}} \leq x_{i_{2}}, \ldots , x_{i_{k+1}}\] 
+  \medskip
+  We now observe that in this poset $(X, \preceq)$:
+  \begin{itemize}
+    \item A \emph{chain} of size $m$ corresponds to indices 
+      $i_1 < i_2 < \cdots < i_m$ such that 
+      $x_{i_1} \le x_{i_2} \le \cdots \le x_{i_m}$,
+    \item An \emph{antichain} of size $m$ corresponds to indices 
+      $i_1 < i_2 < \cdots < i_m$ for which no two are comparable under $\preceq$.  
+      Equivalently, if $i_p < i_q$ in $X$ then we cannot have $x_{i_p} \le x_{i_q}$. 
+      That forces $x_{i_1} > x_{i_2} > \cdots > x_{i_m}$, 
+  \end{itemize}
 
+  By Dilworth's theorem every finite poset $P=(X,\preceq)$ satisfies
+  \[
+    |X|\;\;\le\;\;\alpha(P)\,\cdot\,\omega(P),
+  \]
+  where $\alpha(P)$ is the maximum size of any antichain in $P$ and $\omega(P)$ is the maximum size of any chain. 
+  Applying this to our poset $(X,\preceq)$ yields
+  \[
+    k\ell + 1 
+    \;=\;
+    |X|
+    \;\;\le\;\;
+    \alpha\bigl(X,\preceq\bigr)\;\cdot\;\omega\bigl(X,\preceq\bigr).
+  \]
+  Consequently, it is \emph{impossible} for both $\alpha(P) \le \ell$ and $\omega(P) \le k$ to hold, 
+  since that would force 
+  \(
+    \alpha(P)\,\cdot\,\omega(P) \;\le\; k\ell \,<\, k\ell+1.
+  \)
+  Therefore, at least one of the following must be true:
+  \[
+    \alpha(P) \;\ge\; \ell + 1
+    \qquad\text{or}\qquad
+    \omega(P) \;\ge\; k + 1.
+  \]
+  \begin{itemize}
+    \item If $\alpha(P) \ge \ell + 1$, then there is an antichain of size $\ell + 1$,
+      which corresponds to a \emph{strictly decreasing} subsequence 
+      $x_{i_1} > x_{i_2} > \cdots > x_{i_{\ell+1}}$ of length $\ell + 1$.
 
-
+    \item If $\omega(P) \ge k + 1$, then there is a chain of size $k + 1$, 
+      which corresponds to a \emph{nondecreasing} subsequence 
+      $x_{i_1} \le x_{i_2} \le \cdots \le x_{i_{k+1}}$ of length $k + 1$.
+  \end{itemize}
 \end{proofWithHibiscus}
+
 
 \section*{3.1 Prob 2}
 \addcontentsline{toc}{section}{Prob 4}
@@ -280,6 +330,34 @@ Reading the cells row by row (from top row to bottom row) gives the sequence:
 \qs{}{
   Determine the number of ordered pairs $(A, B)$, where $A \subseteq B \subseteq \{ 1, 2, \ldots, n \}$.
 }
+
+\begin{proofWithHibiscus}
+  Let $X = \{1,2,\ldots,n\}$. We wish to count the number of ordered pairs $(A,B)$ such that
+  \[
+    A \;\subseteq\; B \;\subseteq\; X.
+  \]
+  \smallskip
+
+  \noindent
+  \textbf{Key Observation.} 
+  For each element $i \in X$, there are exactly three ways to place $i$ with respect to the pair $(A,B)$:
+  \[
+    \text{(1) } i \;\notin\; B\;(\text{hence } i \notin A), 
+    \quad 
+    \text{(2) } i \;\in\; B \setminus A,
+    \quad
+    \text{(3) } i \;\in\; A \subseteq B.
+  \]
+  Hence, if we make this choice for every element $i \in X$, we uniquely determine a pair $(A,B)$ with $A \subseteq B$. Conversely, every such pair arises by making one of these three choices for each $i$.
+
+  \medskip
+
+  It follows that there is a $3$-to-$1$ correspondence between all $n$-element subsets of these “choices” and the valid pairs $(A,B)$. Since each of the $n$ elements admits exactly three possibilities, the total number of ordered pairs $(A,B)$ with $A \subseteq B \subseteq X$ is
+  \[
+    3^n.
+  \]
+\end{proofWithHibiscus}
+
 
 \section*{3.1 Prob 6}
 \addcontentsline{toc}{section}{Prob 5}
@@ -289,5 +367,25 @@ Reading the cells row by row (from top row to bottom row) gives the sequence:
   (including 1 and itself) if and only if $\sqrt{n}$ is an integer. {\it The textbook
   has a hint to this problem in the back.}
 }
+
+\begin{proofWithHibiscus}
+  Let $n \ge 1$ be a natural number and denote by $d(n)$ the number of positive divisors of $n$ (including $1$ and $n$ itself). We claim that $d(n)$ is odd if and only if $\sqrt{n}$ is an integer.
+
+  \smallskip
+  \noindent
+  \textbf{(\(\Longrightarrow\))} 
+  Suppose $d(n)$ is odd. We will show that $n$ must be a perfect square. 
+  Consider the divisors of $n$. Each divisor $k$ can be paired with its “partner” $\tfrac{n}{k}$. 
+  Usually $k \neq \tfrac{n}{k}$, so divisors come in pairs. However, because $d(n)$ is odd, at least one divisor must be “self‐paired,” that is, satisfy $k = \tfrac{n}{k}$. Solving $k^2 = n$ shows that $k = \sqrt{n}$ is an integer. Thus $n$ is a perfect square.
+
+  \smallskip
+  \noindent
+  \textbf{(\(\Longleftarrow\))} 
+  Conversely, suppose $n = m^2$ for some integer $m \ge 1$. Then each positive divisor $k \neq m$ of $n$ can be paired uniquely with $n/k = \tfrac{m^2}{k} \neq k$. Only the divisor $k = m$ is paired with itself. Hence all divisors except $m$ come in distinct pairs, and the divisor $m$ stands alone, contributing $1$ more to the total count. Therefore $d(n)$ is an odd number.
+
+  \medskip
+  Combining the two directions shows that $n$ has an odd number of positive divisors if and only if $n$ is a perfect square.
+\end{proofWithHibiscus}
+
 
 \end{document}

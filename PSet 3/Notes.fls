@@ -1689,24 +1689,18 @@ INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
-INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmi.vf
-INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/newtx/stxscr.tfm
-INPUT /usr/share/texmf/fonts/vf/public/newpx/zplsy.vf
-INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxsys.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/newtx/txex-bar.tfm
-INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /usr/share/texmf/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/share/texmf/fonts/tfm/jknappen/ec/tcrm1000.tfm
+INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI.tfm
@@ -1714,7 +1708,27 @@ INPUT /usr/share/texmf/fonts/tfm/public/newtx/stxscr.tfm
 INPUT /usr/share/texmf/fonts/vf/public/newpx/zplsy.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxsys.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newtx/txex-bar.tfm
+INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmi.vf
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newtx/stxscr.tfm
+INPUT /usr/share/texmf/fonts/vf/public/newpx/zplexx.vf
+INPUT /usr/share/texmf/fonts/tfm/public/newtx/ntxexx.tfm
+INPUT /usr/share/texmf/fonts/vf/public/newtx/ntxexx.vf
+INPUT /usr/share/texmf/fonts/tfm/public/newtx/txexs.tfm
+INPUT /usr/share/texmf/fonts/vf/public/newpx/zplsy.vf
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxsys.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newtx/txex-bar.tfm
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/Notes.aux
+INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texmf/fonts/type1/public/newpx/NewPXMI.pfb
 INPUT /usr/share/texmf/fonts/type1/public/newpx/NewPXMI_gnu.pfb
 INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmb10.pfb
@@ -1731,3 +1745,5 @@ INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/newpx/pxmiaX.pfb
 INPUT /usr/share/texmf/fonts/type1/public/newpx/pxsys.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
+INPUT /usr/share/texmf/fonts/type1/public/newtx/txexs.pfb
