@@ -84,7 +84,7 @@
 
 
 \begin{RemarkWithLily}{For Prob 1}
-  FFor $\mathcal{B}_3$ $\varnothing$ is the unique minimal element, it must appear first in any linear extension, and $\{a,b\}$ is the unique maximal element, so it must appear last. The only freedom in ordering comes from the two singletons, $\{a\}$ and $\{b\}$, which are incomparable. There are $2! = 2$ ways to arrange these elements. Therefore, the total number of linear extensions is 
+  FFor $\mathcal{B}_2$ $\varnothing$ is the unique minimal element, it must appear first in any linear extension, and $\{a,b\}$ is the unique maximal element, so it must appear last. The only freedom in ordering comes from the two singletons, $\{a\}$ and $\{b\}$, which are incomparable. There are $2! = 2$ ways to arrange these elements. Therefore, the total number of linear extensions is 
   \[
   2.
   \]
@@ -118,6 +118,58 @@
   $(x_1, y_1)\preceq (x_2, y_2)$ if and only if $x_1 \leq x_2$ and $y_1 \leq y_2$.
 }
 
+
+\begin{proofWithHibiscus}
+  Suppose a finite poset $P$ can be embedded into $(\mathbb{N}^2, \preceq)$. There exists an injective function
+  \[ f: P \to \mathbb{N}^2, \]
+ that for all $x,y\in P$,
+  \[ x \le_P y \quad \Longleftrightarrow \quad f(x) \preceq f(y), \]
+  
+  \[ f(x) = (x_1,x_2) \quad \text{and} \quad f(y) = (y_1,y_2)\] 
+
+  \[ (x_1,x_2) \preceq (y_1,y_2) \quad \Longleftrightarrow \quad x_1 \le y_1 \quad \text{and} \quad x_2 \le y_2. \]
+
+  Define two linear orders on $P$ as follows:
+  \begin{enumerate}[label=\textbf{Order \arabic*:}]
+      \item Define $L_1$ on $P$ by
+      \[
+      x \le_{L_1} y \quad \Longleftrightarrow \quad f(x)_1 \le f(y)_1.
+      \]
+      \item Define $L_2$ on $P$ by
+      \[
+      x \le_{L_2} y \quad \Longleftrightarrow \quad f(x)_2 \le f(y)_2.
+      \]
+  \end{enumerate}
+  Since $\mathbb{N}$ is totally ordered, both $L_1$ and $L_2$ are linear (total) orders.
+
+  We now show that the original poset order on $P$ is the intersection of these two orders. Indeed:
+  \begin{itemize}
+      \item If $x \le_P y$, then by the definition of the embedding, 
+      \[
+      f(x)_1 \le f(y)_1 \quad \text{and} \quad f(x)_2 \le f(y)_2.
+      \]
+      Hence, $x \le_{L_1} y$ and $x \le_{L_2} y$.
+      \item Conversely, if $x \le_{L_1} y$ and $x \le_{L_2} y$, then
+      \[
+      f(x)_1 \le f(y)_1 \quad \text{and} \quad f(x)_2 \le f(y)_2,
+      \]
+      so that $f(x) \preceq f(y)$, and thus $x \le_P y$.
+  \end{itemize}
+
+  This shows that
+  \[
+  x \le_P y \quad \Longleftrightarrow \quad \bigl( x \le_{L_1} y \text{ and } x \le_{L_2} y \bigr).
+  \]
+  Therefore, the poset $P$ is the intersection of two linear orders, meaning its \emph{order dimension} is at most $2$. \\
+
+  It is a well-known fact in order theory that there exist finite posets with order dimension greater than $2$. For example, the Boolean lattice $B_3$---the poset of all subsets of a $3$-element set ordered by inclusion---has order dimension $3$. More generally, for any integer $d \ge 1$, there exists a finite poset with order dimension $d$.\\
+
+  Since any poset that embeds into $(\mathbb{N}^2, \preceq)$ must have order dimension at most $2$, it follows that any finite poset with order dimension greater than $2$ cannot be embedded into $(\mathbb{N}^2, \preceq)$. Therefore, not every finite poset admits an embedding into $(\mathbb{N}^2, \preceq)$.
+
+  \[
+  \boxed{\text{Not every finite poset can be embedded into } (\mathbb{N}^2, \preceq).}
+  \]
+\end{proofWithHibiscus}
 
 \newpage 
 

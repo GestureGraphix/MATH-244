@@ -1684,30 +1684,13 @@ INPUT /usr/share/texmf/fonts/tfm/public/newtx/stxscr.tfm
 INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmia.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxmiaX.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newtx/txmiaSTbb.tfm
-INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
-INPUT /usr/share/texmf/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/share/texmf/fonts/tfm/jknappen/ec/tcrm1000.tfm
-INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
-INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmti10.tfm
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
-INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmi.vf
-INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/newtx/stxscr.tfm
-INPUT /usr/share/texmf/fonts/vf/public/newpx/zplsy.vf
-INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxsys.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/newtx/txex-bar.tfm
 INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI.tfm
@@ -1716,6 +1699,27 @@ INPUT /usr/share/texmf/fonts/vf/public/newpx/zplexx.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newtx/ntxexx.tfm
 INPUT /usr/share/texmf/fonts/vf/public/newtx/ntxexx.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newtx/txexs.tfm
+INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
+INPUT /usr/share/texmf/fonts/vf/public/newpx/zplsy.vf
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxsys.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newtx/txex-bar.tfm
+INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmi.vf
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newpx/NewPXMI.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/newtx/stxscr.tfm
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
