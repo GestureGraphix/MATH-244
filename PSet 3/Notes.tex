@@ -98,7 +98,7 @@
   \item Place the remaining singleton next. Then the three 2-element subsets may appear in any order before the full set $\{a,b,c\}$, contributing $3!=6$ arrangements.
   \item Place the 2-element set formed by the first two singletons next. Then the remaining singleton must appear before any 2-element set containing it, so it appears immediately after, leaving 2 ways to order the remaining two 2-subsets.
   \end{enumerate}
-  Hence, for each of the $6$ ways to choose the first two singletons, there are $6 + 2 = 8$ ways to continue.  The total number of linear extensions is therefore
+  Hence, for each of the $6$ ways to choose the first two singletons, there are $6 + 2$ ways to continue.  The total number of linear extensions is therefore
   \[
   6 \times 8 \;=\; 48.
   \]
@@ -129,46 +129,43 @@
 
   \[ (x_1,x_2) \preceq (y_1,y_2) \quad \Longleftrightarrow \quad x_1 \le y_1 \quad \text{and} \quad x_2 \le y_2. \]
 
-  Define two linear orders on $P$ as follows:
-  \begin{enumerate}[label=\textbf{Order \arabic*:}]
-      \item Define $L_1$ on $P$ by
+  Define two linear orders on $P$:
+  \begin{enumerate}
+      \item $L_1$
       \[
       x \le_{L_1} y \quad \Longleftrightarrow \quad f(x)_1 \le f(y)_1.
       \]
-      \item Define $L_2$ on $P$ by
+      \item $L_2$
       \[
       x \le_{L_2} y \quad \Longleftrightarrow \quad f(x)_2 \le f(y)_2.
       \]
   \end{enumerate}
-  Since $\mathbb{N}$ is totally ordered, both $L_1$ and $L_2$ are linear (total) orders.
+  Since $\mathbb{N}$ is totally ordered, both $L_1$ and $L_2$ are linear total orders.
 
-  We now show that the original poset order on $P$ is the intersection of these two orders. Indeed:
+  We now show that the original poset order on $P$ is the intersection of these two orders. 
   \begin{itemize}
       \item If $x \le_P y$, then by the definition of the embedding, 
       \[
       f(x)_1 \le f(y)_1 \quad \text{and} \quad f(x)_2 \le f(y)_2.
       \]
       Hence, $x \le_{L_1} y$ and $x \le_{L_2} y$.
-      \item Conversely, if $x \le_{L_1} y$ and $x \le_{L_2} y$, then
+      \item If $x \le_{L_1} y$ and $x \le_{L_2} y$, then
       \[
       f(x)_1 \le f(y)_1 \quad \text{and} \quad f(x)_2 \le f(y)_2,
       \]
-      so that $f(x) \preceq f(y)$, and thus $x \le_P y$.
+      so that $f(x) \preceq f(y)$, and $x \le_P y$.
   \end{itemize}
 
   This shows that
   \[
   x \le_P y \quad \Longleftrightarrow \quad \bigl( x \le_{L_1} y \text{ and } x \le_{L_2} y \bigr).
   \]
-  Therefore, the poset $P$ is the intersection of two linear orders, meaning its \emph{order dimension} is at most $2$. \\
+  Therefore, the poset $P$ is the intersection of two linear orders, meaning its order dimension is at most $2$. \\
 
-  It is a well-known fact in order theory that there exist finite posets with order dimension greater than $2$. For example, the Boolean lattice $B_3$---the poset of all subsets of a $3$-element set ordered by inclusion---has order dimension $3$. More generally, for any integer $d \ge 1$, there exists a finite poset with order dimension $d$.\\
+  The Boolean lattice $B_3$ has order dimension $3$. For any integer $d \ge 1$, there exists a finite poset with order dimension $d$.\\
 
-  Since any poset that embeds into $(\mathbb{N}^2, \preceq)$ must have order dimension at most $2$, it follows that any finite poset with order dimension greater than $2$ cannot be embedded into $(\mathbb{N}^2, \preceq)$. Therefore, not every finite poset admits an embedding into $(\mathbb{N}^2, \preceq)$.
+  Since any poset that embeds into $(\mathbb{N}^2, \preceq)$ must have order dimension at most $2$, any finite poset with order dimension greater than $2$ cannot be embedded into $(\mathbb{N}^2, \preceq)$. 
 
-  \[
-  \boxed{\text{Not every finite poset can be embedded into } (\mathbb{N}^2, \preceq).}
-  \]
 \end{proofWithHibiscus}
 
 \newpage 
@@ -336,11 +333,11 @@
       Suppose $i \preceq j$ and $j \preceq k$. Then $i \le j \le k$ and 
       $x_i \le x_j \le x_k$. Consequently $i \le k$ and $x_i \le x_k$, so $i \preceq k$.
     \end{itemize}
-    Hence $\preceq$ is indeed a partial order.
+    $\preceq$ is a partial order.
   \end{ClaimWithMagnolia}
 
   \medskip
-  We now observe that in this poset $(X, \preceq)$:
+  In poset $(X, \preceq)$:
   \begin{itemize}
     \item A \emph{chain} of size $m$ corresponds to indices 
       $i_1 < i_2 < \cdots < i_m$ such that 
@@ -355,7 +352,7 @@
     |X|\;\;\le\;\;\alpha(P)\,\cdot\,\omega(P),
   \]
   where $\alpha(P)$ is the maximum size of any antichain in $P$ and $\omega(P)$ is the maximum size of any chain. 
-  Applying this to our poset $(X,\preceq)$ yields
+  Applying this yields
   \[
     k\ell + 1 
     \;=\;
@@ -385,24 +382,24 @@
 }
 
 \begin{proofWithHibiscus}
-  Let $X = \{1,2,\ldots,n\}$. We wish to count the number of ordered pairs $(A,B)$ such that
+  Let $X = \{1,2,\ldots,n\}$. We want to count the number of ordered pairs $(A,B)$ such that
   \[
     A \;\subseteq\; B \;\subseteq\; X.
   \]
 
-  For each element $i \in X$, there are exactly three ways to place $i$ with respect to the pair $(A,B)$:
+  For each element $x \in X$, there are three ways to place $x$ with respect to the pair $(A,B)$:
   \[
-    \text{(1) } i \;\notin\; B\;(\text{so } i \notin A), 
+    \text{(1) } x \;\notin\; B\;(\text{so } x \notin A), 
     \quad 
-    \text{(2) } i \;\in\; B \setminus A,
+    \text{(2) } x \;\in\; B \setminus A,
     \quad
-    \text{(3) } i \;\in\; A \subseteq B.
+    \text{(3) } x \;\in\; A \subseteq B.
   \]
-  If we make this choice for every element $i \in X$, we determine a pair $(A,B)$ with $A \subseteq B$. 
+  If we make this choice for every element $x \in X$, we get a pair $(A,B)$ with $A \subseteq B$. 
 
   \medskip
 
-  Since each of the $n$ elements admits exactly three possibilities, the total number of ordered pairs $(A,B)$ with $A \subseteq B \subseteq X$ is
+  Since each of the $n$ elements has three possibilities, the total number of ordered pairs is
   \[
     3^n.
   \]
@@ -424,18 +421,18 @@
   \bigskip
 
   (\(\Longrightarrow\))
-  Suppose $d(n)$ is odd. We will show that $n$ must be a perfect square. 
-  Consider the divisors of $n$. Each divisor $k$ can be paired with its fellow divisor $\tfrac{n}{k}$. 
-  Normally divisors come in pairs but since $d(n)$ is odd, at least one divisor must be “self-paired,” 
-  $k = \tfrac{n}{k}$. Solving $k^2 = n$ shows that $k = \sqrt{n}$ is an integer. 
-  So $n$ is a perfect square.
+  Suppose $d(n)$ is odd. \\
+  Consider the divisors of $n$, each divisor $k$ can be paired with its fellow divisor $\tfrac{n}{k}$. 
+  Normally divisors come in pairs but since $d(n)$ is odd, at least one divisor must be paired with itself,
+  $k = \tfrac{n}{k}$. If $k^2 = n$ then $k = \sqrt{n}$ and $n$ is an integer and a perfect square.
 
   \bigskip
 
   (\(\Longleftarrow\))
-  Suppose $n = m^2$ for some integer $m \ge 1$. Then each positive divisor $k \neq m$ 
+  Suppose $n = m^2$ for some integer $m \ge 1$. \\
+  Then each positive divisor $k \neq m$ 
   of $n$ can be paired uniquely with $n/k = \tfrac{m^2}{k} \neq k$. Only the divisor 
-  $k = m$ is paired with itself. Hence all divisors except $m$ come in distinct pairs, 
+  $k = m$ is paired with itself. So all divisors except $m$ come in distinct pairs, 
   and the divisor $m$ stands alone, contributing $1$ more to the total count. 
   Therefore $d(n)$ is an odd number.
 

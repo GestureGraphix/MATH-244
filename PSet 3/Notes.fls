@@ -1685,7 +1685,6 @@ INPUT /usr/share/texmf/fonts/vf/public/newpx/zplmia.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxmiaX.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/newtx/txmiaSTbb.tfm
 INPUT /usr/share/texmf/fonts/tfm/jknappen/ec/tcrm1000.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/cm/cmti10.tfm
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
@@ -1704,6 +1703,7 @@ INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/flow.png
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmti10.tfm
 INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/magnolia.png
