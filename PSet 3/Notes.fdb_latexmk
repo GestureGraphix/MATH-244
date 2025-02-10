@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1739228475 "/home/alex/Documents/MATH 244/PSet 3/Notes.tex" "/home/alex/Documents/MATH 244/PSet 3/Notes.pdf" "Notes" 1739228485
+["pdflatex"] 1739228475 "/home/alex/Documents/MATH 244/PSet 3/Notes.tex" "/home/alex/Documents/MATH 244/PSet 3/Notes.pdf" "Notes" 1739228520
   "/etc/texmf/web2c/texmf.cnf" 1617974667 40935 950c859ef6aa64cd9f8caa18792b2c7d ""
   "/home/alex/Documents/MATH 244/PSet 3/Notes.aux" 1739228485 2578 7faef75e18132908ca5a2fe8c0cf32a5 ""
   "/home/alex/Documents/MATH 244/PSet 3/Notes.tex" 1739228464 15455 11b921787b010977f958e625722a9131 ""
@@ -339,9 +339,9 @@
   "magnolia.png" 1737245751 13134500 a2357c8be14e33e1e12c5c41653f1f75 ""
   "preamble.tex" 1738977971 34697 4db10aafb0d305fa0aa6c75c0b4f8ba3 ""
   (generated)
+  "Notes.aux"
+  "/home/alex/Documents/MATH 244/PSet 3/Notes.log"
+  "/home/alex/Documents/MATH 244/PSet 3/Notes.pdf"
+  "Notes.toc"
   "Notes.log"
   "Notes.pdf"
-  "Notes.aux"
-  "/home/alex/Documents/MATH 244/PSet 3/Notes.pdf"
-  "/home/alex/Documents/MATH 244/PSet 3/Notes.log"
-  "Notes.toc"
