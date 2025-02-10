@@ -1716,9 +1716,6 @@ INPUT /usr/share/texmf/fonts/vf/public/newpx/zplexx.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newtx/ntxexx.tfm
 INPUT /usr/share/texmf/fonts/vf/public/newtx/ntxexx.vf
 INPUT /usr/share/texmf/fonts/tfm/public/newtx/txexs.tfm
-INPUT /usr/share/texmf/fonts/vf/public/newpx/zplsy.vf
-INPUT /usr/share/texmf/fonts/tfm/public/newpx/pxsys.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/newtx/txex-bar.tfm
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png
 INPUT /home/alex/Documents/MATH 244/PSet 3/hibiscus.png

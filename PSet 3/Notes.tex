@@ -84,21 +84,28 @@
 
 
 \begin{RemarkWithLily}{For Prob 1}
-  FFor $\mathcal{B}_2$ there are two linear extensions because the linear extension must respect and preserve the original partial order 
-  so the empty set must be first and the set $\{a,b\}$ must be at the top which means ther variation in ordering the remaining elements is $2!$ as those are the elements below 
-  $\{a,b\}$ and above the empty set. 
+  FFor $\mathcal{B}_3$ $\varnothing$ is the unique minimal element, it must appear first in any linear extension, and $\{a,b\}$ is the unique maximal element, so it must appear last. The only freedom in ordering comes from the two singletons, $\{a\}$ and $\{b\}$, which are incomparable. There are $2! = 2$ ways to arrange these elements. Therefore, the total number of linear extensions is 
+  \[
+  2.
+  \]
 
   \medskip
 
-  For $\mathcal{B}_{3}$ there are 36 possible linear extensions. Since the linear extension needs to preserve teh original 
-  partial order than that means the unique top element and unique bottom element of the set $\{a,b,c\}$ and the empty set must be the last and first 
-  element of any linear extension respectively. For the remaining elements the sets with cardinlaties 1 must all come before the sets of cardinality 2 
-  but there are $3$ sets of cardinality 1 that can be ordered in $3!$ ways as there are 3 options for the first one, 2 for the second, and 1 for the last one. 
-  This logic also applies to the 3 sets of cardinality of 2 that must all go after the sets of cardinality 1 and before the unique top element of 
-  cardinality 3 so there are $3!$ ways to order those. This makes the total possible linear extensions the result of 
-  multiplying the possibilities of each possible way of ordering the elements so $1 \cdot 3! \cdot 3! \cdot 1$ which is $36$. 
+  For $\mathcal{B}_3$ the empty set $\varnothing$ is minimal and must come first in any linear extension.  
+  Next, we must place two of the three singletons, and there are $3\times 2=6$ ways to choose and order these first two.  
+  After this, there are two possibilities:
+  \begin{enumerate}
+  \item Place the remaining singleton next. Then the three 2-element subsets may appear in any order before the full set $\{a,b,c\}$, contributing $3!=6$ arrangements.
+  \item Place the 2-element set formed by the first two singletons next. Then the remaining singleton must appear before any 2-element set containing it, so it appears immediately after, leaving 2 ways to order the remaining two 2-subsets.
+  \end{enumerate}
+  Hence, for each of the $6$ ways to choose the first two singletons, there are $6 + 2 = 8$ ways to continue.  The total number of linear extensions is therefore
+  \[
+  6 \times 8 \;=\; 48.
+  \]
 \end{RemarkWithLily}
 
+
+\newpage 
 
 
 
@@ -210,8 +217,10 @@
   2, 6, 10, 14,\quad
   1, 5, 9, 13.
   \]
-  Why there can't be an increasing subsequence of length 5 
+  Why there can't be an increasing subsequence of length 5.
+
   \medskip
+
   This works because we split the sequence into a matrice of of $ 4 \times 4$ and by the pigeonhole 
   principle, if you were to pick 5 numbers from the sequence at least of them would have to come from the same column 
   but in each column, the numbers appear in decreasing order thus any two numbers comming from teh same cloum will be in decreasing 
@@ -219,7 +228,9 @@
   \bigskip
 
   Why there can't be a strictly decreasing subsequence of length 5 
+
   \medskip
+  
   A similar argument applies for the decreasing subsequence. Our grid has 4 rows and if you were to pick 5 numbers from teh sequence 
   then by the pigeonhole principle at least two would have to come from the same row 
   but the entries in each row are in increasing order preventing a nondecreasing sequence of length 5.
@@ -283,9 +294,8 @@
       $i_1 < i_2 < \cdots < i_m$ such that 
       $x_{i_1} \le x_{i_2} \le \cdots \le x_{i_m}$,
     \item An \emph{antichain} of size $m$ corresponds to indices 
-      $i_1 < i_2 < \cdots < i_m$ for which no two are comparable under $\preceq$.  
-      Equivalently, if $i_p < i_q$ in $X$ then we cannot have $x_{i_p} \le x_{i_q}$. 
-      That forces $x_{i_1} > x_{i_2} > \cdots > x_{i_m}$, 
+      $i_1 < i_2 < \cdots < i_m$ for which no two are comparable under $\preceq$, so
+      $x_{i_1} > x_{i_2} > \cdots > x_{i_m}$, 
   \end{itemize}
 
   By Dilworth's theorem every finite poset $P=(X,\preceq)$ satisfies
@@ -301,7 +311,7 @@
     \;\;\le\;\;
     \alpha\bigl(X,\preceq\bigr)\;\cdot\;\omega\bigl(X,\preceq\bigr).
   \]
-  Consequently, it is \emph{impossible} for both $\alpha(P) \le \ell$ and $\omega(P) \le k$ to hold, 
+  It is impossible for both $\alpha(P) \le \ell$ and $\omega(P) \le k$ to hold, 
   since that would force 
   \(
     \alpha(P)\,\cdot\,\omega(P) \;\le\; k\ell \,<\, k\ell+1.
@@ -312,15 +322,6 @@
     \qquad\text{or}\qquad
     \omega(P) \;\ge\; k + 1.
   \]
-  \begin{itemize}
-    \item If $\alpha(P) \ge \ell + 1$, then there is an antichain of size $\ell + 1$,
-      which corresponds to a \emph{strictly decreasing} subsequence 
-      $x_{i_1} > x_{i_2} > \cdots > x_{i_{\ell+1}}$ of length $\ell + 1$.
-
-    \item If $\omega(P) \ge k + 1$, then there is a chain of size $k + 1$, 
-      which corresponds to a \emph{nondecreasing} subsequence 
-      $x_{i_1} \le x_{i_2} \le \cdots \le x_{i_{k+1}}$ of length $k + 1$.
-  \end{itemize}
 \end{proofWithHibiscus}
 
 
@@ -336,23 +337,20 @@
   \[
     A \;\subseteq\; B \;\subseteq\; X.
   \]
-  \smallskip
 
-  \noindent
-  \textbf{Key Observation.} 
   For each element $i \in X$, there are exactly three ways to place $i$ with respect to the pair $(A,B)$:
   \[
-    \text{(1) } i \;\notin\; B\;(\text{hence } i \notin A), 
+    \text{(1) } i \;\notin\; B\;(\text{so } i \notin A), 
     \quad 
     \text{(2) } i \;\in\; B \setminus A,
     \quad
     \text{(3) } i \;\in\; A \subseteq B.
   \]
-  Hence, if we make this choice for every element $i \in X$, we uniquely determine a pair $(A,B)$ with $A \subseteq B$. Conversely, every such pair arises by making one of these three choices for each $i$.
+  If we make this choice for every element $i \in X$, we determine a pair $(A,B)$ with $A \subseteq B$. 
 
   \medskip
 
-  It follows that there is a $3$-to-$1$ correspondence between all $n$-element subsets of these “choices” and the valid pairs $(A,B)$. Since each of the $n$ elements admits exactly three possibilities, the total number of ordered pairs $(A,B)$ with $A \subseteq B \subseteq X$ is
+  Since each of the $n$ elements admits exactly three possibilities, the total number of ordered pairs $(A,B)$ with $A \subseteq B \subseteq X$ is
   \[
     3^n.
   \]
@@ -369,22 +367,26 @@
 }
 
 \begin{proofWithHibiscus}
-  Let $n \ge 1$ be a natural number and denote by $d(n)$ the number of positive divisors of $n$ (including $1$ and $n$ itself). We claim that $d(n)$ is odd if and only if $\sqrt{n}$ is an integer.
+  Let $d(n)$ be the number of positive divisors of $n$ including $1$ and $n$ itself. 
 
-  \smallskip
-  \noindent
-  \textbf{(\(\Longrightarrow\))} 
+  \bigskip
+
+  (\(\Longrightarrow\))
   Suppose $d(n)$ is odd. We will show that $n$ must be a perfect square. 
-  Consider the divisors of $n$. Each divisor $k$ can be paired with its “partner” $\tfrac{n}{k}$. 
-  Usually $k \neq \tfrac{n}{k}$, so divisors come in pairs. However, because $d(n)$ is odd, at least one divisor must be “self‐paired,” that is, satisfy $k = \tfrac{n}{k}$. Solving $k^2 = n$ shows that $k = \sqrt{n}$ is an integer. Thus $n$ is a perfect square.
+  Consider the divisors of $n$. Each divisor $k$ can be paired with its fellow divisor $\tfrac{n}{k}$. 
+  Normally divisors come in pairs but since $d(n)$ is odd, at least one divisor must be “self-paired,” 
+  $k = \tfrac{n}{k}$. Solving $k^2 = n$ shows that $k = \sqrt{n}$ is an integer. 
+  So $n$ is a perfect square.
 
-  \smallskip
-  \noindent
-  \textbf{(\(\Longleftarrow\))} 
-  Conversely, suppose $n = m^2$ for some integer $m \ge 1$. Then each positive divisor $k \neq m$ of $n$ can be paired uniquely with $n/k = \tfrac{m^2}{k} \neq k$. Only the divisor $k = m$ is paired with itself. Hence all divisors except $m$ come in distinct pairs, and the divisor $m$ stands alone, contributing $1$ more to the total count. Therefore $d(n)$ is an odd number.
+  \bigskip
 
-  \medskip
-  Combining the two directions shows that $n$ has an odd number of positive divisors if and only if $n$ is a perfect square.
+  (\(\Longleftarrow\))
+  Suppose $n = m^2$ for some integer $m \ge 1$. Then each positive divisor $k \neq m$ 
+  of $n$ can be paired uniquely with $n/k = \tfrac{m^2}{k} \neq k$. Only the divisor 
+  $k = m$ is paired with itself. Hence all divisors except $m$ come in distinct pairs, 
+  and the divisor $m$ stands alone, contributing $1$ more to the total count. 
+  Therefore $d(n)$ is an odd number.
+
 \end{proofWithHibiscus}
 
 
