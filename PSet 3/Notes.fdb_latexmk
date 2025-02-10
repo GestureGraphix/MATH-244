@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1739230175 "/home/alex/Documents/MATH 244/PSet 3/Notes.tex" "/home/alex/Documents/MATH 244/PSet 3/Notes.pdf" "Notes" 1739230225
+["pdflatex"] 1739230175 "/home/alex/Documents/MATH 244/PSet 3/Notes.tex" "/home/alex/Documents/MATH 244/PSet 3/Notes.pdf" "Notes" 1739230239
   "/etc/texmf/web2c/texmf.cnf" 1617974667 40935 950c859ef6aa64cd9f8caa18792b2c7d ""
   "/home/alex/Documents/MATH 244/PSet 3/Notes.aux" 1739230185 2578 664d25bc3538b147a867d8d602a3b80e ""
-  "/home/alex/Documents/MATH 244/PSet 3/Notes.tex" 1739230202 14745 a09c5f62d4ed2707f8fbf809bf95ca14 ""
+  "/home/alex/Documents/MATH 244/PSet 3/Notes.tex" 1739230239 14745 a09c5f62d4ed2707f8fbf809bf95ca14 ""
   "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -329,7 +329,7 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1737166436 5175355 cdab57a66732305fc52dc8bf1694ca9d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1737166327 2724546 eb4ee59b3748dcc0747b79c0ae2a910b ""
   "Notes.aux" 1739230185 2578 664d25bc3538b147a867d8d602a3b80e "pdflatex"
-  "Notes.tex" 1739230202 14745 a09c5f62d4ed2707f8fbf809bf95ca14 ""
+  "Notes.tex" 1739230239 14745 a09c5f62d4ed2707f8fbf809bf95ca14 ""
   "Notes.toc" 1739230185 309 ffa3792533789438f70d09705faa9c8b "pdflatex"
   "flow.png" 1737149437 3327 eab4ed35b4d13609c606e28f6c71b1ca ""
   "hibiscus.png" 1737226788 13504464 a190309bb29eae501b51bb5c710cb123 ""
@@ -339,9 +339,9 @@
   "magnolia.png" 1737245751 13134500 a2357c8be14e33e1e12c5c41653f1f75 ""
   "preamble.tex" 1738977971 34697 4db10aafb0d305fa0aa6c75c0b4f8ba3 ""
   (generated)
-  "Notes.log"
-  "Notes.pdf"
+  "Notes.aux"
   "/home/alex/Documents/MATH 244/PSet 3/Notes.pdf"
   "/home/alex/Documents/MATH 244/PSet 3/Notes.log"
-  "Notes.aux"
   "Notes.toc"
+  "Notes.log"
+  "Notes.pdf"
