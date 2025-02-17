@@ -1,0 +1,293 @@
+\documentclass{report}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Math 244}}
+\author{\huge{PSET 4}}
+\date{Feb 21 2025}
+
+\begin{document}
+
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+
+
+\section*{3.2 Prob 1}
+\addcontentsline{toc}{section}{3.2 Prob 1}
+
+\qs{}{
+  How many permutations of \(\{1,2,\dots,n\}\) have a single cycle?
+}
+
+\begin{proofWithHibiscus}
+  There are \( n! \) ways to arrange \( n \) distinct elements in a sequence. Any sequence
+  \[
+  (a_1, a_2, \dots, a_n)
+  \]
+  can be thought of as a candidate for an \( n \)-cycle when interpreted in cyclic notation as
+  \[
+  (a_1, a_2, \dots, a_n).
+  \]
+  
+  But we can't count cycles where the order is simply rotated cyclically
+  \[
+  (a_1, a_2, \dots, a_n)
+  \]
+  is the same as the cycle
+  \[
+  (a_2, a_3, \dots, a_n, a_1),
+  \]
+  there are exactly \( n \) different ways to write the same cycle by cyclically rotating the elements. \\
+  
+  If we count every sequence as a distinct cycle, we overcount each \( n \)-cycle \( n \) times. \\
+    
+  To deal with the overcounting we divide the total number of sequences by \( n \). 
+  \[
+  \frac{n!}{n} = (n-1)!.
+  \]
+  
+\end{proofWithHibiscus}
+
+
+\section*{3.2 Prob 2}
+\addcontentsline{toc}{section}{3.2 Prob 2}
+
+\qs{}{
+  For a permutation \( p: X \to X \), let \( p^k \) denote the permutation arising by a \( k \)-fold 
+  composition of \( p \), i.e., \( p^1 = p \) and \( p^k = p \circ p^{k-1} \). Define a relation 
+  \( \approx \) on the set \( X \) as follows: \( i \approx j \) if and only if there exists a 
+  \( k \geq 1 \) such that \( p^k(i) = j \). Prove that \( \approx \) is an equivalence relation 
+  on \( X \), and that its classes are the cycles of \( p \).
+}
+
+\begin{proofWithHibiscus}
+  Want to show that \( \approx \) satisfies the three properties of an equivalence relation: reflexivity, symmetry, and transitivity.
+
+  \medskip
+    
+  For any \( i \in X \), since \( p \) is a permutation meaning its bijective, \( i \) must belong to some cycle. So, there exists a smallest positive integer \( k \geq 1 \) such that
+  \[ p^k(i) = i. \]
+  By the definition of \( \approx \), we have \( i \approx i \). So, \( \approx \) is reflexive.
+  
+  \medskip
+
+  Suppose \( i \approx j \). Then there exists an integer \( k \geq 1 \) such that
+  \[ p^k(i) = j. \]
+  Since \( p \) is a permutation, it has an inverse \( p^{-1} \). Applying \( p^{-k} \) to both sides, we get
+  \[ i = p^{-k}(j). \]
+  Since this is also a permutation, there exists some positive integer \( m \) such that \( p^m(j) = i \). Thus, \( j \approx i \), showing that \( \approx \) is symmetric.
+  
+  \medskip 
+
+  Suppose \( i \approx j \) and \( j \approx k \). Then there exist positive integers \( m \) and \( n \) such that
+  \[ p^m(i) = j \quad \text{and} \quad p^n(j) = k. \]
+  Now, consider the composition:
+  \[ p^{m+n}(i) = p^n(p^m(i)) = p^n(j) = k. \]
+  Since \( m+n \geq 1 \), it follows that \( i \approx k \). So, \( \approx \) is transitive.
+  
+  \bigskip   
+
+  In cycle notation, the cycle containing an element \( i \) is defined as:
+  \[\{ i,\, p(i),\, p^2(i),\, \ldots,\, p^{k-1}(i) \}, \]
+  where \( k \) is the smallest positive integer such that \( p^k(i) = i \). 
+
+  \bigskip
+  
+  By our definition of \( \approx \), an element \( j \in X \) is related to \( i \) if and only if there exists some \( k \geq 1 \) such that \( p^k(i) = j \). 
+  This is exactly the description of the cycle of \( i \). So, the equivalence 
+  class of \( i \) under \( \approx \) is precisely the set of all elements that 
+  can be reached from \( i \) by some power of \( p \), which corresponds to the 
+  cycle of \( i \).
+    
+\end{proofWithHibiscus}
+
+\section*{3.3 Prob 7}
+\addcontentsline{toc}{section}{3.3 Prob 7}
+
+\qs{}{
+  How many functions \( f: \{1,2, \dots, n\} \to \{1,2, \dots, n\} \) are there 
+  that are \textit{monotonic}; that is, for \( i < j \) we have \( f(i) \leq f(j) \)? 
+  \textit{The textbook has a hint to this problem in the back.}
+}
+
+\begin{proofWithHibiscus}
+  Define a new sequence \( g \) by
+  \[
+  g(i) = f(i) + i - 1, \quad \text{for } i=1,2,\dots,n.
+  \]
+  Since \( f(1)\le f(2)\le \cdots \le f(n) \), it follows that
+  \[
+  g(1) = f(1) \le f(2) + 1 = g(2) \le \cdots \le f(n) + n - 1 = g(n).
+  \]
+  Because we are adding the strictly increasing sequence \( 0,1,2,\dots,n-1 \) to \( f(i) \), the sequence \( g(1), g(2), \dots, g(n) \) becomes strictly increasing:
+  \[
+  g(1) < g(2) < \cdots < g(n).
+  \]
+  
+  \bigskip 
+
+  Since \( f(i) \in \{1,2,\dots,n\} \), we obtain:
+  \begin{itemize}
+      \item For \( i=1 \): \( g(1) = f(1) \ge 1 \).
+      \item For \( i=n \): \( g(n) = f(n) + n - 1 \le n + n - 1 = 2n - 1 \).
+  \end{itemize}
+  
+  Thus, each \( g(i) \) is a distinct element from the set \( \{1, 2, \dots, 2n-1\} \).
+  
+  \bigskip
+  
+  A strictly increasing sequence \( g(1) < g(2) < \cdots < g(n) \) chosen from \( \{1,2,\dots,2n-1\} \) is equivalent to choosing an \( n \)-element subset from a set of \( 2n-1 \) elements. There are
+  \[
+  \binom{2n-1}{n}
+  \]
+  ways to select such a subset.
+    
+  Since the transformation \( f(i) \mapsto g(i) = f(i) + i - 1 \) is a bijection between the set of monotonic functions \( f \) and the set of strictly increasing sequences \( g \), the number of monotonic functions is given by:
+  \[
+  \boxed{\binom{2n-1}{n}}.
+  \]
+\end{proofWithHibiscus}
+
+\section*{3.3 Prob 21}
+\addcontentsline{toc}{section}{3.3 Prob 21}
+
+\qs{}{
+  (optional bonus problem) Draw a triangle \( ABC \). Draw \( n \) points lying on the side \( AB \) (but different from \( A \) and \( B \)) and connect them all by segments to the vertex \( C \). Similarly, draw \( n \) points on the side \( AC \) and connect them to \( B \).
+    
+  \begin{enumerate}
+    \item How many intersections of the drawn segments are there? Into how many regions is the triangle \( ABC \) partitioned by the drawn segments?
+
+    \item Draw \( n \) points on the side \( BC \) and connect them to \( A \). Assume that no 3 of the drawn segments intersect at a single point. How many intersections are there now?
+
+    \item How many regions are there in the situation of (b)?
+  \end{enumerate}
+}
+
+\section*{3.7 Prob 3}
+\addcontentsline{toc}{section}{3.7 Prob 3}
+
+\qs{}{
+  (Sieve of Eratosthenes) How many numbers are left in the set 
+  \(\{1,2,\dots,1000\}\) after all multiples of 2, 3, 5, and 7
+  are crossed out?
+}
+
+\begin{RemarkWithLily}{For Prob 4}
+  DDefine:
+
+  \begin{itemize}
+      \item \(A_2\) as the set of multiples of 2,
+      \item \(A_3\) as the set of multiples of 3,
+      \item \(A_5\) as the set of multiples of 5,
+      \item \(A_7\) as the set of multiples of 7.
+  \end{itemize}
+  
+  We want the size of the complement of \(A_2 \cup A_3 \cup A_5 \cup A_7\)
+  
+  We cound the multiples of \(2,3,5,7 \) in the range of [1,1000].
+
+  \[
+  \begin{aligned}
+  |A_2| &= \left\lfloor \frac{1000}{2} \right\rfloor = 500, \\
+  |A_3| &= \left\lfloor \frac{1000}{3} \right\rfloor = 333, \\
+  |A_5| &= \left\lfloor \frac{1000}{5} \right\rfloor = 200, \\
+  |A_7| &= \left\lfloor \frac{1000}{7} \right\rfloor = 142.
+  \end{aligned}
+  \]
+  
+  count of multiples for pairs using least common multiple:
+  \[
+  \begin{aligned}
+  |A_2 \cap A_3| &= \left\lfloor \frac{1000}{6} \right\rfloor = 166, \\
+  |A_2 \cap A_5| &= \left\lfloor \frac{1000}{10} \right\rfloor = 100, \\
+  |A_2 \cap A_7| &= \left\lfloor \frac{1000}{14} \right\rfloor = 71, \\
+  |A_3 \cap A_5| &= \left\lfloor \frac{1000}{15} \right\rfloor = 66, \\
+  |A_3 \cap A_7| &= \left\lfloor \frac{1000}{21} \right\rfloor = 47, \\
+  |A_5 \cap A_7| &= \left\lfloor \frac{1000}{35} \right\rfloor = 28.
+  \end{aligned}
+  \]
+  
+  Count of multiples for triples
+  \[
+  \begin{aligned}
+  |A_2 \cap A_3 \cap A_5| &= \left\lfloor \frac{1000}{30} \right\rfloor = 33, \\
+  |A_2 \cap A_3 \cap A_7| &= \left\lfloor \frac{1000}{42} \right\rfloor = 23, \\
+  |A_2 \cap A_5 \cap A_7| &= \left\lfloor \frac{1000}{70} \right\rfloor = 14, \\
+  |A_3 \cap A_5 \cap A_7| &= \left\lfloor \frac{1000}{105} \right\rfloor = 9.
+  \end{aligned}
+  \]
+  
+  Count of multiples which all four share 
+  \[
+  |A_2 \cap A_3 \cap A_5 \cap A_7| = \left\lfloor \frac{1000}{210} \right\rfloor = 4.
+  \]
+  
+  Apply the Inclusion-Exclusion Principle
+  
+  The count of numbers divisible by at least one of \(2,3,5,7\) is:
+  
+  \[
+  \begin{aligned}
+  |A_2 \cup A_3 \cup A_5 \cup A_7| &= |A_2|+|A_3|+|A_5|+|A_7| \\
+  &\quad - \Bigl(|A_2 \cap A_3| + |A_2 \cap A_5| + |A_2 \cap A_7| + |A_3 \cap A_5| + |A_3 \cap A_7| + |A_5 \cap A_7|\Bigr)\\
+  &\quad + \Bigl(|A_2 \cap A_3 \cap A_5| + |A_2 \cap A_3 \cap A_7| + |A_2 \cap A_5 \cap A_7| + |A_3 \cap A_5 \cap A_7|\Bigr)\\
+  &\quad - |A_2 \cap A_3 \cap A_5 \cap A_7|.
+  \end{aligned}
+  \]
+  
+  Plugging in values:
+  \[
+  \begin{aligned}
+  |A_2 \cup A_3 \cup A_5 \cup A_7| &= 500 + 333 + 200 + 142 \\
+  &\quad - (166 + 100 + 71 + 66 + 47 + 28) \\
+  &\quad + (33 + 23 + 14 + 9) \\
+  &\quad - 4.
+  \end{aligned}
+  \]
+  
+  Computing 
+  \[
+  \begin{aligned}
+  500+333+200+142 &= 1175, \\
+  166+100+71+66+47+28 &= 478, \\
+  33+23+14+9 &= 79.
+  \end{aligned}
+  \]
+  
+  So,
+  \[
+  |A_2 \cup A_3 \cup A_5 \cup A_7| = 1175 - 478 + 79 - 4.
+  \]
+  
+  Evaluating:
+  \[
+  \begin{aligned}
+  1175 - 478 &= 697, \\
+  697 + 79 &= 776, \\
+  776 - 4 &= 772.
+  \end{aligned}
+  \]
+  
+  The count of numbers \textbf{not} divisible by 2, 3, 5, or 7 is:
+  \[
+  1000 - 772 = 228.
+  \]
+
+\end{RemarkWithLily}
+
+\section*{3.8 Prob 4}
+\addcontentsline{toc}{section}{3.8 Prob 4}
+
+\qs{}{
+  Prove the equation
+    \[
+    D(n) = n! - nD(n-1) - \binom{n}{2} D(n-2) - \dots - \binom{n}{n-1} D(1) - 1.
+    \]
+}
+\end{document}

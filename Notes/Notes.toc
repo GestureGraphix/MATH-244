@@ -15,3 +15,4 @@
 \contentsline {subsection}{\numberline {3.3}Binomial Coefficients and the Binomial Theorem}{8}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Inclusion-Exclusion Principle}{9}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Derangements and the Hat-Check Problem}{10}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}}{10}{subsection.3.6}%
