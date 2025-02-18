@@ -116,42 +116,30 @@
   \textit{The textbook has a hint to this problem in the back.}
 }
 
-\begin{proofWithHibiscus}
-  Define a new sequence \( g \) by
+\begin{proofWithHibiscus} 
+  A monotonic function 
   \[
-  g(i) = f(i) + i - 1, \quad \text{for } i=1,2,\dots,n.
+  f: \{1,2,\dots,n\} \to \{1,2,\dots,n\}
   \]
-  Since \( f(1)\le f(2)\le \cdots \le f(n) \), it follows that
+  satisfies 
   \[
-  g(1) = f(1) \le f(2) + 1 = g(2) \le \cdots \le f(n) + n - 1 = g(n).
+  f(1) \le f(2) \le \cdots \le f(n).
   \]
-  Because we are adding the strictly increasing sequence \( 0,1,2,\dots,n-1 \) to \( f(i) \), the sequence \( g(1), g(2), \dots, g(n) \) becomes strictly increasing:
+  So, the function is completely determined by the non-decreasing sequence 
   \[
-  g(1) < g(2) < \cdots < g(n).
+  (f(1), f(2), \dots, f(n)),
+  \]
+  where each \( f(i) \) is in \(\{1,2,\dots,n\}\).
+  
+  Define \(x_k\) as the number of times the value \(k\) appears in the sequence. Then we have
+  \[
+  x_1 + x_2 + \cdots + x_n = n, \quad \text{with} \quad x_k \geq 0.
+  \]
+  The number of solutions to this equation in nonnegative integers is given by the stars and bars formula:
+  \[
+  \binom{n + n - 1}{n - 1} = \binom{2n-1}{n-1}.
   \]
   
-  \bigskip 
-
-  Since \( f(i) \in \{1,2,\dots,n\} \), we obtain:
-  \begin{itemize}
-      \item For \( i=1 \): \( g(1) = f(1) \ge 1 \).
-      \item For \( i=n \): \( g(n) = f(n) + n - 1 \le n + n - 1 = 2n - 1 \).
-  \end{itemize}
-  
-  Thus, each \( g(i) \) is a distinct element from the set \( \{1, 2, \dots, 2n-1\} \).
-  
-  \bigskip
-  
-  A strictly increasing sequence \( g(1) < g(2) < \cdots < g(n) \) chosen from \( \{1,2,\dots,2n-1\} \) is equivalent to choosing an \( n \)-element subset from a set of \( 2n-1 \) elements. There are
-  \[
-  \binom{2n-1}{n}
-  \]
-  ways to select such a subset.
-    
-  Since the transformation \( f(i) \mapsto g(i) = f(i) + i - 1 \) is a bijection between the set of monotonic functions \( f \) and the set of strictly increasing sequences \( g \), the number of monotonic functions is given by:
-  \[
-  \boxed{\binom{2n-1}{n}}.
-  \]
 \end{proofWithHibiscus}
 
 \section*{3.3 Prob 21}
@@ -193,34 +181,30 @@
   We cound the multiples of \(2,3,5,7 \) in the range of [1,1000].
 
   \[
-  \begin{aligned}
-  |A_2| &= \left\lfloor \frac{1000}{2} \right\rfloor = 500, \\
-  |A_3| &= \left\lfloor \frac{1000}{3} \right\rfloor = 333, \\
-  |A_5| &= \left\lfloor \frac{1000}{5} \right\rfloor = 200, \\
-  |A_7| &= \left\lfloor \frac{1000}{7} \right\rfloor = 142.
-  \end{aligned}
+  |A_2| = \left\lfloor \frac{1000}{2} \right\rfloor = 500, \quad 
+  |A_3| = \left\lfloor \frac{1000}{3} \right\rfloor = 333, \quad 
+  |A_5| = \left\lfloor \frac{1000}{5} \right\rfloor = 200, \quad 
+  |A_7| = \left\lfloor \frac{1000}{7} \right\rfloor = 142.
   \]
   
   count of multiples for pairs using least common multiple:
   \[
-  \begin{aligned}
-  |A_2 \cap A_3| &= \left\lfloor \frac{1000}{6} \right\rfloor = 166, \\
-  |A_2 \cap A_5| &= \left\lfloor \frac{1000}{10} \right\rfloor = 100, \\
-  |A_2 \cap A_7| &= \left\lfloor \frac{1000}{14} \right\rfloor = 71, \\
-  |A_3 \cap A_5| &= \left\lfloor \frac{1000}{15} \right\rfloor = 66, \\
-  |A_3 \cap A_7| &= \left\lfloor \frac{1000}{21} \right\rfloor = 47, \\
-  |A_5 \cap A_7| &= \left\lfloor \frac{1000}{35} \right\rfloor = 28.
-  \end{aligned}
+  |A_2 \cap A_3| = \left\lfloor \frac{1000}{6} \right\rfloor = 166, \quad
+  |A_2 \cap A_5| = \left\lfloor \frac{1000}{10} \right\rfloor = 100, \quad
+  |A_2 \cap A_7| = \left\lfloor \frac{1000}{14} \right\rfloor = 71, \] 
+  \[ 
+  |A_3 \cap A_5| = \left\lfloor \frac{1000}{15} \right\rfloor = 66, \quad
+  |A_3 \cap A_7| = \left\lfloor \frac{1000}{21} \right\rfloor = 47, \quad
+  |A_5 \cap A_7| = \left\lfloor \frac{1000}{35} \right\rfloor = 28.
   \]
   
   Count of multiples for triples
   \[
-  \begin{aligned}
-  |A_2 \cap A_3 \cap A_5| &= \left\lfloor \frac{1000}{30} \right\rfloor = 33, \\
-  |A_2 \cap A_3 \cap A_7| &= \left\lfloor \frac{1000}{42} \right\rfloor = 23, \\
-  |A_2 \cap A_5 \cap A_7| &= \left\lfloor \frac{1000}{70} \right\rfloor = 14, \\
-  |A_3 \cap A_5 \cap A_7| &= \left\lfloor \frac{1000}{105} \right\rfloor = 9.
-  \end{aligned}
+  |A_2 \cap A_3 \cap A_5| = \left\lfloor \frac{1000}{30} \right\rfloor = 33, \quad
+  |A_2 \cap A_3 \cap A_7| = \left\lfloor \frac{1000}{42} \right\rfloor = 23, \] 
+  \[ 
+  |A_2 \cap A_5 \cap A_7| = \left\lfloor \frac{1000}{70} \right\rfloor = 14, \quad
+  |A_3 \cap A_5 \cap A_7| = \left\lfloor \frac{1000}{105} \right\rfloor = 9.
   \]
   
   Count of multiples which all four share 

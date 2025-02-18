@@ -3,5 +3,5 @@
 \contentsline {section}{3.3 Prob 7}{3}{section*.4}%
 \contentsline {section}{3.3 Prob 21}{4}{section*.5}%
 \contentsline {section}{3.7 Prob 3}{4}{section*.6}%
-\contentsline {section}{3.8 Prob 4}{6}{section*.7}%
+\contentsline {section}{3.8 Prob 4}{5}{section*.7}%
 \contentsfinish 
