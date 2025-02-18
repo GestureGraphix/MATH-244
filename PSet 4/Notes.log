@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/TeX Live for SUSE Linux) (preloaded format=pdflatex 2025.1.17)  16 FEB 2025 23:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/TeX Live for SUSE Linux) (preloaded format=pdflatex 2025.1.17)  17 FEB 2025 21:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1198,6 +1198,10 @@ File: lily.png Graphic file (type png)
 <use lily.png>
 Package pdftex.def Info: lily.png  used on input line 282.
 (pdftex.def)             Requested size: 36.98866pt x 36.02458pt.
+File: hibiscus.png Graphic file (type png)
+<use hibiscus.png>
+Package pdftex.def Info: hibiscus.png  used on input line 336.
+(pdftex.def)             Requested size: 25.6073pt x 26.2939pt.
  [6 </home/alex/Documents/MATH 244/PSet 4/lily.png>] (/home/alex/Documents/MATH 244/PSet 4/Notes.aux)
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1208,15 +1212,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 45180 strings out of 478994
- 1016888 string characters out of 5867238
+ 45183 strings out of 478994
+ 1016919 string characters out of 5867238
  1595210 words of memory out of 5000000
- 61814 multiletter control sequences out of 15000+600000
- 432146 words of font info for 109 fonts, out of 8000000 for 9000
+ 61815 multiletter control sequences out of 15000+600000
+ 432740 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  107i,12n,110p,784b,1387s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texmf/fonts/type1/public/newpx/pxsys.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/newtx/txexs.pfb>
-Output written on "/home/alex/Documents/MATH 244/PSet 4/Notes.pdf" (7 pages, 19744725 bytes).
+Output written on "/home/alex/Documents/MATH 244/PSet 4/Notes.pdf" (7 pages, 19747918 bytes).
 PDF statistics:
  196 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams

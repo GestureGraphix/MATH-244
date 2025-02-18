@@ -290,4 +290,49 @@
     D(n) = n! - nD(n-1) - \binom{n}{2} D(n-2) - \dots - \binom{n}{n-1} D(1) - 1.
     \]
 }
+
+\begin{proofWithHibiscus}
+  Suppose a permutation of \(\{1,2,\dots,n\}\) has exactly \(i\) fixed points. 
+  There are \(\binom{n}{i}\) ways to choose these fixed points. 
+  The remaining \(n-i\) elements must form a derangement, which can be done in \(D(n-i)\) ways.
+
+  \medskip 
+
+  Therefore, the total number of permutations of \(n\) elements can be written as
+  \[
+  \sum_{i=0}^{n} \binom{n}{i} D(n-i) = n!.
+  \]
+  
+  \bigskip
+
+  Let \(j=n-i\). Then as \(i\) runs from 0 to \(n\), so does \(j\). Since the binomial coefficient is symmetric
+  \[
+  \sum_{j=0}^{n} \binom{n}{j} D(j) = n!.
+  \]
+  
+  Expanding
+  \[
+  \binom{n}{0}D(0)+\binom{n}{1}D(1)+\cdots+\binom{n}{n-1}D(n-1)+\binom{n}{n}D(n) = n!.
+  \]
+  
+  Since \(\binom{n}{0} = 1\) and \(\binom{n}{n} = 1\), and \(D(0)=1\), we have:
+  \[
+  1 \cdot 1 + \binom{n}{1}D(1)+\cdots+\binom{n}{n-1}D(n-1) + 1 \cdot D(n) = n!.
+  \]
+  
+  \bigskip
+  
+  Solve for \(D(n)\) by subtractracting the contributions of \(D(0), D(1), \dots, D(n-1)\) from both sides:
+  \[
+  D(n) = n! - \left[\binom{n}{1}D(1)+\binom{n}{2}D(2)+\cdots+\binom{n}{n-1}D(n-1)+ \binom{n}{0}D(0)\right].
+  \]
+  
+  Since \(\binom{n}{0}D(0)=1\)
+  \[
+  D(n) = n! - \binom{n}{1}D(n-1) - \binom{n}{2}D(n-2) - \dots - \binom{n}{n-1}D(1) - 1.
+  \]
+  
+  
+\end{proofWithHibiscus}
+
 \end{document}
