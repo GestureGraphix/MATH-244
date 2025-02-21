@@ -2,6 +2,8 @@
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning, shapes, arrows.meta, calc, patterns}
 
 % Theorem environments
 \newtheorem{theorem}{Theorem}[section]
@@ -14,7 +16,7 @@
 
 \begin{document}
 
-\title{Discrete Mathematics: In-Depth Topics and Advanced Formulas}
+\title{Discrete Mathematics: Conceptual Insights and Advanced Formulas}
 \author{}
 \date{\today}
 \maketitle
@@ -22,108 +24,200 @@
 \tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction and Basic Concepts}
+\section{Introduction and Fundamental Concepts}
+
+Discrete mathematics forms the backbone of computer science, cryptography, and combinatorial optimization. Its language—sets, functions, relations, and counting—is essential for structuring rigorous arguments and designing algorithms. In these notes, we present definitions and theorems while discussing the ideas behind them and illustrating concepts with diagrams.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Numbers and Sets: Notation}
+\subsection{Numbers and Sets: Notation and Concepts}
 
-A clear understanding of sets and number systems is fundamental to discrete mathematics. In this section we introduce standard notations and some useful identities.
+Understanding number systems and set theory is critical because they provide the basic vocabulary for nearly every mathematical discussion.
 
 \begin{definition}[Common Number Sets]
-  
   \begin{itemize}[itemsep=3pt]
-    \item \(\mathbb{N}\): the set of \emph{natural numbers}. (Note: some authors define \(\mathbb{N} = \{0,1,2,\dots\}\), while others use \(\{1,2,\dots\}\).)
-    \item \(\mathbb{Z}\): the set of \emph{integers} \( \{ \dots, -2, -1, 0, 1, 2, \dots \}\).
+    \item \(\mathbb{N}\): the set of \emph{natural numbers}. (Note: Some define \(\mathbb{N}=\{0,1,2,\dots\}\), others \(\{1,2,\dots\}\).)
+    \item \(\mathbb{Z}\): the set of \emph{integers}: \(\{ \dots, -2, -1, 0, 1, 2, \dots \}\).
     \item \(\mathbb{Q}\): the set of \emph{rational numbers}.
     \item \(\mathbb{R}\): the set of \emph{real numbers}.
     \item \(\mathbb{C}\): the set of \emph{complex numbers}.
   \end{itemize}
+  \vspace{0.5em}
+  \textbf{Why It Matters:} Each number set expands the types of problems you can solve. For example, \(\mathbb{N}\) underpins counting, while \(\mathbb{R}\) allows us to model continuous change.
 \end{definition}
 
+% Diagram: Nested number sets
+\begin{center}
+\begin{tikzpicture}[node distance=1.8cm, auto]
+  \node[draw, rectangle, rounded corners, fill=blue!20] (N) {\(\mathbb{N}\)};
+  \node[draw, rectangle, rounded corners, fill=green!20, right=of N] (Z) {\(\mathbb{Z}\)};
+  \node[draw, rectangle, rounded corners, fill=yellow!20, right=of Z] (Q) {\(\mathbb{Q}\)};
+  \node[draw, rectangle, rounded corners, fill=orange!20, right=of Q] (R) {\(\mathbb{R}\)};
+  \node[draw, rectangle, rounded corners, fill=red!20, right=of R] (C) {\(\mathbb{C}\)};
+  \draw[->, thick] (N) -- (Z);
+  \draw[->, thick] (Z) -- (Q);
+  \draw[->, thick] (Q) -- (R);
+  \draw[->, thick] (R) -- (C);
+\end{tikzpicture}
+\end{center}
+
 \begin{definition}[Basic Set Notation]
-  A \emph{set} is a collection of distinct objects (called \emph{elements}). Common notations include:
+  A \emph{set} is a collection of distinct objects. We denote a set as
   \[
   A = \{ a, b, c, \dots \},
   \]
-  with \(a \in A\) meaning \(a\) is an element of \(A\). Other important notations are:
+  and write \(a \in A\) if \(a\) is an element of \(A\). Important notations include:
   \begin{itemize}[itemsep=3pt]
-    \item \(|A|\): the \emph{cardinality} of \(A\) (number of elements).
+    \item \(|A|\): the \emph{cardinality} (number of elements in \(A\)).
     \item \(A \subseteq B\): \(A\) is a \emph{subset} of \(B\).
     \item \(A \cup B\): the \emph{union} of \(A\) and \(B\).
     \item \(A \cap B\): the \emph{intersection} of \(A\) and \(B\).
-    \item \(A \setminus B\): the \emph{set difference} (elements in \(A\) but not in \(B\)).
-    \item \(A^c\) or \(\overline{A}\): the \emph{complement} of \(A\) (with respect to a universal set \(U\)).
-    \item \(\mathcal{P}(A)\): the \emph{power set} of \(A\), which has \(|\mathcal{P}(A)| = 2^{|A|}\) when \(A\) is finite.
+    \item \(A \setminus B\): the \emph{set difference}.
+    \item \(A^c\) or \(\overline{A}\): the \emph{complement} of \(A\) (relative to a universal set \(U\)).
+    \item \(\mathcal{P}(A)\): the \emph{power set} of \(A\), with \(|\mathcal{P}(A)| = 2^{|A|}\) when \(A\) is finite.
   \end{itemize}
+  \vspace{0.5em}
+  \textbf{Why It Matters:} Mastering set operations is essential for formal proofs, algorithm design, and understanding data structures.
 \end{definition}
 
+% Diagram: Venn diagram for union, intersection, and complement
+\begin{center}
+\begin{tikzpicture}
+  % Draw two overlapping circles
+  \draw[fill=blue!20, fill opacity=0.5] (0,0) circle (1.5);
+  \draw[fill=red!20, fill opacity=0.5] (2,0) circle (1.5);
+  % Label the sets
+  \node at (-0.8,1) {\(A\)};
+  \node at (2.8,1) {\(B\)};
+  \node at (1,0) {\(A\cap B\)};
+\end{tikzpicture}
+\end{center}
+
 \begin{lemma}[De Morgan's Laws]
-  For any two sets \(A\) and \(B\) (with respect to a universal set \(U\)), we have:
+  For any two sets \(A\) and \(B\) (with respect to a universal set \(U\)):
   \[
   (A \cup B)^c = A^c \cap B^c \quad \text{and} \quad (A \cap B)^c = A^c \cup B^c.
   \]
+  \vspace{0.5em}
+  \textbf{Conceptual Insight:} These laws show the duality between union and intersection under complementation.
 \end{lemma}
-\begin{proof}
-  The proof follows directly from the definitions of union, intersection, and complement.
-\end{proof}
+
+% Diagram: Venn diagram illustrating De Morgan's Laws
+\begin{center}
+\begin{tikzpicture}
+  % Universal set
+  \draw[fill=gray!10] (-2,-2) rectangle (4,2);
+  \node at (4.2,1.8) {Universal set \(U\)};
+  % Circles for A and B
+  \draw[fill=blue!20, fill opacity=0.5] (0,0) circle (1.2) node[pos=0.5] {\(A\)};
+  \draw[fill=red!20, fill opacity=0.5] (1.8,0) circle (1.2) node[pos=0.5] {\(B\)};
+  % Shade (A U B)^c
+  \begin{scope}
+    \clip (-2,-2) rectangle (4,2);
+    \fill[pattern=north west lines, pattern color=black!50] (-2,-2) rectangle (4,2);
+    \clip (0,0) circle (1.2);
+    \clip (1.8,0) circle (1.2);
+  \end{scope}
+  \node at (1,-1.5) {\((A\cup B)^c\)};
+\end{tikzpicture}
+\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mathematical Induction and Other Proof Techniques}
 
-Induction is a key tool for proving statements about natural numbers. In addition to standard induction, strong (complete) induction is also widely used.
+Mathematical induction is like a row of dominos: if the first falls (the base case) and every domino knocks over the next (the inductive step), then the entire row falls (the statement holds for all natural numbers).
 
 \begin{theorem}[Principle of Mathematical Induction]
-  Let \(P(n)\) be a proposition about \(n \in \mathbb{N}\). If
+  Let \(P(n)\) be a proposition about \(n \in \mathbb{N}\). If:
   \begin{enumerate}[label=(\roman*)]
     \item \textbf{Base Case:} \(P(1)\) is true.
-    \item \textbf{Inductive Step:} For all \(k \in \mathbb{N}\), \(P(k)\) true implies \(P(k+1)\) is true.
+    \item \textbf{Inductive Step:} For every \(k \in \mathbb{N}\), \(P(k)\) true implies \(P(k+1)\) is true.
   \end{enumerate}
   Then \(P(n)\) is true for all \(n \in \mathbb{N}\).
+  \vspace{0.5em}
+  \textbf{Why It Matters:} Induction is essential for proving infinite families of statements—a technique central to algorithm correctness and number theory.
 \end{theorem}
 
+% Diagram: Flowchart of induction
+\begin{center}
+\begin{tikzpicture}[node distance=2cm, auto, every node/.style={draw, rectangle, rounded corners, fill=blue!10}]
+  \node (base) {Base Case: \(P(1)\) true};
+  \node (inductive) [below of=base] {Inductive Step: \(P(k) \Rightarrow P(k+1)\)};
+  \node (conclusion) [below of=inductive] {Conclusion: \(P(n)\) true for all \(n\)};
+  \draw[->, thick] (base) -- (inductive);
+  \draw[->, thick] (inductive) -- (conclusion);
+\end{tikzpicture}
+\end{center}
+
 \begin{theorem}[Principle of Strong Induction]
-  Let \(P(n)\) be a proposition about \(n \in \mathbb{N}\). If
+  Let \(P(n)\) be a proposition about \(n \in \mathbb{N}\). If:
   \begin{enumerate}[label=(\roman*)]
     \item \textbf{Base Case:} \(P(1)\) is true.
     \item \textbf{Inductive Step:} For all \(n \ge 1\), if \(P(1), P(2), \dots, P(n)\) are true, then \(P(n+1)\) is true.
   \end{enumerate}
   Then \(P(n)\) is true for all \(n \in \mathbb{N}\).
+  \vspace{0.5em}
+  \textbf{Conceptual Note:} Strong induction is particularly useful when \(P(n+1)\) depends on several previous cases.
 \end{theorem}
 
 \begin{example}[Prime Factorization]
   \textbf{Statement:} Every integer \(n > 1\) can be written as a product of primes.
-
+  
   \textbf{Proof (by strong induction):}
   \begin{itemize}[itemsep=3pt]
     \item \emph{Base Case:} \(n = 2\) is prime.
-    \item \emph{Inductive Step:} Assume every integer \(2 \le k \le n\) has a prime factorization. For \(n+1\): if it is prime, the claim holds; if not, write \(n+1 = ab\) with \(2 \le a,b \le n\). By induction, both \(a\) and \(b\) have prime factorizations, so \(n+1\) does as well.
+    \item \emph{Inductive Step:} Assume every integer \(2 \le k \le n\) can be factored into primes. For \(n+1\): if it is prime, we are done; if composite, write \(n+1 = ab\) with \(2 \le a,b \le n\). Then, by the induction hypothesis, both \(a\) and \(b\) have prime factorizations, so \(n+1\) does as well.
   \end{itemize}
+  \vspace{0.5em}
+  \textbf{Why It Matters:} This proof underpins the Fundamental Theorem of Arithmetic.
 \end{example}
-
-Other common proof methods include \emph{proof by contradiction} and \emph{proof by contrapositive}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Functions}
 
-Functions are mappings between sets that play a central role in mathematics.
+Functions formalize the idea of a rule mapping inputs to outputs, which is vital in modeling processes and computer algorithms.
 
 \begin{definition}[Function]
-  A \emph{function} \(f\) from a set \(A\) to a set \(B\), written \(f: A \to B\), is a rule that assigns each \(a \in A\) a unique element \(f(a) \in B\). Here:
+  A \emph{function} \(f\) from a set \(A\) to a set \(B\), written \(f: A \to B\), assigns each \(a \in A\) a unique element \(f(a) \in B\). Here:
   \begin{itemize}[itemsep=3pt]
     \item \(A\) is the \emph{domain}.
     \item \(B\) is the \emph{codomain}.
     \item The \emph{image} of \(f\) is \(\{ f(a) \mid a \in A \}\).
   \end{itemize}
+  \vspace{0.5em}
+  \textbf{Why It Matters:} Functions are central to describing processes and are the building blocks of mathematical modeling.
 \end{definition}
+
+% Diagram: Mapping from A to B
+\begin{center}
+\begin{tikzpicture}[node distance=2.5cm, auto]
+  \node[draw, rectangle, fill=green!20] (A) {\(A\)};
+  \node[draw, rectangle, fill=orange!20] (B) [right of=A] {\(B\)};
+  \draw[->, thick] (A) -- node[midway, above] {\(f\)} (B);
+\end{tikzpicture}
+\end{center}
 
 \begin{definition}[Types of Functions]
   A function \(f: A \to B\) is:
   \begin{itemize}[itemsep=3pt]
-    \item \textbf{Injective (one-to-one)} if \(f(a_1)=f(a_2)\) implies \(a_1 = a_2\).
-    \item \textbf{Surjective (onto)} if for every \(b \in B\) there is an \(a \in A\) with \(f(a)=b\).
-    \item \textbf{Bijective} if it is both injective and surjective.
+    \item \textbf{Injective (one-to-one)}: \(f(a_1)=f(a_2)\) implies \(a_1 = a_2\).
+    \item \textbf{Surjective (onto)}: For every \(b \in B\), there exists \(a \in A\) such that \(f(a)=b\).
+    \item \textbf{Bijective}: Both injective and surjective.
   \end{itemize}
+  \vspace{0.5em}
+  \textbf{Conceptual Insight:} Recognizing function types helps determine invertibility and structure in algorithms.
 \end{definition}
+
+% Diagram: Composition of functions (A -> B -> C)
+\begin{center}
+\begin{tikzpicture}[node distance=2.5cm, auto]
+  \node[draw, rectangle, fill=green!20] (A) {\(A\)};
+  \node[draw, rectangle, fill=orange!20] (B) [right of=A] {\(B\)};
+  \node[draw, rectangle, fill=purple!20] (C) [right of=B] {\(C\)};
+  \draw[->, thick] (A) -- node[midway, above] {\(f\)} (B);
+  \draw[->, thick] (B) -- node[midway, above] {\(g\)} (C);
+  \node at ($(A)!0.5!(C)$) [above=1cm] {\(g \circ f: A \to C\)};
+\end{tikzpicture}
+\end{center}
 
 \begin{lemma}[Composition of Functions]
   Let \(f: A \to B\) and \(g: B \to C\). Then the composition \(g \circ f: A \to C\) defined by
@@ -136,12 +230,14 @@ Functions are mappings between sets that play a central role in mathematics.
     \item If \(f\) and \(g\) are surjective, then \(g \circ f\) is surjective.
     \item If \(f\) and \(g\) are bijective, then \(g \circ f\) is bijective with inverse \((g \circ f)^{-1} = f^{-1} \circ g^{-1}\).
   \end{itemize}
+  \vspace{0.5em}
+  \textbf{Why It Matters:} Composing functions is analogous to chaining processes—a key idea in building complex algorithms from simple modules.
 \end{lemma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Relations}
 
-Relations generalize the idea of functions and allow us to discuss various types of associations between elements.
+Relations generalize functions and describe various associations between elements, which are essential in structuring data and logical statements.
 
 \begin{definition}[Relation]
   A \emph{relation} \(R\) on a set \(A\) is a subset of the Cartesian product \(A \times A\):
@@ -154,44 +250,68 @@ Relations generalize the idea of functions and allow us to discuss various types
 \begin{definition}[Properties of Relations]
   Let \(R\) be a relation on \(A\). Then:
   \begin{itemize}[itemsep=3pt]
-    \item \(R\) is \emph{reflexive} if for every \(a \in A\), \(a\,R\,a\).
+    \item \(R\) is \emph{reflexive} if \(a\,R\,a\) for every \(a \in A\).
     \item \(R\) is \emph{symmetric} if \(a\,R\,b\) implies \(b\,R\,a\) for all \(a,b \in A\).
-    \item \(R\) is \emph{antisymmetric} if \(a\,R\,b\) and \(b\,R\,a\) imply \(a=b\).
+    \item \(R\) is \emph{antisymmetric} if \(a\,R\,b\) and \(b\,R\,a\) imply \(a = b\).
     \item \(R\) is \emph{transitive} if \(a\,R\,b\) and \(b\,R\,c\) imply \(a\,R\,c\) for all \(a,b,c \in A\).
   \end{itemize}
+  \vspace{0.5em}
+  \textbf{Why It Matters:} These properties help classify relations (like orders or equivalence relations) that are central to database theory and logic.
 \end{definition}
 
-\begin{example}
-  The relation \( \leq \) on \(\mathbb{R}\) is reflexive, antisymmetric, and transitive.
-\end{example}
+% Diagram: Directed graph showing a symmetric relation
+\begin{center}
+\begin{tikzpicture}[node distance=1.8cm, auto]
+  \node[draw, circle, fill=yellow!20] (a) {\(a\)};
+  \node[draw, circle, fill=yellow!20] (b) [right of=a] {\(b\)};
+  \node[draw, circle, fill=yellow!20] (c) [below of=a] {\(c\)};
+  \draw[->, thick] (a) -- (b);
+  \draw[->, thick] (b) -- (a);
+  \draw[->, thick] (a) -- (c);
+  \draw[->, thick] (c) -- (a);
+\end{tikzpicture}
+\end{center}
 
 \begin{lemma}[Composition of Relations]
-  If \(R\) and \(S\) are relations on a set \(A\), their composition is defined as:
+  If \(R\) and \(S\) are relations on \(A\), their composition is:
   \[
   R \circ S = \{ (a,c) \in A \times A \mid \exists\, b \in A \text{ with } (a,b) \in S \text{ and } (b,c) \in R \}.
   \]
-  (Note: even if \(R\) and \(S\) are transitive, \(R \circ S\) need not be transitive; one may consider the \emph{transitive closure} of a relation.)
+  \vspace{0.5em}
+  \textbf{Conceptual Note:} Composing relations is analogous to linking steps in a process, useful in graph theory and state-transition analysis.
 \end{lemma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Equivalence Relations and Partitions}
 
+Equivalence relations group elements into classes based on a shared property, simplifying analysis by reducing redundancy.
+
 \begin{definition}[Equivalence Relation]
   A relation \(R\) on a set \(A\) is an \emph{equivalence relation} if it is reflexive, symmetric, and transitive.
+  \vspace{0.5em}
+  \textbf{Why It Matters:} Equivalence relations partition a set into disjoint equivalence classes—a key concept in modular arithmetic and classification problems.
 \end{definition}
 
-\begin{lemma}[Equivalence Relations and Partitions]
-  Every equivalence relation on \(A\) partitions \(A\) into disjoint subsets (equivalence classes), where each element of \(A\) belongs to exactly one equivalence class. Conversely, any partition of \(A\) defines an equivalence relation by declaring two elements equivalent if they lie in the same subset.
-\end{lemma}
-
-\begin{example}
-  Define a relation \(R\) on \(\mathbb{Z}\) by \(a\,R\,b\) if and only if \(a \equiv b \pmod{n}\) (for some fixed \(n\in\mathbb{N}\)). Then \(R\) is an equivalence relation, and its equivalence classes are the congruence classes modulo \(n\).
-\end{example}
+% Diagram: Partitioning a set into equivalence classes
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm, auto]
+  \node[draw, circle, fill=green!20] (a1) {\(a\)};
+  \node[draw, circle, fill=green!20] (a2) [right=of a1] {\(b\)};
+  \node[draw, circle, fill=green!20] (a3) [right=of a2] {\(c\)};
+  \node[draw, circle, fill=blue!20] (b1) [below=of a1] {\(d\)};
+  \node[draw, circle, fill=blue!20] (b2) [right=of b1] {\(e\)};
+  \node[draw, circle, fill=blue!20] (b3) [right=of b2] {\(f\)};
+  \draw[dashed, rounded corners] ($(a1.north west)+(-0.2,0.2)$) rectangle ($(a3.south east)+(0.2,-0.2)$);
+  \draw[dashed, rounded corners] ($(b1.north west)+(-0.2,0.2)$) rectangle ($(b3.south east)+(0.2,-0.2)$);
+  \node at ($(a1)!0.5!(a3)$) [above] {Equivalence Class 1};
+  \node at ($(b1)!0.5!(b3)$) [below] {Equivalence Class 2};
+\end{tikzpicture}
+\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ordering and Posets}
 
-Ordering relations allow us to compare elements in a set. This section discusses partial orders, total orders, lattices, and related results.
+Ordering is about comparing elements. The structure of orders and partially ordered sets (posets) is central in optimization and scheduling.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Partial Orders and Hasse Diagrams}
@@ -199,46 +319,93 @@ Ordering relations allow us to compare elements in a set. This section discusses
 \begin{definition}[Partial Order]
   A relation \(\preceq\) on a set \(P\) is a \emph{partial order} if it is:
   \begin{itemize}[itemsep=3pt]
-    \item \textbf{Reflexive}: For all \(a \in P\), \(a \preceq a\).
-    \item \textbf{Antisymmetric}: For all \(a,b \in P\), if \(a \preceq b\) and \(b \preceq a\), then \(a = b\).
-    \item \textbf{Transitive}: For all \(a,b,c \in P\), if \(a \preceq b\) and \(b \preceq c\), then \(a \preceq c\).
+    \item \textbf{Reflexive}: \(a \preceq a\) for every \(a \in P\).
+    \item \textbf{Antisymmetric}: \(a \preceq b\) and \(b \preceq a\) imply \(a = b\).
+    \item \textbf{Transitive}: \(a \preceq b\) and \(b \preceq c\) imply \(a \preceq c\).
   \end{itemize}
 \end{definition}
 
 \begin{definition}[Hasse Diagram]
-  A \emph{Hasse diagram} is a drawing of a finite poset that shows the ordering without including the edges for reflexivity and transitivity. If \(a \prec b\) (i.e., \(a \preceq b\) and \(a \neq b\)), then \(b\) is drawn above \(a\).
+  A \emph{Hasse diagram} is a simplified drawing of a finite poset that omits edges implied by reflexivity and transitivity. If \(a \prec b\) (i.e., \(a \preceq b\) and \(a \neq b\)), then \(b\) is drawn above \(a\).
+  \vspace{0.5em}
+  \textbf{Why It Matters:} Hasse diagrams provide an intuitive visualization of a poset's structure.
 \end{definition}
 
+% Diagram: Hasse diagram for the power set of {1,2}
+\begin{center}
+\begin{tikzpicture}[node distance=1.2cm, auto]
+  \node[draw, rectangle, rounded corners, fill=yellow!20] (top) {\(\{1,2\}\)};
+  \node[draw, rectangle, rounded corners, fill=green!20] (left) [below left=of top] {\(\{1\}\)};
+  \node[draw, rectangle, rounded corners, fill=green!20] (right) [below right=of top] {\(\{2\}\)};
+  \node[draw, rectangle, rounded corners, fill=blue!20] (bottom) [below=of left, xshift=1cm] {\(\varnothing\)};
+  \draw (top) -- (left);
+  \draw (top) -- (right);
+  \draw (left) -- (bottom);
+  \draw (right) -- (bottom);
+\end{tikzpicture}
+\end{center}
+
 \begin{lemma}
-  Every finite, nonempty poset has at least one \emph{minimal} element (an element with no smaller element) and at least one \emph{maximal} element.
+  Every finite, nonempty poset has at least one \emph{minimal} element and at least one \emph{maximal} element.
 \end{lemma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Total Orders and Chains}
 
 \begin{definition}[Total (or Linear) Order]
-  A partial order \(\preceq\) on a set \(P\) is a \emph{total order} if for any \(a, b \in P\), either \(a \preceq b\) or \(b \preceq a\); that is, every pair of elements is \emph{comparable}.
+  A partial order \(\preceq\) on a set \(P\) is a \emph{total order} if for any \(a, b \in P\), either \(a \preceq b\) or \(b \preceq a\).
+  \vspace{0.5em}
+  \textbf{Why It Matters:} Total orders are used in sorting and scheduling algorithms, as every pair of elements can be compared.
 \end{definition}
 
-\begin{example}
-  The usual order \(\leq\) on \(\mathbb{R}\) is a total order. In contrast, the subset relation \(\subseteq\) on the power set \(\mathcal{P}(S)\) is only a partial order.
-\end{example}
+% Diagram: A chain (total order) illustrated as a straight line
+\begin{center}
+\begin{tikzpicture}[node distance=1.8cm, auto]
+  \node[draw, circle, fill=blue!20] (1) {\(1\)};
+  \node[draw, circle, fill=blue!20] (2) [right of=1] {\(2\)};
+  \node[draw, circle, fill=blue!20] (3) [right of=2] {\(3\)};
+  \node[draw, circle, fill=blue!20] (4) [right of=3] {\(4\)};
+  \draw[->, thick] (1) -- (2);
+  \draw[->, thick] (2) -- (3);
+  \draw[->, thick] (3) -- (4);
+\end{tikzpicture}
+\end{center}
 
-A \emph{chain} in a poset is a subset in which every two elements are comparable, while an \emph{antichain} is a subset in which no two distinct elements are comparable.
+A \emph{chain} in a poset is a subset where every two elements are comparable, while an \emph{antichain} is a subset where no two distinct elements are comparable.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Lattices and Boolean Algebras}
 
 \begin{definition}[Lattice]
-  A poset \((L, \preceq)\) is called a \emph{lattice} if every pair \(a,b \in L\) has a unique \emph{least upper bound} (join, \(a \vee b\)) and a unique \emph{greatest lower bound} (meet, \(a \wedge b\)).
+  A poset \((L, \preceq)\) is a \emph{lattice} if every pair \(a,b \in L\) has:
+  \begin{itemize}[itemsep=3pt]
+    \item A unique \emph{least upper bound} (join, \(a \vee b\)).
+    \item A unique \emph{greatest lower bound} (meet, \(a \wedge b\)).
+  \end{itemize}
+  \vspace{0.5em}
+  \textbf{Conceptual Insight:} Lattices structure elements in a way that mirrors logical operations, forming the foundation of Boolean algebra.
 \end{definition}
 
 \begin{example}
-  The power set \(\mathcal{P}(S)\) of any set \(S\), ordered by \(\subseteq\), forms a lattice where
+  The power set \(\mathcal{P}(S)\) of any set \(S\), ordered by \(\subseteq\), forms a lattice where:
   \[
   a \vee b = a \cup b \quad \text{and} \quad a \wedge b = a \cap b.
   \]
 \end{example}
+
+% Diagram: Lattice diagram (another view of the power set of \{1,2\})
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm, auto]
+  \node[draw, rectangle, rounded corners, fill=red!20] (top) {\(\{1,2\}\)};
+  \node[draw, rectangle, rounded corners, fill=green!20] (left) [below left=of top] {\(\{1\}\)};
+  \node[draw, rectangle, rounded corners, fill=green!20] (right) [below right=of top] {\(\{2\}\)};
+  \node[draw, rectangle, rounded corners, fill=blue!20] (bottom) [below=of left, xshift=1cm] {\(\varnothing\)};
+  \draw (top) -- (left);
+  \draw (top) -- (right);
+  \draw (left) -- (bottom);
+  \draw (right) -- (bottom);
+\end{tikzpicture}
+\end{center}
 
 \begin{lemma}[Distributive Law in Lattices]
   A lattice \(L\) is \emph{distributive} if for all \(a,b,c \in L\):
@@ -249,28 +416,31 @@ A \emph{chain} in a poset is a subset in which every two elements are comparable
   \[
   a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c).
   \]
-  The lattice \(\mathcal{P}(S)\) is distributive.
+  \vspace{0.5em}
+  \textbf{Why It Matters:} Distributivity simplifies computations and underpins Boolean logic.
 \end{lemma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Dilworth's Theorem and Related Results}
 
-A major topic in the study of posets is the interplay between chains and antichains.
+Dilworth's Theorem and the Erd\H{o}s--Szekeres Theorem capture deep combinatorial properties, showing that large posets necessarily contain either a long chain or a large antichain.
 
 \begin{theorem}[Dilworth's Theorem]
   In any finite poset, the size of the largest antichain equals the minimum number of chains needed to cover the poset.
+  \vspace{0.5em}
+  \textbf{Why It Matters:} This theorem is a powerful tool in combinatorics with applications in scheduling and resource allocation.
 \end{theorem}
 
 \begin{theorem}[Erd\H{o}s--Szekeres Theorem]
   Any sequence of \(n^2+1\) distinct real numbers contains a monotonic (increasing or decreasing) subsequence of length \(n+1\).
+  \vspace{0.5em}
+  \textbf{Conceptual Insight:} This result shows that order must emerge in any sufficiently large dataset, an idea that resonates in Ramsey theory.
 \end{theorem}
-
-These results capture the idea that in a sufficiently large poset, one finds either a long chain (``tall'') or a large antichain (``wide'').
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Combinatorial Counting}
 
-Counting techniques are at the heart of discrete mathematics. This section covers functions, permutations, binomial coefficients, and more.
+Counting techniques are central to discrete mathematics. They allow us to enumerate possibilities, calculate probabilities, and analyze algorithms.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Counting Functions and Subsets}
@@ -284,7 +454,7 @@ Counting techniques are at the heart of discrete mathematics. This section cover
   \[
   P(n, m) = \frac{n!}{(n-m)!}.
   \]
-  \item The number of subsets of an \(n\)-element set is:
+  \item The total number of subsets of an \(n\)-element set is:
   \[
   2^n.
   \]
@@ -293,6 +463,8 @@ Counting techniques are at the heart of discrete mathematics. This section cover
   \binom{n}{k} = \frac{n!}{k!(n-k)!}.
   \]
 \end{itemize}
+\vspace{0.5em}
+\textbf{Why It Matters:} These formulas form the core of combinatorial reasoning, vital for probability theory and algorithm analysis.
 
 \begin{lemma}[Binomial Sum Identity]
   For any non-negative integer \(n\),
@@ -312,7 +484,7 @@ Counting techniques are at the heart of discrete mathematics. This section cover
 \end{definition}
 
 \begin{definition}[Permutation]
-  A \emph{permutation} of a set of \(n\) elements is an ordered arrangement of its elements. The total number of permutations is \(n!\). More generally, the number of ways to order \(k\) out of \(n\) elements is:
+  A \emph{permutation} of a set of \(n\) elements is an ordered arrangement. The total number of permutations is \(n!\). More generally, the number of ways to order \(k\) out of \(n\) elements is:
   \[
   P(n,k) = \frac{n!}{(n-k)!}.
   \]
@@ -340,24 +512,46 @@ Counting techniques are at the heart of discrete mathematics. This section cover
   \[
   \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}.
   \]
+  \vspace{0.5em}
+  \textbf{Conceptual Insight:} This identity is the backbone of Pascal's Triangle and reveals the recursive structure of binomial coefficients.
 \end{lemma}
 
+% Diagram: A small portion of Pascal's Triangle
+\begin{center}
+\begin{tikzpicture}[node distance=0.8cm, auto]
+  \node (row0) {\(1\)};
+  \node (row1-1) [below left=of row0] {\(1\)};
+  \node (row1-2) [below right=of row0] {\(1\)};
+  \node (row2-1) [below left=of row1-1] {\(1\)};
+  \node (row2-2) [below=of row0] {\(2\)};
+  \node (row2-3) [below right=of row1-2] {\(1\)};
+  \draw (row0) -- (row1-1);
+  \draw (row0) -- (row1-2);
+  \draw (row1-1) -- (row2-1);
+  \draw (row1-1) -- (row2-2);
+  \draw (row1-2) -- (row2-2);
+  \draw (row1-2) -- (row2-3);
+\end{tikzpicture}
+\end{center}
+
 \begin{theorem}[Binomial Theorem]
-  For any real numbers \(x\) and \(y\) and any non-negative integer \(n\),
+  For any real numbers \(x\) and \(y\) and non-negative integer \(n\),
   \[
   (x+y)^n = \sum_{k=0}^{n} \binom{n}{k} x^k y^{n-k}.
   \]
+  \vspace{0.5em}
+  \textbf{Why It Matters:} The binomial theorem is a powerful tool for expanding expressions and has applications in algebra, probability, and numerical methods.
 \end{theorem}
 
 \begin{example}
   For \(n=3\):
   \[
-  (x+y)^3 = \binom{3}{0}x^0y^3 + \binom{3}{1}x^1y^2 + \binom{3}{2}x^2y^1 + \binom{3}{3}x^3y^0 = y^3 + 3xy^2 + 3x^2y + x^3.
+  (x+y)^3 = y^3 + 3xy^2 + 3x^2y + x^3.
   \]
 \end{example}
 
 \begin{definition}[Multinomial Coefficients]
-  For non-negative integers \(n_1, n_2, \dots, n_k\) satisfying \(n_1+n_2+\cdots+n_k = n\), the multinomial coefficient is defined by:
+  For non-negative integers \(n_1, n_2, \dots, n_k\) satisfying \(n_1+n_2+\cdots+n_k = n\), the multinomial coefficient is:
   \[
   \binom{n}{n_1, n_2, \dots, n_k} = \frac{n!}{n_1!n_2!\cdots n_k!}.
   \]
@@ -373,14 +567,25 @@ Counting techniques are at the heart of discrete mathematics. This section cover
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Inclusion-Exclusion Principle}
 
-The inclusion-exclusion principle is an important tool for counting the number of elements in the union of overlapping sets.
+The inclusion-exclusion principle corrects for over-counting in overlapping sets, a crucial concept in combinatorics.
 
 \begin{theorem}[Inclusion-Exclusion Principle]
   Let \(A_1, A_2, \dots, A_n\) be finite sets. Then:
   \[
   \left| \bigcup_{i=1}^{n} A_i \right| = \sum_{i=1}^{n} |A_i| - \sum_{1\le i < j \le n} |A_i \cap A_j| + \sum_{1\le i < j < k \le n} |A_i \cap A_j \cap A_k| - \cdots + (-1)^{n+1} |A_1 \cap A_2 \cap \cdots \cap A_n|.
   \]
+  \vspace{0.5em}
+  \textbf{Why It Matters:} This principle is essential for accurately counting elements in overlapping sets.
 \end{theorem}
+
+% Diagram: Three-set Venn diagram for Inclusion-Exclusion
+\begin{center}
+\begin{tikzpicture}
+  \draw[fill=blue!20, fill opacity=0.5] (0,0) circle (1.5) node[above] {\(A_1\)};
+  \draw[fill=red!20, fill opacity=0.5] (1.8,0) circle (1.5) node[above] {\(A_2\)};
+  \draw[fill=green!20, fill opacity=0.5] (0.9,-1.5) circle (1.5) node[below] {\(A_3\)};
+\end{tikzpicture}
+\end{center}
 
 \begin{example}
   For two sets \(A\) and \(B\):
@@ -392,17 +597,19 @@ The inclusion-exclusion principle is an important tool for counting the number o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Derangements and the Hat-Check Problem}
 
-A classical problem in combinatorics involves counting derangements.
+Derangements are permutations where no element remains in its original position. They provide insight into probability and combinatorial reasoning.
 
 \begin{definition}[Derangement]
-  A \emph{derangement} is a permutation \(\sigma\) of \(\{1,2,\dots,n\}\) with no fixed points; that is, \(\sigma(i) \neq i\) for all \(i\).
+  A \emph{derangement} is a permutation \(\sigma\) of \(\{1,2,\dots,n\}\) with \(\sigma(i) \neq i\) for all \(i\).
+  \vspace{0.5em}
+  \textbf{Why It Matters:} Counting derangements uses inclusion-exclusion and highlights unexpected order in chaos.
 \end{definition}
 
-Let \(D_n\) denote the number of derangements of \(n\) objects. Using inclusion-exclusion, one obtains:
+Let \(D_n\) denote the number of derangements of \(n\) objects:
 \[
 D_n = n! \sum_{k=0}^{n} \frac{(-1)^k}{k!}.
 \]
-An alternative recurrence for derangements is:
+An alternative recurrence is:
 \[
 D_n = (n-1)(D_{n-1} + D_{n-2}), \quad \text{with } D_0 = 1 \text{ and } D_1 = 0.
 \]
@@ -412,32 +619,29 @@ D_n = (n-1)(D_{n-1} + D_{n-2}), \quad \text{with } D_0 = 1 \text{ and } D_1 = 0.
   \[
   D_3 = 3! \left(1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!}\right)
   = 6\left(1 - 1 + \frac{1}{2} - \frac{1}{6}\right)
-  = 6\left(\frac{1}{2} - \frac{1}{6}\right)
   = 6\left(\frac{1}{3}\right)
   = 2.
   \]
 \end{example}
 
-Another useful expression for \(D_n\) is:
+Another useful expression is:
 \[
 D_n = \left\lfloor \frac{n!}{e} + \frac{1}{2} \right\rfloor,
 \]
 where \(e\) is the base of the natural logarithm.
 
-\subsection{}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Conclusion}
 
-In this document we have explored several core topics in discrete mathematics in greater depth:
+In these notes we have explored several core topics in discrete mathematics:
 \begin{itemize}
-  \item \textbf{Numbers and Sets:} We reviewed standard number systems, set operations, and key identities such as De Morgan's laws.
-  \item \textbf{Proof Techniques:} Both standard and strong forms of mathematical induction were discussed alongside examples.
-  \item \textbf{Functions and Relations:} Definitions, types, and properties (including function composition and inverses) were examined. We also discussed relations, including equivalence relations and the corresponding partitions of sets.
-  \item \textbf{Ordering:} Partial and total orders were defined, and the concept of Hasse diagrams, chains, antichains, lattices, and related theorems (such as Dilworth's theorem) were introduced.
-  \item \textbf{Combinatorial Counting:} Fundamental counting techniques including functions, permutations (with and without repetition), binomial and multinomial coefficients, the binomial theorem, inclusion-exclusion, and derangements were covered.
+  \item \textbf{Numbers and Sets:} Fundamental structures that underpin all of mathematics.
+  \item \textbf{Proof Techniques:} Methods like induction that enable us to rigorously prove infinite families of statements.
+  \item \textbf{Functions and Relations:} The language for describing mappings and associations, essential in modeling processes.
+  \item \textbf{Ordering:} Concepts such as partial orders, total orders, and lattices that bring structure and hierarchy.
+  \item \textbf{Combinatorial Counting:} Techniques to enumerate possibilities, critical in probability and algorithm analysis.
 \end{itemize}
 
-These topics form the backbone of combinatorics, graph theory, number theory, and computer science, and provide a solid foundation for advanced studies.
+These diagrams serve as visual aids to help cement your understanding of the concepts. Feel free to expand on them or adjust as your understanding grows.
 
 \end{document}
