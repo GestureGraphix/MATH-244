@@ -157,6 +157,152 @@
   \end{enumerate}
 }
 
+\subsection*{Bonus Prob Part 1}
+\addcontentsline{toc}{subsection}{Bonus Prob Part 1}
+
+\begin{RemarkWithLily}{Part a}
+  FFirst, place \(n\) points (\(P_1, P_2, \dots, P_n\)) on side \(AB\) and \(n\) points (\(Q_1, Q_2, \dots, Q_n\)) on side \(AC\).  
+  Draw segments \(CP_i\) for \(i=1,\dots,n\) and segments \(BQ_j\) for \(j=1,\dots,n\).  
+  Since every segment from \(C\) to a point on \(AB\) meets every segment from \(B\) to a point on \(AC\) exactly once, there are
+  \[
+  n \times n = n^2
+  \]
+  intersections. These segments divide the triangle into a grid-like pattern having \((n+1)\) rows and \((n+1)\) columns, so the total number of regions is
+  \[
+  (n+1)^2.
+  \]
+
+  \bigskip
+
+  \textbf{Diagram for (a):}
+
+  \bigskip
+
+  \begin{center}
+  \begin{tikzpicture}[scale=1]
+    % Define triangle vertices
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (6,0);
+    \coordinate (C) at (2,4);
+    
+    % Draw triangle ABC
+    \draw[line width=1pt] (A) -- (B) -- (C) -- cycle;
+    \node[below left] at (A) {\(A\)};
+    \node[below right] at (B) {\(B\)};
+    \node[above] at (C) {\(C\)};
+    
+    % Set n=3 for illustration
+    \def\n{3}
+    
+    % Points on AB: P_1, P_2, ..., P_n
+    \foreach \i in {1,...,\n} {
+      \coordinate (P\i) at ($(A)!{\i/(\n+1)}!(B)$);
+      \fill (P\i) circle (2pt);
+      \node[below] at (P\i) {\(P_{\i}\)};
+      % Draw segment from P_i to C
+      \draw[dashed] (P\i) -- (C);
+    }
+    
+    % Points on AC: Q_1, Q_2, ..., Q_n
+    \foreach \i in {1,...,\n} {
+      \coordinate (Q\i) at ($(A)!{\i/(\n+1)}!(C)$);
+      \fill (Q\i) circle (2pt);
+      \node[left] at (Q\i) {\(Q_{\i}\)};
+      % Draw segment from Q_i to B
+      \draw[dashed] (Q\i) -- (B);
+    }
+    
+  \end{tikzpicture}
+  \end{center}
+\end{RemarkWithLily}
+
+
+\newpage
+
+\subsection*{Bonus Prob Part 2}
+\addcontentsline{toc}{subsection}{Bonus Prob Parts 2 and 3}
+
+\begin{RemarkWithLily}{For Prob 2 and 3}
+  NNow, we add \(n\) points ( \(R_1, R_2, \dots, R_n\)) on side \(BC\) and draw segments \(AR_i\) from each to vertex \(A\). Under the assumption that no three segments are concurrent, each new segment \(AR_i\) intersects every segment from \(C\) to \(AB\) making \(n\) segement and every segment from \(B\) to \(AC\) making \(n\) segements. So, each segment \(AR_i\) contributes \(2n\) new intersections. Since there are \(n\) such segments, the additional intersections amount to
+  \[
+  n \cdot (2n) = 2n^2.
+  \]
+  We add these to the orginal $^{2}$ intersections
+  \[
+  n^2 + 2n^2 = 3n^2.
+  \]
+  \bigskip
+
+  \textbf{Diagram for (b) and (c):}
+
+  \bigskip
+
+  \begin{center}
+  \begin{tikzpicture}[scale=1]
+    % Define triangle vertices
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (6,0);
+    \coordinate (C) at (2,4);
+    
+    % Draw triangle ABC
+    \draw[line width=1pt] (A) -- (B) -- (C) -- cycle;
+    \node[below left] at (A) {\(A\)};
+    \node[below right] at (B) {\(B\)};
+    \node[above] at (C) {\(C\)};
+    
+    % Set n=3 for illustration
+    \def\n{3}
+    
+    % Points on AB: P_1, P_2, ..., P_n
+    \foreach \i in {1,...,\n} {
+      \coordinate (P\i) at ($(A)!{\i/(\n+1)}!(B)$);
+      \fill (P\i) circle (2pt);
+      \node[below] at (P\i) {\(P_{\i}\)};
+      % Draw segment from P_i to C
+      \draw[dashed] (P\i) -- (C);
+    }
+    
+    % Points on AC: Q_1, Q_2, ..., Q_n
+    \foreach \i in {1,...,\n} {
+      \coordinate (Q\i) at ($(A)!{\i/(\n+1)}!(C)$);
+      \fill (Q\i) circle (2pt);
+      \node[left] at (Q\i) {\(Q_{\i}\)};
+      % Draw segment from Q_i to B
+      \draw[dashed] (Q\i) -- (B);
+    }
+    
+    % Points on BC: R_1, R_2, ..., R_n
+    \foreach \i in {1,...,\n} {
+      \coordinate (R\i) at ($(B)!{\i/(\n+1)}!(C)$);
+      \fill (R\i) circle (2pt);
+      \node[right] at (R\i) {\(R_{\i}\)};
+      % Draw segment from R_i to A
+      \draw[dashed] (R\i) -- (A);
+    }
+    
+  \end{tikzpicture}
+  \end{center}
+
+\end{RemarkWithLily}
+
+\subsection*{Bonus Prob Part 3}
+\addcontentsline{toc}{subsection}{Bonus Prob Part 3}
+
+\begin{RemarkWithLily}{For part 3}
+  WWhen a new segment is added, if it is intersected \(k\) times, it is divided 
+  into \(k+1\) pieces—each piece increasing the number of regions by 1. 
+  Each segment \(AR_i\) is intersected \(2n\) times and splits into \(2n+1\) pieces. So, these $n$ segements add
+  \[
+  n(2n+1)
+  \]
+  regions. The total number of regions is 
+  \[
+  (n+1)^2 + n(2n+1) = 3n^2+3n+1.
+  \]
+
+  
+\end{RemarkWithLily}
+
 \section*{3.7 Prob 3}
 \addcontentsline{toc}{section}{3.7 Prob 3}
 
